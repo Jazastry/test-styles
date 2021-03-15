@@ -5,10 +5,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@vizuaalog/bulmajs": "^0.12.0",
-    "bulma": "^0.9.1",
-    "html-includes": "^4.3.3",
-    "node-sass": "^5.0.0"
+    "html-includes": "^4.3.3"
   },
   "scripts": {
     "css-build": "node-sass --omit-source-map-url public/sass/ -o public/css/",
@@ -19,13 +16,15 @@
     "compile": "npm run precompile && npm run rename",
     "server": "nodemon index.js",
     "refresh": "npm run css-build && npm run compile",
-    "install": "npm i && npm run css-build"
+    "install": "npm run css-build"
   },
   "dependencies": {
     "@creativebulma/bulma-badge": "^1.0.1",
     "@creativebulma/bulma-divider": "^1.1.0",
     "@creativebulma/bulma-tooltip": "^1.2.0",
     "@fortawesome/fontawesome-free": "^5.15.2",
+    "@vizuaalog/bulmajs": "^0.12.0",
+    "bulma": "^0.9.1",
     "bulma-carousel": "^4.0.4",
     "bulma-checkradio": "^1.1.1",
     "bulma-helpers": "^0.3.12",
@@ -39,6 +38,7 @@
     "fs": "^0.0.1-security",
     "handlebars-helpers": "^0.10.0",
     "material-icons": "^0.5.2",
+    "node-sass": "^5.0.0",
     "nodemon": "^2.0.7"
   }
 }
