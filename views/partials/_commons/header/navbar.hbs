@@ -1,0 +1,20 @@
+<nav class="js--toggle-navbar as-browser navbar is-fixed-top" aria-label="main navigation">
+  <div class="navbar-brand is-full-width">
+
+    <div class="navbar-item">
+      <a href="/custom" class="has-text-opacity-70">
+        <i class="fas fa-code has-text-vcentered"></i>
+      </a>
+    </div>
+    {{>_commons/header/navbar-tabs}}
+    <div class="ml-auto is-flex">
+      <div class="navbar-item has-text-opacity-70 is-clickable has-tooltip-arrow has-tooltip-left" data-tooltip="Find Anything">
+        <i class="fas fa-search"></i>
+      </div>
+      <div class="navbar-item">
+        {{>_commons/header/dropdown}}
+      </div>
+    </div>
+
+  </div>
+</nav>

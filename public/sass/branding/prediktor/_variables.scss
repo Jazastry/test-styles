@@ -1,0 +1,75 @@
+@charset "utf-8";
+
+// Theme
+$prediktor-theme: true;
+
+// Font
+$family-sans-serif: "Barlow", sans-serif;
+$prediktor-font-path: "../../../fonts/Barlow";
+@import "../../includes/fonts/prediktor.scss";
+
+// Colors
+$red-dark: #EB5A55;
+$red: #EF7A76;
+$red-light: #F39C98;
+$red-lighter: #F7BDBB;
+$red-lightest: #FBDEDD;
+
+$black: #27333B;
+$black-bis: darken($black, 14%);
+$black-ter: darken($black, 7%);
+$grey-darker: #525C62;
+$grey-darkest: darken($grey-darker, 10%);
+$grey-dark: #7D8589;
+$grey: #A9ADB1;
+$grey-light: #D4D6D8;
+$grey-lighter: #E8E6E2;
+$grey-lightest: lighten($grey-lighter, 5%);
+$white-ter: #FBF9F9;
+$white-bis: hsl(0, 0%, 98%);
+
+$blue-dark: #0F5CAF;
+$blue-darker: darken($blue-dark, 2.5%);
+$blue: #3F7DBF;
+$blue-light: #6F9DCF;
+$blue-lighter: #9FBEDF;
+$blue-lightest: #CFDEEF;
+$blue-darkMode: #1686FF; // hsb of $blue-dark, where brightness is 100%
+// $blue-darkMode-hover: #157FF2; // hsb of $blue-dark, where brightness is 95%
+
+$yellow-dark: #FCB560;
+$yellow: #FDC480;
+$yellow-light: #FDD3A0;
+$yellow-lighter: #FEE1C0;
+$yellow-lightest: #FEF0DF;
+
+$green-darker: #085C5E;
+$green-dark: #0FB1B6;
+$green: #3FC1C5;
+$green-light: #6FD0D3;
+$green-lighter: #9FE0E2;
+$green-lightest: #CFEFF0;
+
+$skyblue-dark: #00AEEF;
+$skyblue: #33BEF2;
+$skyblue-light: #66CEF5;
+$skyblue-lighter: #99DFF9;
+$skyblue-lightest: #CCEFFC;
+
+$livid-dark: #5A6E85;
+$livid: #7B8B9D;
+$livid-light: #9CA8B6;
+$livid-lighter: #BDC5CE;
+$livid-lightest: #DEE2E7;
+
+// Update Bulma's global variables
+$primary: $blue-dark;
+$primary-light: $blue;
+$primary-lighter: $blue-light;
+$primary-lightest: $blue-lighter;
+$primary-darkMode: $blue-darkMode;
+$info: $skyblue-dark;
+$warning: $yellow-dark;
+$success: $green-dark;
+$success-dark: $green-darker;
+$danger: $red-dark;

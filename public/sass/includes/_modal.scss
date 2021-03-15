@@ -1,0 +1,22 @@
+.modal {
+  z-index: 99;
+  &-close {
+  	position: fixed;
+  	right: $modal-close-right;
+  	top: $modal-close-top;
+  }
+  &-content {
+    @if $dark-mode {
+      box-shadow: 0px 0px 10px rgba($white, 0.3);
+    } @else {
+      box-shadow: $box-shadow;
+    }
+  }
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .modal-background {
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+  }
+}

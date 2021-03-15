@@ -1,0 +1,30 @@
+// Dropdown item on hover for React
+@mixin dropdown-menu-without-a($background-color: $white) {
+  .dropdown-menu {
+    .dropdown-item {
+      &:hover {
+        background: $background-color;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+// Dropdown
+.dropdown {
+	&-block {
+		align-items: center;
+	  display: flex;
+	  justify-content: flex-start;
+	  padding: 0.5em 0.75em;
+	}
+	&-icon {
+		color: $grey;
+		margin-right: 0.75em;
+		width: 20px;
+		text-align: center;
+	}
+  &-menu.is-centered {
+    @include is-x-centered();
+  }
+}

@@ -1,0 +1,179 @@
+$sizes: (
+	"default": 40px,
+	"small": 30px,
+	"smaller": 20px,
+	"smallest": 14px,
+);
+
+// Buttons
+button.icon {
+	width: map-get($sizes, "default");
+	height: map-get($sizes, "default");
+	justify-content: center;
+	@each $name, $size in $sizes {
+		&.is-#{$name} {
+			width: $size;
+			height: $size;
+		}
+	}
+	&.is-rounded {
+		padding: 0;
+		&:not(.badge):hover {
+			transform: scale(1.04);
+		}
+	}
+	&.is-smallest {
+		border-radius: $radius-rounded;
+		&:hover {
+			transform: none !important;
+		}
+		i {
+			line-height: 150%;
+		}
+	}
+}
+
+.button {
+	&.is-small {
+		border-radius: $radius;
+		&.is-rounded {
+			border-radius: $radius-rounded;
+		}
+	}
+	&.is-smaller {
+		height: ($control-height - 0.5em);
+		padding: ($button-padding-vertical / 2) ($button-padding-horizontal / 2);//0.3rem;
+		font-size: $size-8;
+		line-height: 1;
+	}
+}
+
+
+.button {
+	&[disabled] { opacity: 0.7; }
+	&.is-outlined {
+		@if $dark-mode {
+			background: transparent;
+			&.is-primary {
+				color: $primary-darkMode;
+				border-color: $primary-darkMode;
+			}
+			&.is-light {
+				@extend .has-text-opacity-70;
+			}
+		}
+	}
+
+	&.is-light {
+		@if $dark-mode {
+			background: $black-ter;
+		} @else {
+			background: $white-ter;
+		}
+		&:hover,
+		&:active, &.is-active {
+			@if $dark-mode {
+				background: $black;
+			} @else {
+				background: $grey-lightest;
+			}
+		}
+		@if $dark-mode {
+			$custom-colors:("primary": ($blue-light), "danger": ($red-light), "warning": ($yellow-light), "success": ($green-light), "info": ($skyblue-light));
+			@each $custom-name, $pair in $custom-colors {
+				$custom-color: nth($pair, 1);
+				&.is-#{$custom-name} {
+					color: $black-bis !important;
+					background: #{$custom-color} !important;
+				}
+			}
+		}
+	}
+
+	&.is-link {
+		@if $dark-mode {
+			color: $white;
+			background: $primary;
+		}
+	}
+
+	&.is-text {
+		text-decoration: none;
+		border: none;
+		@extend .has-text-opacity-70;
+		@if $dark-mode {
+			background: $black-bis;
+		} @else {
+			background: $white-ter;
+		}
+		&:focus, &:active {
+			@include box-shadow(none);
+		}
+		&:focus, &:active {
+			@if $dark-mode {
+				background: $black-bis;
+			} @else {
+				background: $grey-lighter;
+			}
+		}
+		&.is-active {
+			background: $primary !important;
+			color: rgba($white, 0.7);
+			&:hover, &.is-active {
+				color: $white;
+			}	
+		}
+		&.is-primary {
+			background: transparent;
+			@if $dark-mode {
+				color: $primary-darkMode;
+			} @else {
+				color: $primary-light;
+			}
+			&:hover, &:active {
+				background: $button-text-hover-background-color;
+				@if $dark-mode {
+					color: $white;
+				} @else {
+					color: $primary;
+				}
+			}
+		}
+		&.is-light {
+			background: transparent;
+			@if $dark-mode {
+				color: rgba($white, 0.5);
+			} @else {
+				color: rgba($white, 0.5);
+			}
+			&:hover, &:active {
+				@if $dark-mode {
+					background: $grey-dark;
+					color: $white;
+				}
+			}
+		}
+	}
+}
+
+.button {
+	&.icon, .icon {
+		i[class*="icon-"],
+		i[class*="mi-"] {
+			line-height: 100%;
+		}
+	}
+}
+
+// Delete button
+.modal-close,
+button.delete {
+	@if $dark-mode {
+		&:before, &:after {
+			background: $white;
+		}
+		&:hover {
+			background: $primary;
+		}
+	}
+}

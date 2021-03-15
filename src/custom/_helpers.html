@@ -1,0 +1,18 @@
+<div class="js--toggle-navbar-composed flex-column is-fixed is-top is-hidden-mobile
+js--toggle-aside">
+  ${require('aside/_helpers.html')}
+</div>
+
+<div class="js--toggle-aside-content has-aside pb-5">
+  <div class="container is-fluid is-flex">
+    ${require('../pview/navbar/components/_navbar-item-menu-toggle.html')}
+  </div>
+  <div class="container is-fluid pt-5">
+    <section>
+      <div class="divider">
+        <h2 class="title is-capitalized mx-3">Helpers</h2>
+      </div>
+      ${require('content/helpers/_all.html')}
+    </section>
+  </div>
+</div>

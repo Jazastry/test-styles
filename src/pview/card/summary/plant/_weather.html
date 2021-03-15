@@ -1,0 +1,18 @@
+<div class="card">
+  <header class="card-header">
+    <h2 class="card-header-title is-uppercase is-size-7">Weather</h2>
+  </header>
+  <div class="card-content px-3 justify-centered">
+    <div class="columns">
+      <div class="column mt-auto pb-0">
+        ${require('weather/_other-metrics.html')}
+      </div>
+      <div class="column has-text-centered mt-auto pb-0">
+        ${require('weather/_temperature.html')}
+      </div>
+      <div class="column has-text-centered mt-auto pb-0">
+        ${require('weather/_irradiance.html')}
+      </div>
+    </div>
+  </div>
+</div>

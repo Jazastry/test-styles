@@ -1,0 +1,29 @@
+<div class="js--toggle-navbar-composed js--toggle-aside flex-column is-fixed is-top is-hidden-mobile">
+  <aside class="is-sticky px-3 pt-5">
+    <ul class="menu-list">
+      <li class="menu-label">Components</li>
+      <li>
+        <a href="#siteCard">Site card</a>
+      </li>
+    </ul>
+  </aside>
+</div>
+
+<div class="js--toggle-aside-content has-aside pb-5">
+  <div class="container is-fluid is-flex">
+    {{>_commons/navbar-item-menu-toggle}}
+  </div>
+  <div class="container is-fluid pt-5">
+    <section>
+      <div class="divider">
+        <h2 class="title is-capitalized mx-3">site card</h2>
+      </div class="columns">
+        {{#each cardItems}}
+        <div class="column is-4">
+          {{>pview/components/card/card}}
+        </div>
+        {{/each}}
+      </div>
+    </section>
+  </div>
+</div>

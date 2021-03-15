@@ -1,0 +1,122 @@
+@import "../commons.scss";
+@import "variables.scss";
+
+// OVERITING GLOBAL VARIABLES
+$text: $black;
+$link: $blue-dark;
+$body-background-color: rgba($white-ter, 0.3);
+$box-shadow: 0 1px 1px 0 rgba(60, 64, 67, 0.08), 0 1px 3px 1px rgba(60, 64, 67, 0.16);
+$light: $grey-lighter;
+
+// Panel
+$panel-heading-weight: 600;
+$panel-block-color: $black;
+
+// Form
+$label-weight: normal;
+
+// Input
+$input-icon-active-color: darken($grey-light, 5%);
+
+// Card
+$card-header-weight: 600;
+$card-header-shadow: 0 0.05em 0em rgba(39, 51, 59, 0.1);
+$card-shadow: 0 1px 1px 0 rgba(60, 64, 67, 0.08), 0 1px 3px 1px rgba(60, 64, 67, 0.16);
+
+// Table
+$table-background-color: transparent;
+$table-row-active-color: $text;
+$table-row-active-background-color: rgba($primary, 0.15);
+
+// Tabs
+$tabs-link-color: $grey-dark;
+
+// Button
+$button-color: $grey-dark;
+
+// Breadcrumbs
+$breadcrumb-item-color: $grey;
+$breadcrumb-item-hover-color: $text;
+
+// Progress
+$progress-value-background-color: $blue;
+
+// Dropdown
+$dropdown-content-shadow: 0 1px 1px 0 rgba(60, 64, 67, 0.08), 0 1px 3px 1px rgba(60, 64, 67, 0.16);
+
+// BULMA
+@import "../../../../node_modules/bulma/bulma.sass";
+
+// EXTENSIONS
+// Steps
+$steps-divider-size: .14em;
+$steps-hollow-border-size: .14em;
+@import "../../../../node_modules/bulma-o-steps/bulma-steps.sass"; /* there is bug with this bulma-o-steps overwriting the form inputs (font-size & height). I've commented the whole file (utilities/controls.sass)from being included in utilities/_all.sass */
+
+// Modal
+$transition-duration: .3s;
+$transition-duration-newsPaper: .7s;
+$transition-duration-3dslit: .5s;
+$modal-perspective: 1300px;
+$modal-bg-color: rgba($white,.5);
+@import "../../../../node_modules/bulma-modal-fx/src/_scss/components/_modal-fx.scss";
+
+// Badge
+@import "../../../../node_modules/@creativebulma/bulma-badge/src/sass/index.sass";
+
+// Tooltip
+$tooltip-background-color: $black;
+@import "../../../../node_modules/@creativebulma/bulma-tooltip/src/sass/index.sass";
+
+// Divider
+$hr-height: 1px;
+$hr-background-color: $grey-lighter;
+@import "../../../../node_modules/@creativebulma/bulma-divider/src/sass/index.sass";
+
+// Quickview
+@import "../../../../node_modules/bulma-quickview/src/sass/index.sass";
+
+// Switch
+@import "../../../../node_modules/bulma-switch/src/sass/index.sass";
+
+// Slider
+@import "../../../../node_modules/bulma-slider/src/sass/index.sass";
+
+// Carousel
+@import "../../../../node_modules/bulma-carousel/src/sass/index.sass";
+
+// Checkradio
+@import "../../../../node_modules/bulma-checkradio/src/sass/index.sass";
+
+// CUSTOM
+$light-mode: true;
+@import "../../includes/all.scss";
+
+
+//////////////////////////////
+// TO BE MOVED & DELETED
+/////////////////////////////
+
+// Screens Navbar Bottom
+.navbar.is-screen-nav {
+	@include screen-nav();
+}
+
+// Cards
+@include card-image-has-brand();
+
+// Aside
+@include aside-sticky-panel();
+
+// Vertical Percentage Bar
+@include vertical-bar();
+
+// Badge
+@include badge-ghost();
+
+// Dropdown
+@include dropdown-menu-without-a($grey-light);
+
+// TO DO Available for DARK mode only
+@include is-loading(); /* is-loading class */
+@include average-bar(); /* PView Portfolio KPI's */

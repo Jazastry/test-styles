@@ -1,0 +1,11 @@
+{{#>bulma/components/panel/items/block block="is-sticky is-top is-borderless has-z-index-1 py-3 pl-4"}}
+  {{#>bulma/form/field field="has-addons is-full-width is-align-items-center"}}
+    {{>bulma/form/checkbox checkbox="is-small" id="indeterminate" input="has-background-color is-primary" inputName="Select all"}}
+    {{#>bulma/form/label for="indeterminate" label="is-size-small py-2 my-0"}}
+      <span id="js--change-selected-all-value" class="pl-1">1 selected</span>
+    {{/bulma/form/label}}
+    <div class="ml-auto {{modalButton}}">
+      {{>bulma/elements/buttons/button class="is-primary is-rounded is-size-small modal-button" text="Trend Chart" data-target="planModal"}}
+    </div>
+  {{/bulma/form/field}}
+{{/bulma/components/panel/items/block}}

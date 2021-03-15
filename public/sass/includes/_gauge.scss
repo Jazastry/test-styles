@@ -1,0 +1,53 @@
+.gauge {
+  &-donut {
+    @if $dark-mode {
+      stroke: rgba($white, 0.2);
+    } @else {
+      stroke: rgba($black, 0.1);
+    }
+  }
+  &-arrow {
+    @if $dark-mode {
+      fill: $primary;
+    } @else {
+      fill: $primary;
+    }
+  }
+  &-current {
+    @if $dark-mode {
+      stroke: $primary;
+    } @else {
+      stroke: $primary;
+    }
+  }
+}
+
+@mixin gauge-color($donutColor, $arrowColor) {
+  .gauge {
+    &-donut {
+      stroke: $donutColor;
+    }
+    &-arrow {
+      fill: $arrowColor;
+    }
+    &-current {
+      stroke: $arrowColor;
+    }
+  }
+}
+
+.gauge-dark {
+  @if $dark-mode {
+    @include gauge-color($white, $primary);
+  } @else {
+    @include gauge-color($white, $primary);
+  }
+}
+
+.gauge-light {
+  @if $dark-mode {
+    @include gauge-color(rgba($white,0.2), $white);
+  } @else {
+    @include gauge-color(rgba($black,0.1), $primary);
+  }
+}

@@ -1,0 +1,29 @@
+// Typography Extend
+$size-larger: 5rem;
+$size-8: 0.65rem;
+$size-9: 0.4rem;
+$size-10: 0.3rem;
+
+.is {
+  &-size-0 {
+    font-size: $size-larger;
+  }
+  &-size-8 {
+    font-size: $size-8;
+  }
+  &-size-9 {
+    font-size: $size-9;
+  }
+  &-size-10 {
+    font-size: $size-10;
+  }
+  &-size-small {
+    font-size: $small-font-size !important;
+  }
+  &-truncated {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex: 1;
+    overflow: hidden;
+  }
+}

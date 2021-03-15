@@ -1,0 +1,16 @@
+${require('modal/report-generate/_index.html')}
+
+<div class="js--toggle-navbar-composed flex-column is-fixed is-top is-hidden-mobile ">
+  ${require('panel/_reporting.html')}
+</div>
+
+<div class="has-aside py-5">
+  <div class="container is-fluid">
+    <section class="has-text-centered">
+      <h3 class="is-size-5 has-text-weight-semibold has-text-opacity-40 py-5">You don’t have any reports yet.</h3>
+      <button class="button is-primary is-rounded modal-button" data-target="modalReport" aria-haspopup="true">
+        Generate Report
+      </button>
+    </section>
+  </div>
+</div>

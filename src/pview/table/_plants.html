@@ -1,0 +1,89 @@
+<table class="table is-fullwidth is-hoverable is-striped is-bordered">
+  <thead class="is-transparent">
+    <tr>
+      <th class="sorting is-size-7 is-uppercase has-text-weight-semibold" colspan="2" aria-sort="ascending">Plant</th>
+      <th class="sorting is-size-7 is-uppercase has-text-weight-semibold">Weather</th>
+      <th class="sorting is-size-7 is-uppercase has-text-weight-semibold">Current</th>
+      <th class="sorting is-size-7 is-uppercase has-text-weight-semibold">Nominal</th>
+      <th class="sorting is-size-7 is-uppercase has-text-weight-semibold">PR</th>
+      <th class="sorting is-size-7 is-uppercase has-text-weight-semibold">Communication</th>
+      <th class="sorting is-size-7 is-uppercase has-text-weight-semibold">Production</th>
+      <th class="sorting is-size-7 is-uppercase has-text-weight-semibold has-text-right"></th>
+      <th class="sorting is-size-7 is-uppercase has-text-weight-semibold has-text-right"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="has-text-vcentered is-narrow">CZ</td>
+      <td class="has-text-vcentered">Hrusovany</td>
+      <td class="has-text-vcentered">${require('./cells/_weather.html')}</td>
+      <td class="has-text-vcentered">${require('./cells/_current-power.html')}</td>
+      <td class="has-text-vcentered">
+        <small>3.1mWp</small>
+      </td>
+      <td class="has-text-vcentered">${require('./cells/_pr-increased.html')}</td>
+      <td></td>
+      <td class="has-text-vcentered">
+        <div class="field is-grouped">
+          ${require('./cells/_alert-string.html')}
+        </div>
+      </td>
+      <td class="has-text-vcentered is-narrow has-text-right">
+        ${require('./cells/_status-warning.html')}
+      </td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <td class="has-text-vcentered is-narrow">CZ</td>
+      <td class="has-text-vcentered">Mramotice</td>
+      <td class="has-text-vcentered">${require('./cells/_weather.html')}</td>
+      <td class="has-text-vcentered">${require('./cells/_current-power.html')}</td>
+      <td class="has-text-vcentered">
+        <small>2.6mWp</small>
+      </td>
+      <td class="has-text-vcentered has-background-stripes has-background-stripes--part">
+        <span class="icon mr-2"></span>
+        83%
+      </td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <td class="has-text-vcentered is-narrow">CZ</td>
+      <td class="has-text-vcentered">Svitavy</td>
+      <td class="has-text-vcentered">${require('./cells/_weather.html')}</td>
+      <td class="has-text-vcentered">${require('./cells/_current-power.html')}</td>
+      <td class="has-text-vcentered">
+        <small>3.1mWp</small>
+      </td>
+      <td class="has-text-vcentered">${require('./cells/_pr-decreased.html')}</td>
+      <td class="has-text-vcentered">
+        <div class="field is-grouped">
+          ${require('./cells/_alert-network.html')}
+          ${require('./cells/_alert-internet.html')}
+        </div>
+      </td>
+      <td class="has-text-vcentered">
+        <div class="field is-grouped">
+          ${require('./cells/_alert-grid.html')}
+          ${require('./cells/_alert-tracker.html')}
+          ${require('./cells/_alert-inverter.html')}
+        </div>
+      </td>
+      <td class="has-text-vcentered is-narrow has-text-right">
+        ${require('./cells/_status-warning.html')}
+        ${require('./cells/_status-error.html')}
+      </td>
+      <td class="has-text-vcentered is-narrow has-text-centered">
+        <span class="icon has-text-info has-text-vcentered has-tooltip-arrow" data-tooltip="Service Requested">
+          <i class="icon-service-requested is-size-4" aria-hidden="true"></i>
+        </span>
+      </td>
+    </tr>
+
+  </tbody>
+</table>

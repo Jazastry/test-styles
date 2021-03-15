@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/branding/prediktor/prediktor-print.css">
+    <!-- including ECharts file -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.0.0/dist/echarts.min.js"></script>
+  </head>
+  <body>
+    <section>
+      <div class="columns mb-0">
+        <div class="column is-narrow">
+          <i class="icon-pview is-size-2"></i>
+        </div>
+        <div class="column">
+          <h1 class="is-uppercase is-size-4 has-text-weight-bold">
+            Production report
+            <small class="is-block is-capitalized has-text-weight-medium is-size-6 mt-1">for facility X</small>
+          </h1>
+        </div>
+      </div>
+
+      <div class="divider is-right mt-0">Some text explaining the purpose of the report</div>
+      <div class="columns is-variable is-1">
+        <div class="column">
+          <div class="px-3 py-2 has-background-grey-lighter">
+            <small class="caption has-text-grey-darker">Facility:</small>
+            <span class="has-text-weight-semibold">Lorem</span>
+          </div>
+        </div>
+        <div class="column">
+          <div class="px-3 py-2 has-background-grey-lighter">
+            <small class="caption has-text-grey-darker">Period:</small>
+            <span class="has-text-weight-semibold">01.01.1970 - 31.12.1970</span>
+          </div>
+        </div>
+        <div class="column">
+          <div class="px-3 py-2 has-background-grey-lighter">
+            <small class="caption has-text-grey-darker">Data interval/resolution:</small>
+            <span class="has-text-weight-semibold">5 minutes</span>
+          </div>
+        </div>
+      </div>
+
+      <h2>Summary</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th></th>
+            <th class="has-text-right">Actual</th>
+            <th class="has-text-right">Budget</th>
+            <th class="has-text-right">Diff</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="has-text-weight-semibold">Power production</td>
+            <td class="has-text-right">112 <span class="uom">MWh</span></td>
+            <td class="has-text-right">110 <span class="uom">MWh</span></td>
+            <td class="has-text-right has-text-success-dark">5,0 <span class="uom">%</span><i class="icon-arrow-up has-text-success ml-2"></i></td>
+          </tr>
+          <tr>
+            <td class="has-text-weight-semibold">Incline irradiation</td>
+            <td class="has-text-right">16 <span class="uom">kWh/m<sup>2</sup></span></td>
+            <td class="has-text-right">15 <span class="uom">kWh/m<sup>2</sup></span></td>
+            <td class="has-text-right has-text-success-dark">4,3 <span class="uom">%</span><i class="icon-arrow-up has-text-success ml-2"></i></td>
+          </tr>
+          <tr>
+            <td class="has-text-weight-semibold">Plant availability</td>
+            <td class="has-text-right">100,0 <span class="uom">%</span></td>
+            <td class="has-text-right">99,0 <span class="uom">%</span></td>
+            <td class="has-text-right has-text-success-dark">1,0 <span class="uom">%</span><i class="icon-arrow-up has-text-success ml-2"></i></td>
+          </tr>
+          <tr>
+            <td class="has-text-weight-semibold">Grid availability</td>
+            <td class="has-text-right">100,0 <span class="uom">%</span></td>
+            <td class="has-text-right">99,0 <span class="uom">%</span></td>
+            <td class="has-text-right has-text-success-dark">1,0 <span class="uom">%</span><i class="icon-arrow-up has-text-success ml-2"></i></td>
+          </tr>
+          <tr>
+            <td class="has-text-weight-semibold">Performance ratio</td>
+            <td class="has-text-right">77,1 <span class="uom">%</span></td>
+            <td class="has-text-right">82,4 <span class="uom">%</span></td>
+            <td class="has-text-right has-text-danger-dark">-6,4 <span class="uom">%</span><i class="icon-arrow-down has-text-danger ml-2"></i></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="4" class="pl-0">
+              <small class="is-italic">There should be some description of what the user is seeing here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit nisi sed sollicitudin pellentesque. Nunc posuere purus rhoncus pulvinar aliquam. Ut aliquet tristique nisl vitae volutpat. Nulla aliquet porttitor venenatis. Donec a dui et dui fringilla consectetur id nec massa. Aliquam erat volutpat. Sed ut dui ut lacus dictum fermentum vel tincidunt neque. Sed sed lacinia lectus. Duis sit amet sodales felis. Duis nunc eros, mattis at dui ac, convallis semper risus. In adipiscing ultrices tellus, in suscipit massa vehicula eu.</small>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </section>
+
+      <section>
+          <h2>Charts</h2>
+          <section>
+              <div id="production" class="is-full-width" style="height:300px;"></div>
+              <script type="text/javascript">
+                // based on prepared DOM, initialize echarts instance
+                var myChart = echarts.init(document.getElementById('production'), 'light');
+
+                // specify chart configuration item and data
+                var option = {
+                    title: {
+                        text: 'Production',
+                        textStyle: {
+                          fontSize: 20,
+                          fontWeight: 600,
+                          color: '#525C62',
+                          fontFamily: 'Barlow',
+                        },
+                        padding: [0, 0, 10, 0],
+                    },
+                    tooltip: {},
+                    legend: {
+                        data:['Sales']
+                    },
+                    xAxis: {
+                        data: ["shirt","cardign","chiffon shirt","pants","heels","socks"]
+                    },
+                    yAxis: {},
+                    series: [{
+                        name: 'Sales',
+                        type: 'bar',
+                        data: [5, 20, 36, 10, 10, 20],
+                        showBackground: true,
+                        backgroundStyle: {
+                            color: 'rgba(232, 230, 226, 0.5)'
+                        }
+                    }]
+                };
+
+                // use configuration item and data specified to show chart
+                myChart.setOption(option);
+            </script>
+              <small>Some text to explain the graph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit nisi sed sollicitudin pellentesque</small>
+          </section>
+          <section class="has-page-break">
+              <h4>Irradiation:</h4>
+              <div id="irradiation" class="is-full-width has-background-white-ter" style="height:300px;">
+                  Actual Production (kWh)
+                  Budget Production (kWh)
+              </div>
+              <small>Some text to explain the graph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit nisi sed sollicitudin pellentesque</small>
+          </section>
+          <section>
+              <h4>Performance ratio:</h4>
+              <div id="pr" class="is-full-width has-background-white-ter" style="height:300px;">
+                  Actual PR (%)
+                  Budget PR (%)
+              </div>
+              <small>Some text to explain the graph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit nisi sed sollicitudin pellentesque</small>
+          </section>
+          <section>
+              <h4>Plant Availability:</h4>
+              <div id="plantAvailability" class="is-full-width has-background-white-ter" style="height:300px;">
+                  Actual Availability (%)
+                  Budget Availability (%)
+              </div>
+              <small>Some text to explain the graph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit nisi sed sollicitudin pellentesque</small>
+          </section>
+          <section class="has-page-break">
+              <h4>Grid Availability:</h4>
+              <div id="gridAvailability" class="is-full-width has-background-white-ter" style="height:300px;">
+                  Actual Availability (%)
+                  Budget Availability (%)
+              </div>
+              <small>Some text to explain the graph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit nisi sed sollicitudin pellentesque</small>
+          </section>
+      </section>
+
+      <section>
+        <h2>Data</h2>
+        <table class="table is-bordered">
+          <thead>
+            <tr class="parent">
+              <th colspan="2"></th>
+              <th colspan="3">Production</th>
+              <th colspan="3">Irradiation</th>
+              <th colspan="3">Performance Ratio</th>
+              <th colspan="3">Plant Availability</th>
+              <th colspan="3">Grid Availability</th>
+            </tr>
+            <tr class="child">
+              <th></th>
+              <th>Actual<span class="uom is-block">kWh</span></th>
+              <th>Budget<span class="uom is-block">kWh</span></th>
+              <th>Diff (%)<span class="uom is-block">kWh</span></th>
+              <th>Actual<span class="uom is-block">kWh/m<sup>2</sup></span></th>
+              <th>Budget<span class="uom is-block">kWh/m<sup>2</sup></span></th>
+              <th>Diff<span class="uom is-block">kWh/m<sup>2</sup></span></th>
+              <th>Actual<span class="uom is-block">%</span></th>
+              <th>Budget<span class="uom is-block">%</span></th>
+              <th>Diff<span class="uom is-block">%</span></th>
+              <th>Actual<span class="uom is-block">kWp</span></th>
+              <th>Budget<span class="uom is-block">%</span></th>
+              <th>Diff<span class="uom is-block">%</span></th>
+              <th>Actual<span class="uom is-block">%</span></th>
+              <th>Budget<span class="uom is-block">%</span></th>
+              <th>Diff<span class="uom is-block">%</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="family">
+              <th colspan="16">Facility name or other type of data</th>
+            </tr>
+            <tr>
+              <td>1.2.1970</td>
+              <td class="has-text-right">2</td>
+              <td class="has-text-right">3</td>
+              <td class="has-text-right has-text-success-dark"><i class="icon-arrow-up has-text-success mr-2 is-pulled-left"></i>1</td>
+              <td class="has-text-right">2</td>
+              <td class="has-text-right">3</td>
+              <td class="has-text-right has-text-danger-dark">-3<i class="icon-arrow-down has-text-danger mr-2 is-pulled-left"></i></td>
+              <td class="has-text-right">2</td>
+              <td class="has-text-right">3</td>
+              <td class="has-text-right has-text-success-dark">1<i class="icon-arrow-up has-text-success mr-2 is-pulled-left"></i></td>
+              <td class="has-text-right">2</td>
+              <td class="has-text-right">3</td>
+              <td class="has-text-right has-text-success-dark">1<i class="icon-arrow-up has-text-success mr-2 is-pulled-left"></i></td>
+              <td class="has-text-right">2</td>
+              <td class="has-text-right">3</td>
+              <td class="has-text-right has-text-success-dark">1<i class="icon-arrow-up has-text-success mr-2 is-pulled-left"></i></td>
+            </tr>
+            <tr>
+              <td>1.2.1970</td>
+              <td class="has-text-right">2</td>
+              <td class="has-text-right">3</td>
+              <td class="has-text-right has-text-success-dark">1<i class="icon-arrow-up has-text-success mr-2 is-pulled-left"></i></td>
+              <td class="has-text-right">2</td>
+              <td class="has-text-right">3</td>
+              <td class="has-text-right has-text-danger-dark">-3<i class="icon-arrow-down has-text-danger mr-2 is-pulled-left"></i></td>
+              <td class="has-text-right">2</td>
+              <td class="has-text-right">3</td>
+              <td class="has-text-right has-text-success-dark">1<i class="icon-arrow-up has-text-success mr-2 is-pulled-left"></i></td>
+              <td class="has-text-right">2</td>
+              <td class="has-text-right">3</td>
+              <td class="has-text-right has-text-success-dark">1<i class="icon-arrow-up has-text-success mr-2 is-pulled-left"></i></td>
+              <td class="has-text-right">2</td>
+              <td class="has-text-right">3</td>
+              <td class="has-text-right has-text-success-dark">1<i class="icon-arrow-up has-text-success mr-2 is-pulled-left"></i></td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr class="total">
+              <td class="has-text-right">Total</td>
+              <td class="has-text-right">4</td>
+              <td class="has-text-right">6</td>
+              <td class="has-text-right has-text-success-dark">2<i class="icon-arrow-up has-text-success mr-2 is-pulled-left"></i></td>
+              <td class="has-text-right">4</td>
+              <td class="has-text-right">6</td>
+              <td class="has-text-right has-text-danger-dark">-6<i class="icon-arrow-down has-text-danger mr-2 is-pulled-left"></i></td>
+              <td class="has-text-right">4</td>
+              <td class="has-text-right">6</td>
+              <td class="has-text-right has-text-success-dark">2<i class="icon-arrow-up has-text-success mr-2 is-pulled-left"></i></td>
+              <td class="has-text-right">4</td>
+              <td class="has-text-right">6</td>
+              <td class="has-text-right has-text-success-dark">2<i class="icon-arrow-up has-text-success mr-2 is-pulled-left"></i></td>
+              <td class="has-text-right">4</td>
+              <td class="has-text-right">6</td>
+              <td class="has-text-right has-text-success-dark">2<i class="icon-arrow-up has-text-success mr-2 is-pulled-left"></i></td>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+
+    </body>
+</html>

@@ -1,0 +1,12 @@
+{{#>bulma/components/panel/items/block block=(replace
+"is-borderless is-radiusless is-size-small ###" "###" extendBlock)}}
+  {{#if stateIsToggled}}
+    {{>bulma/elements/buttons/button-icon class="is-small is-text is-transparent" i="fas fa-caret-right" onclick=(replace "expandWithId(event,'###',true)" "###" togglerId)}}
+  <h6>Is it tracked?</h6>
+  {{>bulma/elements/icons/icon icon="is-small ml-auto" i="fas fa-times has-text-danger" aria-hidden="true"}}
+  {{else}}
+    {{>bulma/elements/buttons/button-icon class="is-small is-text is-transparent" i="fas fa-caret-down" onclick=(replace "expandWithId(event,'###',true)" "###" togglerId)}}
+  <h6>Is it tracked?</h6>
+  {{>bulma/elements/icons/icon icon="is-small ml-auto" i="fas fa-check has-text-success" aria-hidden="true"}}
+  {{/if}}
+{{/bulma/components/panel/items/block}}

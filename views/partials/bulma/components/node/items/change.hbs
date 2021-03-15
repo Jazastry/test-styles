@@ -1,0 +1,41 @@
+<div class="dropdown js--is-unclickable" id="js--dropdown-change-type">
+  <div class="dropdown-trigger" id="js--trigger-change-type">
+    {{>bulma/elements/buttons/button-icon class="is-small is-text has-tooltip-arrow" i=(replace "fas fa-circle has-text-###" "###" this.color) data-tooltip="Change Type" aria-controls="change-type"}}
+  </div>
+  <div class="dropdown-menu has-width-250" id="change-type" role="menu">
+    <div class="dropdown-content is-paddingless">
+
+      <div class="tabs is-fullwidth m-0">
+        <ul>
+          <li class="tab is-active p-0" onclick="openTab(event,'tab-master')">
+            <span class="is-clickable">
+              <span class="icon is-small has-text-{{color}}">
+                <i class="fas fa-circle is-size-7" aria-hidden="true"></i>
+              </span>
+              <span>Master</span>
+            </span>
+          </li>
+          <li class="tab p-0" onclick="openTab(event,'tab-servant')">
+            <span class="is-clickable">
+              <span class="icon is-small has-text-{{colorServant}}">
+                <i class="fas fa-circle is-size-7" aria-hidden="true"></i>
+              </span>
+              <span>Servant</span>
+            </span>
+          </li>
+        </ul>
+      </div>
+      <div id="tab-master" class="content-tab p-3">
+        <div class="grid is-2 has-gap-smallest">
+          {{>bulma/components/node/items/master}}
+        </div>
+      </div>
+      <div id="tab-servant" class="content-tab p-3" style="display: none;">
+        <div class="grid is-2 has-gap-smallest">
+          {{>bulma/components/node/items/servant}}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

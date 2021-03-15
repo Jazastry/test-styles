@@ -1,0 +1,39 @@
+<div class="field">
+  <label class="label"><small>Select template: <span class="has-text-danger">*</span></small></label>
+  <div class="control">
+    <div class="columns is-multiline is-mobile is-variable is-1 my-1">
+      <div class="column is-6 py-1">
+        <div class="template is-selected">
+          KPI
+          <small>Short description</small>
+          <div class="ml-auto mb-1">
+            <i class="icon-kpi"></i>
+          </div>
+        </div>
+      </div>
+      <div class="column is-flex">
+        <span class="link is-clickable is-size-7 mt-auto mb-auto ml-3">Clear</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="field">
+  <label class="label"><small>KPI report type: <span class="has-text-danger">*</span></small></label>
+  <div class="control as-list">
+    <input class="is-checkradio is-primary has-background-color is-small" id="full" type="radio" name="reportType" checked="checked">
+    <label for="full">Full</label>
+    <input class="is-checkradio is-primary has-background-color is-small" id="compact" type="radio" name="reportType">
+    <label for="compact">Compact</label>
+  </div>
+</div>
+
+<div class="field">
+  <label class="label"><small>Budget type: <span class="has-text-danger">*</span></small></label>
+  <div class="control as-list">
+    <input class="is-checkradio is-primary has-background-color is-small" id="internal" type="radio" name="budgetType">
+    <label for="internal">Internal budget</label>
+    <input class="is-checkradio is-primary has-background-color is-small" id="external" type="radio" name="budgetType">
+    <label for="external">External budget</label>
+  </div>
+</div>

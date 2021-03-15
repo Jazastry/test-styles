@@ -1,0 +1,54 @@
+<div class="field">
+  <label class="label mb-3"><small>Select period: <span class="has-text-danger">*</span></small></label>
+
+  <div class="tabs is-toggle is-toggle-rounded is-small mb-3">
+    <ul>
+      <li class="tab">
+        <span class="is-clickable">Hour</span>
+      </li>
+      <li class="tab">
+        <span class="is-clickable">Day</span>
+      </li>
+      <li class="tab">
+        <span class="is-clickable">Week</span>
+      </li>
+      <li class="tab is-active">
+        <span class="is-clickable">Month</span>
+      </li>
+      <li class="tab">
+        <span class="is-clickable">Quater</span>
+      </li>
+      <li class="tab">
+        <span class="is-clickable">Year</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="content-tab is-block">
+    <div class="control as-list">
+      <input class="is-checkradio is-primary has-background-color is-small" id="currentMonth" type="radio" name="period">
+      <label for="currentMonth">Current month</label>
+      <input class="is-checkradio is-primary has-background-color is-small" id="previousMonth" type="radio" name="period">
+      <label for="previousMonth">Previous month</label>
+      <input class="is-checkradio is-primary has-background-color is-small" id="custom" type="radio" name="period" checked="checked">
+      <label for="custom">Custom</label>
+      <div class="control has-icons-right ml-5 has-width-200">
+        <input class="input" type="text" placeholder="Select month" value="">
+        <span class="icon is-small is-right">
+          <i class="fas fa-calendar"></i>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="field">
+  <label class="label mb-3"><small>Select interval: <span class="has-text-danger">*</span></small></label>
+  <div class="control">
+    <div class="select">
+      <select>
+        <option value="Day">Day</option>
+      </select>
+    </div>
+  </div>
+</div>

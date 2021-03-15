@@ -1,0 +1,104 @@
+.is-borderless {
+  border: 0 !important;
+}
+
+table.is-completely-borderless {
+  td,
+  th,
+  tr {
+    border: 0 !important;
+  }
+}
+
+$sides: (top, bottom, left, right);
+
+@each $side in $sides {
+  .is-#{$side}-borderless {
+    border-#{$side}: 0px !important;
+  }
+}
+
+// sizing helpers settings
+$range-start: 1;
+$range-end: 4;
+$interval: 1;
+
+$current: $range-start;
+@while $current < $range-end {
+  .has-border-width-#{$current} {
+    border-width: #{$current}px !important;
+  }
+  @each $side in $sides {
+    .has-border-#{$side}-width-#{$current} {
+      border-#{$side}-width: #{$current}px !important;
+    }
+  }
+  $current: $current + $interval;
+}
+
+// color helpers settings
+$custom-colors:(
+  "default": ($white-ter, $black-bis),
+  "primary": ($blue-dark, $blue-dark),
+  "success": ($success, $success),
+  "danger": ($danger, $danger),
+  "grey": ($grey-lightest, rgba($grey-darker, 0.5)),
+  "opacity-20": (rgba($black, 0.2), rgba($white, 0.2))
+);
+
+@each $custom-name, $pair in $custom-colors {
+  $custom-color: nth($pair, 1);
+  $custom-color-dark-mode: nth($pair, 2);
+  @each $side in $sides {
+    .has-border-#{$side}-#{$custom-name} {
+      border-#{$side}-style: solid;
+      @if $dark-mode {
+        border-#{$side}-color: #{$custom-color-dark-mode};
+      } @else {
+        border-#{$side}-color: #{$custom-color};
+      }
+    }
+  }
+}
+
+// Border Styles
+@mixin border-middle {
+  &:after {
+    content: "";
+    width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    border-top-width: 1px;
+  }
+}
+
+@mixin border-dashed {
+  .has-border-dashed {
+    @include border-middle;
+    &:after {
+      border-top-style: dashed;
+      @if $dark-mode {
+        border-color: $grey-dark;
+      } @else {
+        border-color: $grey-darker;
+      }
+    }
+  }
+}
+
+@mixin border-solid {
+  .has-border-solid {
+    @include border-middle;
+    &:after {
+      border-top-style: solid;
+      @if $dark-mode {
+        border-color: rgba($grey-darker, 0.5);
+      } @else {
+        border-color: $grey-lighter;
+      }
+    }
+  }
+}
+
+@include border-dashed();
+@include border-solid();

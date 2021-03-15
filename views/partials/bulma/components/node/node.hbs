@@ -1,0 +1,53 @@
+<div {{#if this.id}} id={{this.id}} {{/if}} class="node {{this.class}}">
+
+  <div class="is-flex is-justify-content-center">
+    {{>bulma/components/node/items/actions}}
+  </div>
+
+  <div class="is-flex is-justify-content-center">
+    {{#if edgeSmallTop-active}}
+      {{>bulma/elements/buttons/button-icon class="edge is-active is-smallest is-text is-light is-rounded my-auto" i="fas fa-circle fa-xxs"}}
+    {{else}}
+      {{>bulma/components/node/items/edge-small}}
+    {{/if}}
+  </div>
+
+  <div class="is-flex is-justify-content-center">
+    {{#if edgeSmallLeft-active}}
+      {{>bulma/elements/buttons/button-icon class="edge is-active is-smallest is-text is-light is-rounded my-auto" i="fas fa-circle fa-xxs"}}
+    {{else}}
+      {{>bulma/components/node/items/edge-small}}
+    {{/if}}
+    <!-- Node -->
+    <div class="node-content is-rounded has-border-width-1 m-3">
+      {{>bulma/elements/icons/icon icon=(replace "is-large is-rounded has-background-### has-text-white" "###" this.color) i=(replace "is-size-4 ##" "##" this.icon)}}
+      {{>bulma/components/node/items/name}}
+      {{#contains this.class "to-edge"}}
+        <div class="is-absolute is-xy-centered">
+          {{#if edgeBig-active}}
+            {{>bulma/elements/buttons/button-icon class="edge is-active is-text is-light is-rounded my-auto" i="fas fa-circle is-size-6"}}
+          {{else}}
+            {{>bulma/components/node/items/edge-big}}
+          {{/if}}
+        </div>
+      {{/contains}}
+    </div>
+    {{#if add-child}}
+      {{>bulma/components/node/items/add-child}}
+    {{else}}
+      {{#if edgeSmallRight-active}}
+        {{>bulma/elements/buttons/button-icon class="edge is-active is-smallest is-text is-light is-rounded my-auto" i="fas fa-circle fa-xxs"}}
+      {{else}}
+        {{>bulma/components/node/items/edge-small}}
+      {{/if}}
+    {{/if}}
+  </div>
+
+  <div class="is-flex is-justify-content-center">
+    {{#if edgeSmallBottom-active}}
+      {{>bulma/elements/buttons/button-icon class="edge is-active is-smallest is-text is-light is-rounded my-auto" i="fas fa-circle fa-xxs"}}
+    {{else}}
+      {{>bulma/components/node/items/edge-small}}
+    {{/if}}
+  </div>
+</div>

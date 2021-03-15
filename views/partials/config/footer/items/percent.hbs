@@ -1,0 +1,16 @@
+{{#>bulma/components/dropdown/dropdown id-dropdown="js--dropdown-scale" class="is-up is-right"}}
+
+  {{#>bulma/components/dropdown/trigger id-trigger="js--trigger-scale" button="is-outlined is-smaller has-text-vcentered" aria-haspopup="true" aria-controls="scale"}}
+    <span>172&percnt;</span>
+    {{>bulma/elements/icons/icon icon="is-small" i="fas fa-angle-up fa-xs" aria-hidden="true"}}
+  {{/bulma/components/dropdown/trigger}}
+
+  {{#>bulma/components/dropdown/menu menu="has-min-width-50" content="is-paddingless" id="scale" role="menu"}}
+    {{>bulma/components/dropdown/item type="span" item="is-size-7 is-truncated" text="Fit map"}}
+    {{>bulma/components/dropdown/divider divider="m-0"}}
+    {{>bulma/components/dropdown/item type="span" item="is-size-7" text="100&percnt;"}}
+    {{>bulma/components/dropdown/item type="span" item="is-size-7" text="150&percnt;"}}
+    {{>bulma/components/dropdown/item type="span" item="is-size-7" text="25&percnt;"}}
+  {{/bulma/components/dropdown/menu}}
+
+{{/bulma/components/dropdown/dropdown}}

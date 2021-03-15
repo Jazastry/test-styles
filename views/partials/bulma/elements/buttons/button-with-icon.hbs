@@ -1,0 +1,24 @@
+<button class="button {{class}}" {{#if id}} id={{id}}{{/if}}
+{{#if this.data-tooltip}} data-tooltip="{{this.data-tooltip}}" {{/if}}
+{{#if this.data-target}} data-target="{{this.data-target}}" {{/if}}
+{{#if this.aria-controls}} aria-controls="{{this.aria-controls}}"{{/if}}
+{{#if this.data-show}} data-show="{{this.data-show}}"{{/if}}
+>
+  {{>bulma/elements/icons/icon}}
+  <span class="{{textSpan}}">
+    {{#if this.text}}
+      {{this.text}}
+    {{else}}
+      Button
+    {{/if}}
+  </span>
+</button>
+
+{{!-- 
+class: adds custom classes to button element
+icon: adds custom classes to span.icon => in bulma/elements/icons/icon
+data-tooltip: adds value for data-tooltip => in bulma/elements/icons/icon
+i: adds custom class to i.icon =>in bulma/elements/icons/i
+textSpan: adds custom classes to span with text;
+text: adds custom text to span with text, if not provided text has default of "Button"
+ --}}

@@ -1,0 +1,115 @@
+<div class="has-portal-aside mt-6">
+
+  <div class="section px-6">
+    <div class="level">
+      <div class="level-left">
+        <nav class="breadcrumb is-large" aria-label="breadcrumbs">
+          <ul>
+            <li><a href="#" class="has-text-weight-medium">App Manager</a></li>
+            <li class="is-active">
+              <a href="#" aria-current="page" class="has-text-weight-medium">
+                <span class="icon has-text-vcentered mr-3 ml-0">
+                  <picture>
+                    <source srcset="./images/logo/composed/symbol--negative.svg" media="(prefers-color-scheme: dark)">
+                    <source srcset="./images/logo/composed/symbol--positive.svg" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
+                    <img class="is-flex" src="./images/logo/composed/symbol--positive.svg" alt="" width="24">
+                  </picture>
+                </span>
+                Composed App 1
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <div class="section pt-0 px-6">
+    <div class="columns has-shadow is-marginless">
+      <div class="column is-narrow is-paddingless">
+        <nav class="panel is-nav is-full-height">
+          <div class="tabs panel-tabs m-auto">
+            <ul>
+              <li class="tab" onclick="">
+                <a class="is-inline-block has-text-centered">
+                  <span class="icon is-small mr-0">
+                    <i class="fas fa-cog" aria-hidden="true"></i>
+                  </span>
+                  <span class="is-block is-size-7 is-uppercase has-text-weight-semibold">
+                    <small>Settings</small>
+                  </span>
+                </a>
+              </li>
+              <li class="tab is-active" onclick="">
+                <a class="is-inline-block has-text-centered">
+                  <span class="icon is-small mr-0">
+                    <i class="mi mi-computer" aria-hidden="true"></i>
+                  </span>
+                  <span class="is-block is-size-7 is-uppercase has-text-weight-semibold">
+                    <small>Screens</small>
+                  </span>
+                </a>
+              </li>
+              <li class="tab" onclick="">
+                <a class="is-inline-block has-text-centered">
+                  <span class="icon is-small mr-0">
+                    <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                  </span>
+                  <span class="is-block is-size-7 is-uppercase has-text-weight-semibold">
+                    <small>Permissions</small>
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <p class="panel-block">
+            <span>All Categories</span>
+            <button class="button icon is-small is-rounded ml-auto has-tooltip-arrow" data-tooltip="Add Category">
+              <i class="fas fa-plus" aria-hidden="true"></i>
+            </button>
+          </p>
+          <a href="#" class="panel-block is-active">
+            <span class="panel-icon">
+              <i class="fa fa-bookmark fa-xs mr-2" aria-hidden="true"></i>
+            </span>
+            Favourites
+          </a>
+          <a href="#" class="panel-block">
+            <span class="panel-icon">
+              <i class="fa fa-bookmark fa-xs mr-2" aria-hidden="true"></i>
+            </span>
+            Dashboards
+          </a>
+          <a href="#" class="panel-block is-radiusless">
+            <span class="panel-icon">
+              <i class="fa fa-bookmark fa-xs mr-2" aria-hidden="true"></i>
+            </span>
+            Operator Favourites
+          </a>
+        </nav>
+      </div>
+      <div class="column">
+        <div class="px-5 py-5">
+          <div class="content-tab is-block" style="display: block;">
+            <h2 class="title is-size-3 has-text-weight-medium">
+              Favourites
+              <span class="icon is-size-5 has-text-vcentered">
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+              </span>
+            </h2>
+            <hr class="mt-0" />
+            <div class="columns is-multiline">
+              <div class="column is-3">
+                ${require('cards/_screen.html')}
+              </div>
+              <div class="column is-3">
+                ${require('cards/_screen-new.html')}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

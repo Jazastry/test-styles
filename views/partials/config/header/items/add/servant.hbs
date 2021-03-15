@@ -1,0 +1,24 @@
+{{#>bulma/elements/buttons/button-extended
+class=(replace "is-light flex-column is-full-width is-full-height has-line-height-1 is-radiusless ###" "###" class)}}
+  {{#contains class "is-selected"}}
+    {{>remove-button}}
+  {{/contains}}
+
+ {{>bulma/elements/icons/i i="fas fa-circle has-text-danger is-size-5 py-1 m-auto"}}
+  <span class="has-text-weight-medium my-1">
+    Servant
+  </span>
+  <span class="is-size-7 has-text-opacity-40-70 mb-1">
+    standalone node
+  </span>
+{{/bulma/elements/buttons/button-extended}}
+
+{{#contains class "is-selected"}}
+  {{>config/header/items/add/type-partial-servant}}
+{{/contains}}
+
+{{#*inline "remove-button"}}
+  <span class="badge is-top-left is-primary button icon is-rounded m-0 p-0">
+    <i class="mi mi-remove is-size-7"></i>
+  </span>
+{{/inline}}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Prediktor guidelines</title>
+    <style>
+      @import "/css/branding/prediktor/prediktor-dark.css" (prefers-color-scheme: dark);
+      @import "/css/branding/prediktor/prediktor-light.css" (prefers-color-scheme: no-preference), (prefers-color-scheme: light);
+    </style>
+  </head>
+
+  <body class="as-browser has-navbar-fixed-top has-composed-app">
+    ${require('portal-0.2/apps/portal-0.1/_navbar.html')}
+    ${require('portal-0.2/apps/portal-0.1/_screens.html')}
+    ${require('portal-0.2/navbar/_level-expanded-has-composed-app.html')}
+
+    <div class="js--toggle-navbar-content">
+      ${require('portal/navbar/_header.html')}
+      ${require('portal/aside/_collapsed.html')}
+
+      <div id="tab-app-manager" class="content-tab">
+        ${require('portal/_appmanager.html')}
+      </div>
+
+      <div id="tab-composed-app" class="content-tab" style="display:none">
+        ${require('portal/_composed-app.html')}
+      </div>
+
+      <div id="tab-screens" class="content-tab" style="display:none">
+        ${require('portal/_appmanager-screens.html')}
+      </div>
+
+      <div id="tab-authorisation" class="content-tab" style="display:none">
+        ${require('portal/_authorisation.html')}
+      </div>
+
+      <div id="tab-provider" class="content-tab" style="display:none">
+        ${require('portal/_provider-manager.html')}
+      </div>
+
+      <div id="tab-new-role" class="content-tab" style="display:none">
+        ${require('portal/_new-role.html')}
+      </div>
+
+      <div id="tab-new-app" class="content-tab" style="display:none">
+        ${require('portal/_new-app.html')}
+      </div>
+
+      <div id="tab-new-app-native" class="content-tab" style="display:none">
+        ${require('portal/_new-app-native.html')}
+      </div>
+
+      <div id="tab-new-app-native-register" class="content-tab"
+        style="display:none">
+        ${require('portal/_new-app-native-register.html')}
+      </div>
+
+      <div id="tab-new-app-created" class="content-tab" style="display:none">
+        ${require('portal/_new-app-created.html')}
+      </div>
+
+      <div id="tab-new-app-composed" class="content-tab" style="display:none">
+        ${require('portal/_new-app-composed.html')}
+      </div>
+
+      <div id="tab-new-app-composed-screens" class="content-tab"
+        style="display:none">
+        ${require('portal/_new-app-composed-screens.html')}
+      </div>
+    </div>
+    <script src="js/main.js"></script>
+
+  </body>
+</html>

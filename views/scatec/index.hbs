@@ -1,0 +1,17 @@
+<div class="js--toggle-navbar-native js--toggle-aside flex-column is-fixed is-top is-hidden-mobile">
+  {{>_commons/aside listName = listName asideItems = asideItems}}
+</div>
+<div class="js--toggle-aside-content has-aside pb-5">
+  <div class="container is-fluid is-flex">
+    {{>_commons/navbar-item-menu-toggle}}
+  </div>
+  <div class="container is-fluid">
+    <section>
+      <div id="colors" class="divider">
+        <h2 class="title is-capitalized mx-3">Colors</h2>
+      </div>
+      <h3 class="subtitle is-4">Light mode</h3>
+      <iframe class="hero is-full-width is-fullheight-with-navbar" src="http://localhost:3005/scatec/colors"></iframe>
+    </section>
+  </div>
+</div>

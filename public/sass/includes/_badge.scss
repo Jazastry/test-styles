@@ -1,0 +1,45 @@
+@mixin badge-ghost($bgColor: $white, $color: $black ) {
+	.badge.is-ghost {
+		background: $bgColor;
+		color: $color;
+		box-shadow: none;
+		border: none;
+		border-radius: 0;
+	}
+}
+
+.badge {
+	&.is-top-left-aligned {
+		transform: translate(0, -50%);
+	}
+}
+
+/* Portal Notification circle */
+.has-badge {
+  position: relative;
+  &:before,
+  &:after {
+    position: absolute;
+    content: "\f111";
+    font-family: $fontawesome;
+    font-weight: 900;
+  }
+  &:before {
+    z-index: 1;
+    color: $danger;
+    top: -2px;
+    right: -2px;
+    font-size: 8px;
+  }
+  &:after {
+    z-index: 0;
+    @if $dark-mode {
+      color: $black-ter;
+    } @else {
+      color: $white;
+    }
+    top: -3px;
+    right: -3px;
+    font-size: 10px;
+  }
+}

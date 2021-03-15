@@ -1,0 +1,55 @@
+${require('quickview/string/_index.html')}
+
+<div class="js--toggle-navbar-composed flex-column is-fixed is-top is-hidden-mobile  js--toggle-aside">
+  ${require('panel/_monitoring.html')}
+</div>
+
+<div class="js--toggle-aside-content has-aside pb-5">
+  <div class="container is-fluid is-flex">
+    ${require('navbar/components/_navbar-item-menu-toggle.html')}
+    ${require('quickview/string/_button.html')}
+  </div>
+  <div class="container is-fluid">
+    <section>
+      <div class="columns">
+        <div class="column is-4">
+          ${require('card/summary/_string.html')}
+        </div>
+        <div class="column is-4">
+          <div class="card flex-column is-full-height">
+            <div class="card-content">
+              <div class="columns is-mobile is-multiline border-xy-cross">
+                <div class="column is-6 has-text-centered">
+                  ${require('card/gauge/string/_relative-power.html')}
+                </div>
+                <div class="column is-6 has-text-centered">
+                  ${require('card/gauge/string/_power.html')}
+                </div>
+                <div class="column is-6 has-text-centered">
+                  ${require('card/gauge/string/_current.html')}
+                </div>
+                <div class="column is-6 has-text-centered">
+                  ${require('card/gauge/string/_voltage.html')}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column is-4">
+          ${require('title/_alarm.html')}
+          ${require('card/alarms/_index.html')}
+        </div>
+      </div>
+
+      <div class="columns">
+        <div class="column is-6">
+          ${require('card/chart/string/_current-voltage.html')}
+        </div>
+        <div class="column is-6">
+          ${require('card/chart/string/_power.html')}
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>

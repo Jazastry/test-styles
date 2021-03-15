@@ -1,0 +1,19 @@
+{{#each typographyItems}}
+  {{#>_commons/partial}}
+    <ul class="block-list">
+        {{#each this.values}}
+          <li>
+          {{#if this.uom}}
+           <div class="flex-row is-justify-content-center is-align-content-center">
+              <div class="has-width-300"><code class="{{this.class}}" data-tooltip={{this.class}}>.{{this.name}}</code></div>
+              <div class="has-width-200 has-text-centered"><code>{{this.uom}}</code></div>
+              <div class="ml-auto"><span class="{{this.name}}"><i class="fas fa-circle has-text-opacity-40 mr-2"></i>Example</span></div>
+            </div>
+          {{else}}
+              <div class="has-width-300"><code class="{{this.class}}" data-tooltip={{this.class}}>.{{this.name}}</code></div>
+          {{/if}}
+          </li>
+        {{/each}}
+    </ul>
+  {{/_commons/partial}}
+{{/each}}

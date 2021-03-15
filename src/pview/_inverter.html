@@ -1,0 +1,69 @@
+${require('quickview/inverter/_index.html')}
+
+<div class="js--toggle-navbar-composed flex-column is-fixed is-top is-hidden-mobile 
+  js--toggle-aside">
+  ${require('panel/_monitoring.html')}
+</div>
+
+<div class="js--toggle-aside-content has-aside pb-5">
+  <div class="container is-fluid is-flex">
+    ${require('navbar/components/_navbar-item-menu-toggle.html')}
+    ${require('quickview/inverter/_button.html')}
+  </div>
+  <div class="container is-fluid">
+    <section>
+      <div class="columns is-variable is-1">
+        <div class="column is-6">
+          <div class="columns is-variable is-1 mb-0">
+            <div class="column is-6 pb-2">
+              ${require('card/summary/_inverter.html')}
+            </div>
+            <div class="column is-6 pb-2">
+              ${require('card/chart/inverter/_kpi.html')}
+            </div>
+          </div>
+          <div class="columns is-variable is-1">
+            <div class="column">
+              <div class="columns is-full-height is-gapless">
+                <div class="column has-text-centered is-full-height mr-2">
+                  ${require('card/gauge/inverter/_dc-power.html')}
+                </div>
+                <div class="column has-text-centered is-full-height mr-2">
+                  ${require('card/gauge/inverter/_ac-active-power.html')}
+                </div>
+                <div class="column has-text-centered is-full-height mr-2">
+                  ${require('card/gauge/inverter/_ac-reactive-power.html')}
+                </div>
+                <div class="column has-text-centered is-full-height ml-1">
+                  ${require('card/summary/plant/_total-production.html')}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column is-6">
+          ${require('card/chart/inverter/_production.html')}
+        </div>
+      </div>
+
+      <div class="columns">
+        <div class="column is-8">
+          ${require('title/_string.html')}
+          <div class="columns is-variable is-1">
+            <div class="column">
+              ${require('card/status/inverter/_index.html')}
+            </div>
+            <div class="column">
+              ${require('card/tabs/_inverter.html')}
+            </div>
+          </div>
+        </div>
+        <div class="column is-4">
+          ${require('title/_alarm.html')}
+          ${require('card/alarms/_index.html')}
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>

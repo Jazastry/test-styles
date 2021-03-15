@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Prediktor guidelines</title>
+    <style>
+      @import "/css/branding/prediktor/prediktor-dark.css" (prefers-color-scheme: dark);
+      @import "/css/branding/prediktor/prediktor-light.css" (prefers-color-scheme: no-preference), (prefers-color-scheme: light);
+    </style>
+  </head>
+
+  <body class="bulma as-browser has-navbar-fixed-top">
+    <nav class="js--toggle-navbar as-browser navbar is-fixed-top" aria-label="main navigation">
+  <div class="navbar-brand is-full-width">
+
+    <div class="navbar-tabs">
+  <div class="navbar-item is-clickable">
+    <a href="/bulma">
+      <i class="icon-bulma" aria-hidden="true"></i>
+      <span class="is-size-7 is-hidden-mobile">Bulma</span>
+    </a>
+  </div>
+  <div class="navbar-item is-clickable">
+    <a href="/custom">
+      <i class="fas fa-code" aria-hidden="true"></i>
+      <span class="is-size-7 is-hidden-mobile">Bulma</span>
+    </a>
+  </div>
+  <div class="navbar-item is-clickable">
+    <a href="/pview-html">
+      <i class="fas fa-code" aria-hidden="true"></i>
+      <span class="is-size-7 is-hidden-mobile">PView</span>
+    </a>
+  </div>
+  <div class="navbar-item is-clickable">
+    <a href="/portal">
+      <i class="fas fa-code" aria-hidden="true"></i>
+      <span class="is-size-7 is-hidden-mobile">Portal vO.1</span>
+    </a>
+  </div>
+</div>
+
+
+    <div class="ml-auto is-flex">
+      <div class="navbar-item has-text-opacity-70 is-clickable has-tooltip-arrow has-tooltip-left" data-tooltip="Find Anything">
+        <i class="fas fa-search"></i>
+      </div>
+      <div class="navbar-item">
+        <div class="dropdown is-right">
+  <div class="dropdown-trigger">
+    <button class="button is-paddingless is-borderless is-transparent has-text-opacity-70 is-clickable" aria-haspopup="true" aria-controls="dropdown-menu4">
+      <span class="image is-20x20 has-badge">
+        <img src="https://bulma.io/images/placeholders/32x32.png" alt="" class="is-rounded">
+      </span>
+      <span class="icon is-small ml-0">
+        <i class="fas fa-angle-down fa-xs" aria-hidden="true"></i>
+      </span>
+    </button>
+  </div>
+  <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+    <div class="dropdown-content py-1">
+      <div class="divider is-size-8 my-1">Notifications</div>
+      <div class="dropdown-item has-text-weight-semibold is-size-7">
+        Here comes notification message. <a href="#" class="link">View more</a>
+      </div>
+      <div class="dropdown-item is-size-7">
+        This notification message has been read.
+      </div>
+      <div class="divider is-size-8 my-1">User</div>
+      <div class="dropdown-item">
+        <span class="is-20x20 is-inline-block has-text-centered mr-2">
+          <i class="fas fa-cog" aria-hidden="true"></i>
+        </span>
+        Settings
+      </div>
+      <hr class="dropdown-divider m-0">
+      <div class="dropdown-item">
+        <span class="is-20x20 is-inline-block has-text-centered mr-2">
+          <i class="fas fa-question-circle" aria-hidden="true"></i>
+        </span>
+        Help
+      </div>
+      <hr class="dropdown-divider m-0">
+      <div class="dropdown-item">
+        <span class="is-20x20 is-inline-block has-text-centered mr-2">
+          <i class="fas fa-sign-out-alt" aria-hidden="true"></i>
+        </span>
+        Log out
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+    <div class="js--toggle-navbar-parent as-browser level is-mobile is-size-8 px-3">
+  <div class="level-left">
+    <!-- When is shrinked item name appears here -->
+  </div>
+  <div class="level-right has-text-opacity-40 is-clickable">
+    <div class="js--toggle-navbar-button level-item">
+      <i class="icon-expand has-line-height-1"></i>
+    </div>
+  </div>
+</div>
+
+
+    <div class="js--toggle-navbar-content">
+      <div id="tab-all" class="content-tab">
+        <div class="js--toggle-navbar-native  flex-column is-fixed is-top is-hidden-mobile">
+  <aside class="is-sticky px-3 pt-5">
+
+    <ul class="menu-list">
+      <li class="menu-label">Documentation</li>
+      <li><a href="#bulma">Including</a></li>
+      <li><a href="#">Logo</a></li>
+    </ul>
+  </aside>
+</div>
+
+<div class="has-aside pb-5">
+  <div class="container is-fluid pt-5">
+      <div id="docs">
+        <div class="content">
+  <p>If you're not familiar with Bulma, please find the docs <a href="https://bulma.io/documentation" target="_blank">here</a>. Bulma is a framework for CSS. This work extends this with Prediktor styling.</p>
+  <h3 id="including" class="subtitle">Including it in your project</h3>
+  <p>You need to download the files either for css or sass. If you want the sass-files; please find them in the original repo. The css files will include the whole bulma css library. The easiest way of adding them is as follows:</p>
+  <ol>
+    <li>In your publically available assets, make sure you have two folders: <code>images</code> and <code>css</code>. Under the <code>css</code> folder you need to create a <code>mode</code> folder. If you choose to have other names, you might need to update the contents of the files.</li>
+    <li>Copy the css files to your <code>css</code> folder and subfolder.
+      <ul>
+        <li>The main file: <a href="/css/prediktor-bulma.css">css/prediktor-bulma.css</a> which is responsible for including the others css's</li>
+        <li>The light theme file to the <code>mode folder</code>: <a href="/css/mode/prediktor-light.css">css/mode/prediktor-light.css</a></li>
+        <li>The dark theme file to the <code>mode folder</code>: <a href="/css/mode/prediktor-dark.css">css/mode/prediktor-dark.css</a></li>
+        <li class="has-text-grey">There is standalone print theme file in <code>mode folder</code>: <a href="/css/mode/prediktor-print.css">css/mode/prediktor-print.css</a></li>
+      </ul>
+    </li>
+    <li>Add a link to the css in the header of your html: <code>&lt;link rel="stylesheet" href="/css/prediktor-bulma.css" /&gt;</code>
+    <li>Also copy the six SVG-images to your <code>images</code> folder:</li>
+  </ol>
+  <p>We use <a href="https://fontawesome.com/icons?d=gallery" target="_blank">FontAwesome</a>, <a href="https://marella.me/material-icons/demo/" target="_blank">Material Icons</a> and custom icons <code>/sass/includes/_icons-prediktor.scss</code></p>
+  <h3 class="subtitle">Logo</h3>
+  <table class="table is-fullwidth">
+  <thead>
+    <tr>
+      <th></th>
+      <th class="has-text-centered">Main Logo</th>
+      <th class="has-text-centered">One-line</th>
+      <th class="has-text-centered">Stacked</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="pt-5">Regular</td>
+      <td>
+        <div class="pt-5 has-text-centered">
+          <a href="/images/logo/prediktor/main.svg" class="is-borderless" target="_blank">
+            <img src="/images/logo/prediktor/main.svg" alt="Main Logo" width="177" height="27" />
+          </a>
+        </div>
+      </td>
+      <td>
+        <div class="pt-5 has-text-centered">
+          <a href="/images/logo/prediktor/one-line.svg" class="is-borderless" target="_blank">
+            <img src="/images/logo/prediktor/one-line.svg" alt="One-line" width="177" height="27" />
+          </a>
+        </div>
+      </td>
+      <td>
+        <div class="pt-5 has-text-centered">
+          <a href="/images/logo/prediktor/stacked.svg" class="is-borderless" target="_blank">
+            <img src="/images/logo/prediktor/stacked.svg" alt="Stacked" width="100" height="133" />
+          </a>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="pt-5">Negative</td>
+      <td>
+        <div class="has-background-black has-text-centered py-5">
+          <a href="/images/logo/prediktor/main--negative.svg" class="is-borderless" target="_blank">
+            <img src="/images/logo/prediktor/main--negative.svg" alt="Main Logo Inverted" width="177" height="27" />
+          </a>
+        </div>
+      </td>
+      <td>
+        <div class="has-background-black has-text-centered py-5">
+          <a href="/images/logo/prediktor/one-line--negative.svg" class="is-borderless" target="_blank">
+            <img src="/images/logo/prediktor/one-line--negative.svg" alt="One-line Inverted" width="177" height="27" />
+          </a>
+        </div>
+      </td>
+      <td>
+        <div class="has-background-black has-text-centered py-5">
+          <a href="/images/logo/prediktor/stacked--negative.svg" class="is-borderless" target="_blank">
+            <img src="/images/logo/prediktor/stacked--negative.svg" alt="Stacked Inverted" width="100" height="133" />
+          </a>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="pt-5">Positive</td>
+      <td>
+        <div class="has-background-white has-text-centered py-5">
+          <a href="/images/logo/prediktor/main--positive.svg" class="is-borderless" target="_blank">
+            <img src="/images/logo/prediktor/main--positive.svg" alt="Main Logo Positive" width="177" height="27" />
+          </a>
+        </div>
+      </td>
+      <td>
+        <div class="has-background-white has-text-centered py-5">
+          <a href="/images/logo/prediktor/one-line--positive.svg" class="is-borderless" target="_blank">
+            <img src="/images/logo/prediktor/one-line--positive.svg" alt="One-line Positive" width="177" height="27" />
+          </a>
+        </div>
+      </td>
+      <td>
+        <div class="has-background-white has-text-centered py-5">
+          <a href="/images/logo/prediktor/stacked--positive.svg" class="is-borderless" target="_blank">
+            <img src="/images/logo/prediktor/stacked--positive.svg" alt="Stacked Positive" width="100" height="133" />
+          </a>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+  <h3 class="subtitle">Useful links</h3>
+  <ul>
+    <li><a href="https://www.pview.dev/" target="_blank">PView Dev</a>
+    <li><a href="https://solar.zoncoalitie.pview.dev/" target="_blank">Zoncoalitie PView Dev</a></li>
+  </ul>
+</div>
+
+      </div>
+    </div>
+</div>
+
+      </div>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/bulma-quickview.min.js"></script>
+    <script src="js/bulma-carousel.min.js"></script>
+    <script src="js/bulma-modal-fx.min.js"></script>
+    <script>
+      // Carousel
+      bulmaCarousel.attach('#carousel-demo', {
+        slidesToScroll: 1,
+        slidesToShow: 3
+      });
+    </script>
+  </body>
+</html>

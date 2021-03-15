@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+// Theme
+$scatec-theme: true;
+
+// Font
+$family-sans-serif: 'Work Sans', 'Helvetica Neue', 'Helvetica', 'Roboto', 'Arial', sans-serif;
+$scatec-font-path: "../../../fonts/WorkSans";
+@import "../../includes/fonts/scatec.scss";
+
+// Colors
+$black: #27333B;
+$black-bis: #101010;
+$grey-light: #e4e4e4;
+$grey-lighter: #f6f6f6;
+
+$purple-dark: #4C209E;
+$purple: #8A41D9;
+$purple-light: #a552ff;
+$purple-lighter: #c48eff;
+$purple-lightest: #e4d6f3;
+$purple-lightestest: #F5F3F7;
+
+$pink: #ED8A9C;
+
+$green: #88DFBF;
+
+// Update Bulma's global variables
+$primary: $purple-dark;
+$primary-darkMode: $primary;
+$primary2: $purple;
+$primary-light: $purple-light;
+$primary-lighter: $purple-lighter;
+$primary-lightest: $purple-lightest;
+$white-ter: $purple-lightestest;
+$success: $green;
+$link: $black;
+$blue-dark: $purple-dark; // to remove when replace $blue-dark with primary

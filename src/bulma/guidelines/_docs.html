@@ -1,0 +1,26 @@
+<div class="content">
+  <p>If you're not familiar with Bulma, please find the docs <a href="https://bulma.io/documentation" target="_blank">here</a>. Bulma is a framework for CSS. This work extends this with Prediktor styling.</p>
+  <h3 id="including" class="subtitle">Including it in your project</h3>
+  <p>You need to download the files either for css or sass. If you want the sass-files; please find them in the original repo. The css files will include the whole bulma css library. The easiest way of adding them is as follows:</p>
+  <ol>
+    <li>In your publically available assets, make sure you have two folders: <code>images</code> and <code>css</code>. Under the <code>css</code> folder you need to create a <code>mode</code> folder. If you choose to have other names, you might need to update the contents of the files.</li>
+    <li>Copy the css files to your <code>css</code> folder and subfolder.
+      <ul>
+        <li>The main file: <a href="/css/prediktor-bulma.css">css/prediktor-bulma.css</a> which is responsible for including the others css's</li>
+        <li>The light theme file to the <code>mode folder</code>: <a href="/css/mode/prediktor-light.css">css/mode/prediktor-light.css</a></li>
+        <li>The dark theme file to the <code>mode folder</code>: <a href="/css/mode/prediktor-dark.css">css/mode/prediktor-dark.css</a></li>
+        <li class="has-text-grey">There is standalone print theme file in <code>mode folder</code>: <a href="/css/mode/prediktor-print.css">css/mode/prediktor-print.css</a></li>
+      </ul>
+    </li>
+    <li>Add a link to the css in the header of your html: <code>&lt;link rel="stylesheet" href="/css/prediktor-bulma.css" /&gt;</code>
+    <li>Also copy the six SVG-images to your <code>images</code> folder:</li>
+  </ol>
+  <p>We use <a href="https://fontawesome.com/icons?d=gallery" target="_blank">FontAwesome</a>, <a href="https://marella.me/material-icons/demo/" target="_blank">Material Icons</a> and custom icons <code>/sass/includes/_icons-prediktor.scss</code></p>
+  <h3 class="subtitle">Logo</h3>
+  ${require('_logo.html')}
+  <h3 class="subtitle">Useful links</h3>
+  <ul>
+    <li><a href="https://www.pview.dev/" target="_blank">PView Dev</a>
+    <li><a href="https://solar.zoncoalitie.pview.dev/" target="_blank">Zoncoalitie PView Dev</a></li>
+  </ul>
+</div>

@@ -1,0 +1,92 @@
+<nav class="js--toggle-navbar-composed navbar is-fixed-top has-portal-aside has-background-blurred" aria-label="main navigation">
+  <div class="container is-fluid">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="#">
+        <i class="fa fa-angle-double-right fa-xs" aria-hidden="true"></i>
+      </a>
+
+      <div class="navbar-item is-hidden-tablet">
+        <div class="control has-icons-left">
+          <input class="input is-rounded" type="text">
+          <span class="icon is-small is-left">
+            <i class="fas fa-search"></i>
+          </span>
+        </div>
+      </div><!-- Search for mobile -->
+
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarPortal1">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarPortal1" class="navbar-menu is-hidden-tablet">
+      <div class="navbar-start">
+        // Here comes the navigation for mobile
+      </div>
+    </div>
+
+    <div class="navbar-menu is-hidden-mobile">
+      <div class="navbar-start navbar-start--centered">
+        <div class="navbar-item">
+          <div class="control has-icons-left">
+            <input class="input is-rounded" type="text">
+            <span class="icon is-small is-left">
+              <i class="fas fa-search"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="dropdown is-right">
+            <div class="dropdown-trigger">
+              <button class="button is-borderless is-paddingless is-transparent has-badge" aria-haspopup="true" aria-controls="notifications">
+                <i class="fas fa-bell is-size-4" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="dropdown-menu" id="notifications" role="menu">
+              <div class="dropdown-content">
+                <div class="dropdown-item">
+                  <p>Here comes notification</p>
+                </div>
+                <hr class="dropdown-divider">
+                <div class="dropdown-item">
+                  <p>Another notification</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <div class="dropdown is-right">
+            <div class="dropdown-trigger">
+              <div class="button is-paddingless is-borderless is-transparent" aria-haspopup="true" aria-controls="dropdown-menu3">
+                <figure class="image is-32x32">
+                  <img src="https://bulma.io/images/placeholders/32x32.png" alt="" class="is-rounded">
+                </figure>
+                <span class="icon is-small">
+                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                </span>
+              </div>
+            </div>
+            <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+              <div class="dropdown-content">
+                <a href="#" class="dropdown-item">
+                  User Settings
+                </a>
+                <hr class="dropdown-divider">
+                <a href="#" class="dropdown-item">
+                  Log out
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</nav>

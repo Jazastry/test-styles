@@ -1,0 +1,148 @@
+@import "../commons.scss";
+@import "variables.scss";
+
+/*  Overwriting global variables
+   ----------------------------- */
+$text: $black;
+$link: $blue-dark;
+$body-background-color: $white;
+$box-shadow: 0 1px 1px 0 rgba(60, 64, 67, 0.08), 0 1px 3px 1px rgba(60, 64, 67, 0.16);
+$light: $grey-lighter;
+
+/*** Icons ***/
+$material-icons-font-size: inherit;
+
+/*  Bulma
+   ----------------------------- */
+@import "../../../../node_modules/bulma/sass/utilities/_all";
+@import "../../../../node_modules/bulma/sass/base/_all";
+@import "../../../../node_modules/bulma/sass/grid/columns";
+@import "../../../../node_modules/bulma/sass/elements/content";
+@import "../../../../node_modules/bulma/sass/elements/icon";
+@import "../../../../node_modules/bulma/sass/elements/image";
+@import "../../../../node_modules/bulma/sass/elements/table";
+@import "../../../../node_modules/bulma/sass/helpers/_all";
+@import "../../../../node_modules/@creativebulma/bulma-divider/src/sass/index.sass";
+
+/* page specific styles */
+@page { margin: 1.5cm 1cm; }
+
+@media (min-width: 48em) {
+  body {
+    padding: 2rem !important;
+    max-width: 70em;
+  }
+}
+
+body {
+  width: 100%;
+}
+
+* { color-adjust: exact;  -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+/* Headings */
+h1,h2,h3,h4,h5,h6 { page-break-after:avoid; }
+p, h2, h3 { orphans: 3; widows: 3; }
+.caption {
+  @extend .is-size-7;
+  @extend .has-text-weight-semibold;
+  @extend .is-block;
+  @extend .is-uppercase;
+}
+
+h2 { color: $livid-dark !important; }
+
+/* avoid splitting of ul elements */
+ul { page-break-inside: avoid; }
+
+/* Print at least 2 lines on the current page and 4 lines on the next page */
+p { widows: 4; orphans: 2; }
+
+/* Links */
+a {
+  &[href^="http://"] {
+    color: $red;
+  }
+  &:link, &:visited {
+    background: transparent;
+    font-weight: 700;
+    text-decoration: underline;
+    color:#333;
+  }
+  &[href^="#"], &[href^="javascript:"] {
+    &:after { content: ""; } /* Don't show links that are fragment identifiers, or use the `javascript:` pseudo protocol .. taken from html5boilerplate */
+  }
+}
+
+/* Display targets of links */
+a:link[href^="http://"]:after,
+a[href^="http://"]:visited:after,
+a[href^="http"]:after {
+  content: " (" attr(href) ") "; font-size: 90%;
+}
+
+/* Display expansions of abbreviations */
+abbr[title]:after { content: " (" attr(title) ")"; }
+
+/* Table */
+img,tr {page-break-inside: avoid;}
+
+table {
+  thead {
+    display: table-header-group;
+    .parent th {
+      border-bottom-width: 1px;
+      text-align: center;
+    }
+    .child th {
+      border-bottom-width: 2px !important;
+      text-transform: none !important;
+      font-weight: 600;
+      text-align: right;
+      .uom {
+        text-align: right;
+      }
+    }
+  }
+  tr.family th {
+    font-size: 0.875em !important;
+    background: $grey-lighter !important;
+    text-transform: none !important;
+    font-weight: 600;
+  }
+  tr.total {
+    font-weight: 600;
+    background: $white-ter;
+    border-top: 2px solid $grey-light;
+  }
+  tbody td {
+    font-weight: 500;
+  }
+  th, td {
+    vertical-align: middle;
+  }
+  th {
+    text-transform: uppercase;
+    @extend .is-size-7;
+    background: $white-ter;
+  }
+  i[class^="icon-"]:before {
+    vertical-align: text-bottom;
+    line-height: 125%;
+  }
+}
+
+ .uom {
+   font-weight: 300;
+   @extend .is-size-7;
+   text-align: left;
+ }
+
+/* Section */
+section {
+  @extend .content;
+  margin-bottom: 2cm; /* Absolute units are great for print stylesheets */
+  &.has-page-break {
+    page-break-before: always; /* Section always get their own page */
+  }
+}

@@ -1,0 +1,41 @@
+<nav class="navbar is-fixed-top has-background-blurred has-shadow" aria-label="main navigation">
+  <div class="container is-fluid px-5">
+    <div class="navbar-brand">
+      <a class="navbar-item pl-0" href="#">
+        <picture>
+          <source
+            srcset="./images/logo/prediktor/one-line--negative.svg"
+            media="(prefers-color-scheme: dark)"
+          />
+          <source
+            srcset="./images/logo/prediktor/one-line.svg"
+            media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+          />
+          <img class="is-flex" src="./images/logo/prediktor/one-line.svg" alt="" width="180" />
+        </picture>
+      </a>
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarMain">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="navbarMain" class="navbar-menu is-hidden-tablet">
+      <div class="navbar-start">
+        ${require('../_aside.html')}
+      </div>
+    </div>
+
+    <div class="navbar-start navbar-start--centered">
+      <a class="navbar-item" href="/">Defaults</a>
+      <a class="navbar-item" href="/custom">Customs</a>
+      <a class="navbar-item" href="/pview">Pages</a>
+    </div>
+
+    <div class="navbar-end is-hidden-mobile">
+      <div class="navbar-item">
+        <small>Ligth and dark mode automatically from your OS choice</small>
+      </div>
+    </div>
+  </div>
+</nav>

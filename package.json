@@ -1,25 +1,43 @@
 {
-  "name": "test-styles",
-  "version": "1.0.1",
-  "description": "Description will be here.",
-  "main": "index.scss",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Jazastry/test-styles.git"
-  },
+  "name": "bulma-starter",
+  "version": "1.0.0",
+  "main": "index.js",
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Jazastry/test-styles/issues"
+  "devDependencies": {
+    "@vizuaalog/bulmajs": "^0.12.0",
+    "bulma": "^0.9.1",
+    "html-includes": "^4.3.3",
+    "node-sass": "^5.0.0"
   },
-  "homepage": "https://github.com/Jazastry/test-styles#readme",
-  "files": [
-    "css",
-    "sass",
-    "index.sass",
-    "README.md"
-  ]
+  "scripts": {
+    "css-build": "node-sass --omit-source-map-url public/sass/ -o public/css/",
+    "css-watch": "npm run css-build -- --watch",
+    "start": "npm run css-watch",
+    "precompile": "html-includes --src src --dest views/layouts",
+    "rename": "node rename.js",
+    "compile": "npm run precompile && npm run rename",
+    "server": "nodemon index.js",
+    "refresh": "npm run css-build && npm run compile"
+  },
+  "dependencies": {
+    "@creativebulma/bulma-badge": "^1.0.1",
+    "@creativebulma/bulma-divider": "^1.1.0",
+    "@creativebulma/bulma-tooltip": "^1.2.0",
+    "@fortawesome/fontawesome-free": "^5.15.2",
+    "bulma-carousel": "^4.0.4",
+    "bulma-checkradio": "^1.1.1",
+    "bulma-helpers": "^0.3.12",
+    "bulma-modal-fx": "^1.1.1",
+    "bulma-o-steps": "^1.0.9",
+    "bulma-quickview": "^2.0.0",
+    "bulma-slider": "^2.0.4",
+    "bulma-switch": "^2.0.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "fs": "^0.0.1-security",
+    "handlebars-helpers": "^0.10.0",
+    "material-icons": "^0.5.2",
+    "nodemon": "^2.0.7"
+  }
 }

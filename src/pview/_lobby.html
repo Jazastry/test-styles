@@ -1,0 +1,42 @@
+<div class="has-sticky-footer">
+
+  <div class="container is-fluid">
+    <section class="pt-5">
+      <div class="columns">
+        <div class="column is-one-fifth">
+          ${require('card/summary/_lobby.html')}
+        </div>
+        <div class="column is-one-fifth">
+          ${require('card/summary/lobby/_weather.html')}
+        </div>
+        <div class="column is-one-fifth">
+          ${require('card/gauge/lobby/_production-current.html')}
+        </div>
+        <div class="column is-one-fifth">
+          ${require('card/graph/production-split/_index.html')}
+        </div>
+        <div class="column is-one-fifth">
+          ${require('card/summary/lobby/_savings.html')}
+        </div>
+      </div>
+    </section>
+    <section class="pt-5">
+      <div class="columns">
+        <div class="column is-6">
+          ${require('card/chart/lobby/_production-daily.html')}
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="footer is-transparent pb-3">
+    <div class="is-flex justify-center is-size-7">
+      <span class="has-text-grey-dark">Powered by</span>
+      <figure class="image is-16x16 mx-2">
+        <img src="/images/apps/pview/lobby-dashboard/logo-zoncoalitie.svg" alt="Placeholder image">
+      </figure>
+      <span>Zoncoalitie</span>
+    </div>
+  </footer>
+
+</div>

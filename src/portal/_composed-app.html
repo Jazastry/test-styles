@@ -1,0 +1,107 @@
+<div class="has-portal-aside mt-6">
+
+  <div class="section">
+    Here comes the content
+  </div>
+
+  <nav class="navbar is-screen-nav is-block is-fixed-bottom pb-1 has-shadow has-background-blurred">
+    <div class="level mx-2 my-1 is-mobile">
+      <div class="level-left">
+        <div class="level-item">
+          <div class="control has-icons-left ml-3">
+            <input class="input is-small" type="text" placeholder="Search for screens">
+            <span class="icon is-small is-left">
+              <i class="fas fa-search"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="level-item">
+        <div class="tabs is-small">
+          <ul>
+            <li class="tab is-active" onclick="openTab(event,'tab1')">
+              <a>
+                <span class="icon is-small">
+                  <i class="fas fa-bookmark" aria-hidden="true"></i></span>
+                <span>Favourites</span>
+              </a>
+            </li>
+            <li class="tab" onclick="openTab(event,'tab2')">
+              <a>
+                <span class="icon is-small">
+                  <i class="fas fa-bookmark" aria-hidden="true"></i></span>
+                <span>Dashboards</span>
+              </a>
+            </li>
+            <li class="tab" onclick="openTab(event,'tab3')">
+              <a>
+                <span class="icon is-small">
+                  <i class="fas fa-bookmark" aria-hidden="true"></i></span>
+                <span>Operator Favourites</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="level-right">
+        <div class="level-item">
+          <button class="button icon is-small is-rounded has-tooltip-arrow" data-tooltip="App Settings">
+            <i class="fa fa-cog" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="level-item">
+          <button class="button icon is-small is-rounded has-tooltip-arrow" data-tooltip="Hide">
+            <i class="fa fa-angle-double-down" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab1" class="content-tab">
+      <div class="columns mx-2 mt-1">
+        <div class="column is-narrow">
+          ${require('cards/small/_screen.html')}
+        </div>
+        <div class="column is-narrow">
+          ${require('cards/small/_screen.html')}
+        </div>
+        <div class="column is-narrow">
+          ${require('cards/small/_screen.html')}
+        </div>
+        <div class="column is-narrow">
+          ${require('cards/small/_screen.html')}
+        </div>
+        <div class="column is-narrow">
+          ${require('cards/small/_screen-active.html')}
+        </div>
+        <div class="column is-narrow">
+          ${require('cards/small/_screen-new.html')}
+        </div>
+      </div>
+    </div>
+    <div id="tab2" class="content-tab" style="display:none">
+      <div class="columns mx-2 mt-1">
+        <div class="column is-narrow">
+          ${require('cards/small/_screen.html')}
+        </div>
+        <div class="column is-narrow">
+          ${require('cards/small/_screen-new.html')}
+        </div>
+      </div>
+    </div>
+    <div id="tab3" class="content-tab is-block" style="display:none">
+      <div class="columns mx-2 mt-1">
+        <div class="column is-narrow">
+          ${require('cards/small/_screen.html')}
+        </div>
+        <div class="column is-narrow">
+          ${require('cards/small/_screen.html')}
+        </div>
+        <div class="column is-narrow">
+          ${require('cards/small/_screen-new.html')}
+        </div>
+      </div>
+    </div>
+
+  </nav>
+</div>

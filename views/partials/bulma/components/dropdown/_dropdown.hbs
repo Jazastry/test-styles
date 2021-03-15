@@ -1,0 +1,25 @@
+{{#each dropdownItems}}
+  {{#>_commons/partial}}
+    <div class="columns">
+    {{#each this.values}} 
+      <div class="column">
+        {{#>bulma/components/dropdown/dropdown}}
+          {{#>bulma/components/dropdown/trigger button=button aria-haspopup=aria-haspopup aria-controls=aria-controls}}
+          <span>{{textSpan}}</span>
+            {{>bulma/elements/icons/icon icon=icon i=i aria-hidden=aria-hidden}} 
+          {{/bulma/components/dropdown/trigger}}
+
+         {{#>bulma/components/dropdown/menu  menu=menu content=content id=aria-controls role="menu"}}
+            {{#each this.items}}
+              {{>bulma/components/dropdown/item type=type item=item text=text}}
+              {{#if has-divider}}
+                {{>bulma/components/dropdown/divider divider=divider}}
+              {{/if}}
+            {{/each}}
+          {{/bulma/components/dropdown/menu}}
+        {{/bulma/components/dropdown/dropdown}}
+      </div>
+    {{/each}}
+  </div>
+  {{/_commons/partial}}
+{{/each}}

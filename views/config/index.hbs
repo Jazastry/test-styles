@@ -1,0 +1,66 @@
+<div class="js--toggle-navbar-composed js--toggle-aside flex-column is-fixed is-top is-hidden-mobile">
+  <aside class="is-sticky px-3 pt-5">
+    <ul class="menu-list">
+      <li class="menu-label">Components</li>
+      <li>
+        <a href="#node">Node</a>
+      </li>
+      <li>
+        <a href="#dropdown">Add Dropdown content</a>
+      </li>
+      <li class="menu-label">Resources</li>
+      <li>
+        <a href="https://www.jasondavies.com/wordtree/?source=cat-in-the-hat.txt&prefix=Now!%E2%80%9D%20said%20the%20cat.%20%E2%80%9CWith%20a%20cup%20and%20a%20cake%20on%20the%20top%20of%20my%20hat!%20I%20can%20hold%20up%20TWO%20books!" target="_blank">
+          Word Tree
+          <sup><i class="fas fa-external-link-alt is-size-8 ml-1"></i></sup>
+        </a>
+      </li>
+      <li>
+        <a href="https://echarts.apache.org/examples/en/editor.html?c=graph-force" target="_blank">
+          Echarts
+          <sup><i class="fas fa-external-link-alt is-size-8 ml-1"></i></sup>
+        </a>
+      </li>
+    </ul>
+  </aside>
+</div>
+
+<div class="js--toggle-navbar-content has-aside pb-5">
+  <div class="container is-fluid">
+    <div id="node">
+      <div class="divider">
+        <h2 class="title is-capitalized mx-3">Node</h2>
+      </div>
+      <div class="columns is-multiline">
+        {{#each nodeItems}}
+          {{#each this.values}}
+            {{>config/components/node}}
+          {{/each}}
+        {{/each}}
+      </div>
+    </div>
+    <div id="dropdown">
+      <div class="divider">
+        <h2 class="title is-capitalized mx-3">Add Dropdown content</h2>
+      </div>
+      <div class="columns has-background-default my-4 p-4">
+        <div class="column">
+          <div class="grid is-2 is-2-mobile is-gapless has-text-centered">
+            {{>config/header/items/add/master}}
+            {{>config/header/items/add/servant}}
+          </div>
+        </div>
+        <div class="column">
+          <div class="grid is-2 is-2-mobile is-gapless has-text-centered">
+            {{>config/header/items/add/master class="is-selected"}}
+          </div>
+        </div>
+        <div class="column">
+          <div class="grid is-2 is-2-mobile is-gapless has-text-centered">
+            {{>config/header/items/add/servant class="is-selected"}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

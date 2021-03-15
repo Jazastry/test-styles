@@ -1,0 +1,55 @@
+<div class="js--toggle-navbar-composed flex-column is-fixed is-top is-hidden-mobile 
+  js--toggle-aside">
+  ${require('panel/_monitoring.html')}
+</div>
+
+<div class="js--toggle-aside-content has-aside pb-5">
+
+  <div class="container is-fluid is-flex">
+    ${require('navbar/components/_navbar-item-menu-toggle.html')}
+  </div>
+
+  <div class="container is-fluid">
+    <section>
+      <div class="level m-0">
+        <div class="level-left">
+          <h1 class="title is-size-4 has-text-weight-medium">Solar Portfolio</h1>
+        </div>
+        <div class="level-right m-0"></div>
+      </div>
+      <div class="is-flex mb-4 has-margin-bottom-5-mobile">
+        <span class="has-border-solid is-flex-grow-1 mr-3"></span>
+        <div class="ml-auto is-size-4">
+          <i class="js--expand-button mi
+            mi-remove-circle-outline has-text-opacity-40 is-clickable"></i>
+        </div>
+      </div>
+    </section>
+
+    <section class="js--expand-parent pb-5">
+      ${require('card/summary/_portfolio.html')}
+    </section>
+
+    <section>
+      <div class="is-flex mb-3">
+        <span class="has-border-solid is-flex-grow-1 mr-3"></span>
+        <div class="ml-auto is-size-6">
+          <span class="js--modeDefault-button icon is-clickable is-disabled has-text-opacity-40
+            is-selected mr-2">
+            <i class="fas fa-bars"></i>
+          </span>
+          <span class="js--modeOpposite-button icon is-clickable
+            has-text-opacity-40">
+            <i class="fas fa-th"></i>
+          </span>
+        </div>
+      </div>
+      <div class="js--modeDefault-parent table-container column">
+        ${require('table/_plants.html')}
+      </div>
+      <div class="js--modeOpposite-parent table-container column is-hidden">
+        ${require('masonry/_summary.html')}
+      </div>
+    </section>
+  </div>
+</div>

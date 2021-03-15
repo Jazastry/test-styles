@@ -1,0 +1,15 @@
+{{#each nodeItems}}
+  {{#>_commons/partial}}
+    <ul class="block-list">
+      {{#each this.values}}
+        <li class="grid is-2">
+          <p>{{this.title}}</p>
+          <div class="has-border-solid"></div>
+          {{#each this.items}}
+            {{>bulma/components/node/node}}
+          {{/each}}
+        </li>
+      {{/each}}
+    </ul>
+  {{/_commons/partial}}
+{{/each}}

@@ -1,0 +1,25 @@
+// Navbar
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .has-background-blurred {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
+}
+
+.navbar {
+	&-start--centered {
+		flex-grow: 1;
+  	justify-content: center;
+	}
+	&-end .navbar-item img {
+	  max-height: initial;
+	}
+  @if $light-mode {
+    input {
+    	background: lighten($grey-lighter, 5%);
+    	&:focus {
+    		background: $white;
+    	}
+    }
+  }
+}

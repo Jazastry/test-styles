@@ -1,0 +1,22 @@
+{{#each panelItems}}
+  {{#>bulma/components/panel/panel-tree class=(replace "### is-top-borderless is-shadowless" "###" this.class)}}
+
+    {{>config/components/panel/items/heading color=color}}
+
+    <div id={{expandId}} class="is-hidden">
+      {{#each level}}
+        {{#>bulma/components/panel/items/level level=(replace "### is-hoverable--lighter" "###" this.number)}}
+
+          {{#if this.last}}
+            {{>config/components/panel/items/level-last color=../../color}}
+          {{else if this.number}}
+            {{>config/components/panel/items/level color=../../color}}
+          {{else}}
+            {{>config/components/panel/items/block color=../../color}}
+          {{/if}}
+
+        {{/bulma/components/panel/items/level}}
+      {{/each}}
+    </div>
+  {{/bulma/components/panel/panel-tree}}
+{{/each}}

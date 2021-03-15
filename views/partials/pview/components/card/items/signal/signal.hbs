@@ -1,0 +1,23 @@
+{{#if chart}}
+  {{#eq chart "gauge"}}
+    {{#>pview/components/card/items/signal/unit mediaLeftExtend="mr-1-fullhd mr-3-desktop mr-2-touch"}}
+      <span class="icon gauge-light">
+        {{>bulma/components/gauge/gauge}}
+      </span>
+    {{/pview/components/card/items/signal/unit}}
+  {{/eq}}
+  {{#eq chart "bar"}}
+    {{#>pview/components/card/items/signal/unit mediaLeftExtend="mr-2"}}
+      <span class="icon">
+        <canvas value="120" limit="100" width="40" height="40"></canvas>
+      </span>
+    {{/pview/components/card/items/signal/unit}}
+  {{/eq}}  
+  {{#eq chart "epi"}}
+    {{>pview/components/card/items/signal/unit noMediaLeft="true" extendMedia=(replace "p-1 has-radius has-width-70 px-2 has-text-white ###" "###" color)}}
+  {{/eq}}
+{{else}}
+  {{#>pview/components/card/items/signal/unit mediaLeftExtend="mr-2"}} 
+    {{>bulma/elements/icons/icon i=(replace " ### is-size-4" "###" i)aria-hidden="true"}}
+  {{/pview/components/card/items/signal/unit}}
+{{/if}}

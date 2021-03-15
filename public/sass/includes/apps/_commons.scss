@@ -1,0 +1,58 @@
+$aside: (
+	"config": 400px,
+	"pview": 300px,
+	"scatec": 300px,
+);
+
+// All apps
+@include until($desktop) {
+	.pview, .bulma, .config, .portal, .scatec {
+	  aside { width: 1px;}
+	}
+}
+@include from($desktop) {
+	.pview, .bulma, .portal, .scatec {
+		aside {
+			width: map-get($aside, "pview");
+			@if $dark-mode{
+				background: $black;
+			} @else {
+				background: $white-ter;
+			}
+		}
+		.has-aside {
+			margin-left: map-get($aside, "pview");
+		}
+	}
+  // Config app
+	.config {
+		$navbar-height: 4rem;
+		&.has-navbar-fixed-top {
+			padding-top: $navbar-height;
+		}
+		.navbar {
+			&.is-fixed-top {
+				height: $navbar-height;
+			}
+			&.is-fixed-bottom,
+			&.is-fixed-bottom > .container {
+				min-height: 2.5rem;
+			}
+		}
+		aside {
+      width: map-get($aside, "config");
+      @if $dark-mode{
+        background: $black-bis;
+      } @else {
+        background: $white-ter;
+      }
+    }
+    .has-aside {
+      margin-right: map-get($aside, "config");
+			.navbar.is-fixed-top,
+			.navbar.is-fixed-bottom {
+				right: map-get($aside, "config");
+			}
+    }
+	}
+}

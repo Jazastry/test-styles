@@ -1,0 +1,14 @@
+<aside class="is-sticky px-3 pt-5">
+  <ul class="menu-list">
+    <li class="menu-label">
+        {{listName}}
+    </li>
+    {{#each asideItems}}
+    <li>
+      <a href="{{createAnchorTagHref this}}">
+        {{capitalize this}}
+      </a>
+    </li>
+    {{/each}}
+  </ul>
+</aside>

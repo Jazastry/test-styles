@@ -1,0 +1,52 @@
+<div class="flex-column is-fixed is-top is-hidden-mobile 
+  js--toggle-aside" style="top: 9rem">
+  ${require('panel/_monitoring.html')}
+</div>
+
+<div class="js--toggle-aside-content has-aside pb-5">
+  <div class="container is-fluid is-flex">
+    ${require('navbar/components/_navbar-item-menu-toggle.html')}
+  </div>
+  <div class="container is-fluid">
+    <section>
+      <div class="level">
+        <div class="level-left">
+          <h1 class="title is-size-4 has-text-weight-medium">Solar Portfolio</h1>
+        </div>
+        <div class="level-right">
+          <button class="button mr-4 is-small has-tooltip-arrow"
+            data-tooltip="Hide summary">
+            <span class="icon">
+              <i class="fas fa-info" aria-hidden="true"></i>
+            </span>
+          </button>
+          <div class="buttons has-addons is-right">
+            <button class="button is-active is-small has-tooltip-arrow"
+              data-tooltip="List view">
+              <span class="icon">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+              </span>
+            </button>
+            <button class="button is-small has-tooltip-arrow" data-tooltip="Grid
+              view">
+              <span class="icon">
+                <i class="fas fa-th" aria-hidden="true"></i>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <hr />
+    </section>
+
+    <section>
+      ${require('card/summary/_portfolio.html')}
+      <hr />
+    </section>
+
+    <div>
+      ${require('table/_plants.html')}
+    </div>
+
+  </div>
+</div>

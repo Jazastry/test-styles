@@ -1,0 +1,23 @@
+<section class="as-browser navbar tabs composed-app is-fixed-top" aria-label="main navigation">
+  {{#if appPagesNames}}
+  <ul class="is-borderless pt-3 pl-1">
+    {{#each appPagesNames}}
+    {{#if this}}
+    <a href={{createsAppPageHref this}} class="p-0 is-borderless">
+      <li class="screen mx-1 is-clickable">
+        <figure class="image is-flex has-width-100 has-height-75">
+        </figure>
+        <div class="px-2">
+          <small class="is-size-7 is-truncated">{{capitalize this}}</small>
+        </div>
+      </li>
+    </a>
+    {{/if}}
+    {{/each}}
+  </ul>
+  {{else}}
+  <ul class="is-borderless pt-3 pl-1">
+    <li class="screen mx-1">No Pages Available</li>
+  </ul>
+  {{/if}}
+</section>

@@ -1,0 +1,39 @@
+{{#>bulma/components/card/content/content}}
+  {{#each this.values}}
+    {{#ifEven @index}}
+      <div class="columns is-mobile is-vcentered is-clipped has-border-top-opacity-20 has-border-top-width-1 m-0 pl-1-touch pr-2-touch py-3-touch pl-3-desktop pr-3-desktop py-4-desktop">
+        {{#each items}}
+          {{#ifEven @index}}
+            <div class="column is-7 is-flex is-justify-content-flex-start has-arrow-right is-relative pl-0 pr-1 py-0">
+              {{>pview/components/card/items/signal/signal}}
+            </div> 
+          {{/ifEven}}
+          {{#ifOdd @index}}
+            <div class="column is-flex is-justify-content-flex-end is-paddingless">
+              {{>pview/components/card/items/signal/signal}}
+            </div>
+          {{/ifOdd}}
+        {{/each}}
+      </div>
+    {{/ifEven}}
+
+    {{#ifOdd @index}}
+      <div class="columns is-mobile is-vcentered has-border-top-opacity-20 has-border-top-width-1 m-0 pl-1-touch pr-2-touch py-1-touch pl-3-desktop pr-3-desktop pt-2-desktop pb-1-desktop">
+        {{#each items}}
+          {{#ifEven @index}}
+            <div class="column is-paddingless">
+              {{>pview/components/card/items/signal/signal}}
+            </div> 
+          {{/ifEven}}
+          {{#ifOdd @index}}
+            <div class="column is-narrow-desktop is-flex-touch is-justify-content-flex-end is-paddingless">
+              {{>pview/components/card/items/signal/signal}}
+            </div>
+          {{/ifOdd}}
+        {{/each}}
+      </div>
+    {{/ifOdd}}
+  {{/each}}
+
+  {{>pview/components/card/items/day dayText="yesterday"}}
+{{/bulma/components/card/content/content}}

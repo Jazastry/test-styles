@@ -1,0 +1,13 @@
+<div id="js--switch-signals">
+  {{>pview/quickview/components/panel/items/select-all}}
+  {{#each dataSignalsPanelBlocks}}
+    <section>
+      {{>pview/quickview/components/panel/items/heading-expander expanderName=expanderName}}
+      <div id="{{camelcase expanderName}}">
+        {{#each this.values}}
+          {{>pview/quickview/components/panel/items/block-checkbox}}
+        {{/each}}
+      </div>
+    </section>
+  {{/each}}
+</div>

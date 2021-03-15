@@ -1,0 +1,29 @@
+@import "../commons.scss";
+@import "variables.scss";
+
+// OVERITING GLOBAL VARIABLES
+$text: $black;
+$light: $grey-lighter;
+
+// BULMA
+@import "../../../../node_modules/bulma/bulma.sass";
+
+// CUSTOM
+$light-mode: true;
+
+@import "../../includes/helpers/all.scss";
+@import "../../includes/layout/columns.scss";
+@import "../../includes/layout/flex.scss";
+@import "../../includes/layout/grid.scss";
+@import "../../includes/button.scss";
+@import "../../includes/gauge.scss";
+@import "../../includes/worldmap.scss";
+
+.has-dark-mode {
+  $dark-mode: true;
+  & * { color: $white; }
+  @import "../../includes/helpers/border.scss";
+  @import "../../includes/helpers/colors.scss";
+  @import "../../includes/worldmap.scss";
+  @import "../../includes/gauge.scss";
+}

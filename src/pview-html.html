@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Prediktor guidelines</title>
+    <style>
+      @import "/css/branding/prediktor/prediktor-dark.css" (prefers-color-scheme: dark);
+      @import "/css/branding/prediktor/prediktor-light.css" (prefers-color-scheme: no-preference), (prefers-color-scheme: light);
+    </style>
+    <style>
+      /* Just for this demo fixing visibility on carousel in modal: PView/Generate Report */
+      .slider-container { width: 3840px !important; }
+      .slider-item { width: 640px !important; }
+    </style>
+  </head>
+
+  <body class="pview as-browser has-navbar-fixed-top has-composed-app">
+    ${require('portal-0.2/apps/pview/_navbar.html')}
+    ${require('portal-0.2/apps/pview/_screens.html')}
+    ${require('portal-0.2/navbar/_level-expanded-has-composed-app.html')}
+
+    <div class="js--toggle-navbar-content">
+      <div id="tab-lobby" class="content-tab">
+        ${require('pview/_lobby.html')}
+      </div>
+
+      <div id="tab-reports" class="content-tab" style="display:none">
+        ${require('pview/_reports.html')}
+      </div>
+
+      <div id="tab-report-generate" class="content-tab" style="display:none">
+        ${require('pview/_report-generate.html')}
+      </div>
+
+      <div id="tab-string" class="content-tab" style="display:none">
+        ${require('pview/_string.html')}
+      </div>
+
+      <div id="tab-list" class="content-tab" style="display:none">
+        ${require('pview/_portfolio-list.html')}
+      </div>
+
+      <div id="tab-grid" class="content-tab" style="display:none">
+        ${require('pview/_portfolio-grid.html')}
+      </div>
+
+      <div id="tab-portfolio" class="content-tab" style="display:none">
+        ${require('pview/_portfolio.html')}
+      </div>
+
+      <div id="tab-plant" class="content-tab" style="display:none">
+        ${require('pview/_plant.html')}
+      </div>
+
+      <div id="tab-inverter" class="content-tab" style="display:none">
+        ${require('pview/_inverter.html')}
+      </div>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/bulma-quickview.min.js"></script>
+    <script src="js/bulma-carousel.min.js"></script>
+    <script src="js/bulma-modal-fx.min.js"></script>
+    <script>
+      // Quickview
+      var quickviews = bulmaQuickview.attach(); // quickviews now contains an array of all Quickview instances
+
+      // Carousel
+      bulmaCarousel.attach('#carousel-generateReport', {
+        slidesToScroll: 1,
+        slidesToShow: 1,
+        navigation: false
+      });
+    </script>
+  </body>
+</html>

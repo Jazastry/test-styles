@@ -1,0 +1,36 @@
+{{#each dataParametersPanelBlocks}}
+  <div>
+    {{>pview/quickview/components/panel/items/heading-expander expanderName=expanderName}}
+    {{#if this.values}}
+      <div {{#if expanderName}} id="{{camelcase expanderName}}" {{/if}}>
+        {{#if toggable}}
+          {{#each this.values}}
+            <div class="is-hoverable--dark">
+              {{>pview/quickview/components/panel/items/block-toggler 
+                stateIsToggled=stateIsToggled 
+                togglerId=(toString @index)
+              }}
+              <div id={{toString @index}} class="{{#if stateIsToggled}}is-hidden{{/if}} pb-3">
+                  {{#each this.items}}
+                    {{>pview/quickview/components/panel/items/block-toggled}}
+                  {{/each}}
+              </div>
+            </div>
+          {{/each}}
+        {{else}}
+          {{#each this.values}}
+            {{>pview/quickview/components/panel/items/block-info extendBlock="is-hoverable--dark on-hover px-4"}}
+          {{/each}}
+        {{/if}}
+      </div>
+    {{else}}
+      <div id="{{camelcase expanderName}}">
+        {{#>pview/quickview/components/panel/items/block-info extendBlock="has-text-opacity-40 px-4"}}
+          <h6>No {{expanderName}} added.</h6>
+        {{/pview/quickview/components/panel/items/block-info}}
+      </div>
+    {{/if}}
+  </div>
+{{/each}}
+
+

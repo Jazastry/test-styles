@@ -1,0 +1,16 @@
+{{#>bulma/components/panel/items/block block="is-bottom-borderless is-radiusless on-hover is-size-small has-border-left-width-1 has-border-left-grey px-4 ml-5"}}
+  {{#if infoName}}
+    <div>
+      <span>{{infoName}}</span>
+      {{>pview/quickview/elements/uom uom=infoUom}}
+      {{>bulma/elements/buttons/button-icon class="is-smallest is-text is-transparent has-text-vcentered has-tooltip-arrow on-hover--show" data-tooltip="Info" i="fas fa-info-circle is-size-7"}}
+    </div>
+    {{#if infoValue}}
+      <span class="ml-auto has-text-weight-semibold">{{infoValue}}</span>
+    {{else}}
+      <span class="ml-auto has-text-opacity-40 has-text-weight-semibold">Not set</span>
+    {{/if}}
+  {{else}}
+    <p>No items added.</p>
+  {{/if}}  
+{{/bulma/components/panel/items/block}}

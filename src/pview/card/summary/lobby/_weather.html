@@ -1,0 +1,54 @@
+<div class="card flex-column is-full-height">
+  <header class="card-header is-shadowless">
+    <h2 class="card-header-title is-uppercase is-size-7">Weather</h2>
+  </header>
+  <div class="card-content px-5 mt-auto">
+    <div class="columns is-mobile is-multiline border-xy-cross">
+      <div class="column is-6 has-text-centered">
+        <figure class="image is-48x48 is-inline-block mb-1">
+          <img src="/images/wheather/sun.svg" alt="">
+        </figure>
+        <h2>
+          <span class="has-text-weight-semibold is-size-4 is-block has-line-height-1">
+            23<small class="is-size-7 has-text-weight-light">&#176;C</small>
+          </span>
+        </h2>
+      </div>
+      <div class="column is-6 has-text-centered">
+        <span class="is-relative has-text-grey-dark mb-1">
+          <picture>
+            <source srcset="./images/mode/dark/time-horizon-state.svg" media="(prefers-color-scheme: dark)">
+            <source srcset="./images/mode/light/time-horizon-state.svg" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
+            <img class="has-width-80" src="/images/mode/light/time-horizon-state.svg" alt="">
+          </picture>
+          <i class="icon-factory is-size-6 is-absolute is-bottom is-left is-right" aria-hidden="true"></i>
+        </span>
+        <h2>
+          <span class="has-text-weight-semibold is-size-4 is-block has-line-height-1">
+            <small class="is-size-7 has-text-weight-light">at 10:30</small>
+          </span>
+        </h2>
+      </div>
+      <div class="column is-6 has-text-centered">
+        <span class="icon is-large has-text-grey-dark mt-4 mb-1">
+          <i class="fas fa-wind is-size-3" aria-hidden="true"></i>
+        </span>
+        <h2>
+          <span class="has-text-weight-semibold is-size-4 is-block has-line-height-1">
+            38<small class="is-size-7 has-text-weight-light">km/h</small>
+          </span>
+        </h2>
+      </div>
+      <div class="column is-6 has-text-centered">
+        <span class="icon is-large has-text-grey-dark mt-4 mb-1">
+          <i class="icon-irradiance is-size-3" aria-hidden="true"></i>
+        </span>
+        <h2>
+          <span class="has-text-weight-semibold is-size-4 is-block has-line-height-1">
+            1000<small class="is-size-7 has-text-weight-light">W/m<sup>2</sup></small>
+          </span>
+        </h2>
+      </div>
+    </div>
+  </div>
+</div>

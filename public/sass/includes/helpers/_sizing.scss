@@ -1,0 +1,53 @@
+.has {
+  &-width {
+    &-60 {
+    	width: 60px;
+		}
+    &-70 {
+    	width: 70px;
+		}
+		&-80 {
+    	width: 80px;
+		}
+		&-100 {
+			width: 100px;
+		}
+  }
+  &-height {
+    &-2 {
+      height: 2px;
+    }
+    &-30 {
+      height: 30px;
+    }
+    &-75 {
+      height: 75px;
+    }
+    &-auto {
+      height: auto;
+      &-touch{
+        @include touch{
+          height:auto !important;
+        }
+      }
+
+    }
+  }
+  &-min-height-fit-content {
+    min-height: fit-content !important;
+  }
+}
+
+@include desktop {
+  .is-narrow-desktop {
+    width: unset !important;
+  }
+}
+
+// TO DO
+.is {
+  &-20x20 {
+    width: 20px;
+    height: 20px;
+  }
+}

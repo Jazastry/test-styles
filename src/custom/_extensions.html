@@ -1,0 +1,70 @@
+<div class="js--toggle-navbar-composed flex-column is-fixed is-top is-hidden-mobile 
+js--toggle-aside">
+  ${require('aside/_extensions.html')}
+</div>
+
+<div class="js--toggle-aside-content has-aside pb-5">
+  <div class="container is-fluid is-flex">
+    ${require('../pview/navbar/components/_navbar-item-menu-toggle.html')}
+  </div>
+  <div class="container is-fluid pt-5">
+    <section>
+
+      <div class="divider">
+        <h2 class="title is-capitalized mx-3">Extensions</h2>
+      </div>
+
+      <div id="badge" class="mt-6">
+        ${require('../bulma/extensions/_badge.html')}
+      </div>
+
+      <div id="divider" class="mt-6">
+        ${require('../bulma/extensions/_divider.html')}
+      </div>
+
+      <div id="slider" class="mt-6">
+        ${require('../bulma/extensions/_slider.html')}
+      </div>
+
+      <div id="steps" class="mt-6">
+        <div class="divider">
+          <h2 class="title is-capitalized">Steps
+            <sup><a href="https://octoshrimpy.github.io/bulma-o-steps/" target="_blank"><i class="fa fa-external-link-alt is-size-7"></i></a></sup>
+          </h2>
+        </div>
+        <h3 class="subtitle is-4">Horizontal steps</h3>
+        ${require('../bulma/extensions/_steps.html')}
+        <h3 class="subtitle is-4">Vertical steps</h3>
+        ${require('../portal/steps/_step2-composed.html')}
+      </div>
+
+      <div id="switch" class="mt-6">
+        <div class="divider">
+          <h2 class="title is-capitalized">Switch
+            <sup><a href="https://wikiki.github.io/form/switch/" target="_blank"><i class="fa fa-external-link-alt is-size-7"></i></a></sup>
+          </h2>
+        </div>
+        ${require('../bulma/extensions/_switch.html')}
+      </div>
+
+      <div id="tooltip" class="mt-6">
+        <div class="divider">
+          <h2 class="title is-capitalized">Tooltip
+            <sup><a href="https://demo.creativebulma.net/components/tooltip/1.2/get-started/" target="_blank"><i class="fa fa-external-link-alt is-size-7"></i></a></sup>
+          </h2>
+        </div>
+        ${require('../bulma/extensions/_tooltip.html')}
+      </div>
+
+      <div id="carousel" class="mt-6">
+        <div class="divider">
+          <h2 class="title is-capitalized">Carousel
+            <sup><a href="https://bulma-carousel.onrender.com/" target="_blank"><i class="fa fa-external-link-alt is-size-7"></i></a></sup>
+          </h2>
+        </div>
+        ${require('../bulma/extensions/_carousel.html')}
+      </div>
+
+    </section>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<nav class="navbar is-transparent" aria-label="main navigation">
+  <div class="container is-fluid">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+        ${require('_button-group.html')}
+      </div>
+
+      <div class="navbar-item is-hidden-tablet">
+        ${require('_search.html')}
+      </div><!-- Search for mobile -->
+
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarPortal1">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarPortal1" class="navbar-menu is-hidden-tablet">
+      <div class="navbar-start">
+        // Here comes the navigation for mobile
+      </div>
+    </div>
+
+    <div class="navbar-menu is-hidden-mobile">
+      <div class="navbar-start navbar-start--centered">
+        <div class="navbar-item">
+          ${require('_add.html')}
+        </div>
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          ${require('_search.html')}
+        </div>
+        <div class="navbar-item">
+          <button class="button icon is-text is-rounded is-transparent">
+            <i class="icon-outline"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</nav>

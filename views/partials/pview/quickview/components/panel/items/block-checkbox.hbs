@@ -1,0 +1,17 @@
+{{#>bulma/components/panel/items/block block="py-0 px-4 is-borderless is-radiusless is-hoverable--dark on-hover"}}
+  {{#>bulma/form/field field="has-addons is-full-width is-align-items-center"}}
+    {{>bulma/form/checkbox id=(camelcase checkboxLabel) checkbox="is-small" inputName=checkboxLabel}}
+    {{#>bulma/form/label for=(camelcase checkboxLabel) label="is-size-small py-2 my-0"}}
+      <span class="pl-1">{{checkboxLabel}}</span>
+      {{>pview/quickview/elements/uom uom=checkboxUom}}
+    {{/bulma/form/label}}
+    <div class="is-flex is-flex-grow-1 is-justify-content-flex-end">
+      {{#if checkboxValue}}
+        <span class="has-text-weight-semibold is-size-small on-hover--hide">
+          {{checkboxValue}}
+        </span>
+      {{/if}}
+      {{>bulma/elements/buttons/button-icon class="is-smaller is-text is-primary on-hover--show p-0" i="fas fa-chart-area is-size-6"}}
+    </div>
+  {{/bulma/form/field}}
+{{/bulma/components/panel/items/block}}

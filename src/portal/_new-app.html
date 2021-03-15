@@ -1,0 +1,45 @@
+<div class="has-portal-aside mt-6">
+
+  <div class="section px-6">
+    <div class="level">
+      <div class="level-left">
+        <nav class="breadcrumb is-large" aria-label="breadcrumbs">
+          <ul>
+            <li><a href="/app-manager" class="has-text-weight-medium has-text-grey">App Manager</a></li>
+            <li class="is-active">
+              <a href="#" aria-current="page" class="has-text-weight-medium">
+                Create App
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <div class="section pt-0 px-6">
+    <div class="columns has-shadow">
+      <div class="column is-2 is-paddingless">
+        <nav class="panel is-nav is-full-height">
+          <div class="px-3 py-3">
+            ${require('steps/_step1.html')}
+          </div>
+        </nav>
+      </div>
+
+      <div class="column px-6 pt-5">
+
+        <h3 class="is-size-5 has-text-weight-medium mb-4">Select App type</h3>
+
+        <div class="field is-horizontal is-large">
+          <div class="field-label is-normal"></div>
+          <div class="field-body">
+            ${require('tiles/_app-type.html')}
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,15 @@
+.slider {
+  &:focus {
+    outline: none;
+  }
+  &-pagination {
+    .slider-page {
+      background: $grey-darker;
+  		width: 8px;
+  		height: 8px;
+      &.is-active {
+        background: $primary;
+      }
+    }
+  }
+}

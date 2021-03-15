@@ -1,0 +1,214 @@
+@import "../commons.scss";
+@import "variables.scss";
+
+// OVERITING GLOBAL VARIABLES
+// * General colors
+$scheme-invert: $black-bis;
+$scheme-main: $scheme-invert;
+$scheme-invert-bis: $black-bis !default;
+$scheme-invert-ter: $black-ter !default;
+
+$scheme-main-bis: $scheme-invert-bis;
+$scheme-main-ter: $scheme-invert-ter;
+
+$background: darken($grey-darker, 5%);
+$body-background-color: $black-ter;
+$shadow: 0px 0px 10px rgba($white, 0.3);
+
+$border: $grey-darker;
+$border-hover: $grey-dark;
+$border-light: $grey-darkest;
+$border-light-hover: $grey-dark;
+
+//* Text colors
+$text-invert: $white-ter;
+$text: $white-ter;
+$text-strong: $white;
+$light: $grey-darker;
+
+//* Code colors
+$code: $white-ter;
+
+//* Link colors
+$link: $text-invert;
+$link-hover: $white;
+$link-hover-border: $grey;
+$link-focus: $grey-lighter;
+$link-focus-border: $grey;
+$link-active: $grey-lighter;
+$link-active-border: $grey-dark;
+
+//* Button
+$button-text-hover-background-color: $black-bis;
+
+//* Menu colors
+$menu-item-hover-color: $white;
+$menu-item-hover-background-color: $blue-dark;
+$menu-item-active-color: $white;
+$menu-item-active-background-color: $blue-dark;
+
+//* Navbar colors
+$navbar-item-hover-color: $white-ter;
+$navbar-item-hover-background-color: rgba($primary, 0.4);
+$navbar-item-active-color: $white;
+$navbar-dropdown-arrow: $white-ter;
+$navbar-dropdown-item-hover-color: $white;
+$navbar-dropdown-border-top: 2px solid $primary;
+
+//* Message colors
+$message-body-color: $black;
+
+//* Modal
+$modal-background-background-color: rgba($black-bis, 0.95);
+$modal-card-head-background-color: $black-bis;
+$modal-card-head-border-bottom: 1px solid $black;
+$modal-card-body-background-color: $black-bis;
+$modal-card-foot-border-top: 1px solid $black;
+
+// Table colors
+$table-background-color: transparent;
+$table-row-active-color: $text;
+$table-row-active-background-color: rgba($primary, 0.4);
+$table-row-hover-background-color: rgba($black-ter, 0.7);
+$table-cell-border: 1px solid $black-ter;
+$table-head-cell-color: $livid-lightest;
+$table-striped-row-even-background-color: rgba($black, 0.5);
+$table-striped-row-even-hover-background-color: rgba($black-ter, 0.7);
+
+// Tabs colors
+$tabs-link-color: $grey;
+$tabs-link-active-border-bottom-color: $blue;
+$tabs-border-bottom-color: $grey-darkest;
+$tabs-toggle-link-active-background-color: $blue-dark;
+$tabs-toggle-link-active-border-color: $blue-dark;
+$tabs-toggle-link-active-color: $white;
+
+// Panel
+$panel-heading-weight: 600;
+$panel-heading-background-color: $black-bis;
+$panel-block-hover-background-color: rgba($black-ter, 0.7);
+$panel-item-border: 1px solid $black;
+$panel-list-item-color: rgba($white, 0.7);
+$panel-list-item-hover-color: $white;
+
+// Form
+$label-weight: normal;
+
+// Card
+$card-header-weight: 600;
+$card-header-shadow: inset 0 -1px 0 0 $black;
+$card-background-color: $black-bis;
+$card-footer-border-top: 1px solid $black;
+$card-shadow: 0 0 0 0.02em $grey-darker;
+
+// Breadcrumbs
+$breadcrumb-item-color: $grey;
+$breadcrumb-item-hover-color: $text;
+
+// Box
+$box-background-color: $black-bis;
+$box-shadow: $shadow;
+
+// Progress
+$progress-value-background-color: $blue-dark;
+
+// Dropdown
+$dropdown-content-background-color: $black-bis;
+$dropdown-content-shadow: $shadow;
+$dropdown-item-hover-background-color: $black-ter;
+$dropdown-item-hover-color: $white-ter;
+
+// Pagination
+$pagination-current-color: $black;
+
+// BULMA
+@import "../../../../node_modules/bulma/bulma.sass";
+
+// EXTENSIONS
+// Steps
+$steps-divider-size: .14em;
+$steps-hollow-border-size: .14em;
+$steps-default-color: $grey-darker;
+@import "../../../../node_modules/bulma-o-steps/index.sass";
+
+// Modal
+$transition-duration: .3s;
+$transition-duration-newsPaper: .7s;
+$transition-duration-3dslit: .5s;
+$modal-perspective: 1300px;
+$modal-bg-color: rgba($black,.5);
+@import "../../../../node_modules/bulma-modal-fx/src/_scss/components/_modal-fx.scss";
+
+// Badge
+@import "../../../../node_modules/@creativebulma/bulma-badge/src/sass/index.sass";
+
+// Tooltip
+$tooltip-background-color: $grey-lighter;
+$tooltip-color: $black;
+@import "../../../../node_modules/@creativebulma/bulma-tooltip/src/sass/index.sass";
+
+// Divider
+$hr-height: 1px;
+$hr-background-color: $black;
+@import "../../../../node_modules/@creativebulma/bulma-divider/src/sass/index.sass";
+
+// Quickview
+$quickview-divider: 1px solid darken($livid-dark, 15%);
+$quickview-shadow: $shadow;
+@import "../../../../node_modules/bulma-quickview/src/sass/index.sass";
+
+// Switch
+@import "../../../../node_modules/bulma-switch/src/sass/index.sass";
+
+// Slider
+$slider-thumb-background: $grey-dark;
+$slider-track-background: $grey-darkest;
+$slider-thumb-border: 1px solid $black-ter;
+@import "../../../../node_modules/bulma-slider/src/sass/index.sass";
+
+// Carousel
+@import "../../../../node_modules/bulma-carousel/src/sass/index.sass";
+
+// Checkradio
+$checkbox-border: .1rem solid $grey-darker;
+$checkradio-focus: transparent;
+@import "../../../../node_modules/bulma-checkradio/src/sass/index.sass";
+
+// CUSTOM
+$dark-mode: true;
+@import "../../includes/all.scss";
+
+//////////////////////////////
+// TO BE MOVED & DELETED
+/////////////////////////////
+
+// Screens Navbar Bottom
+.navbar.is-screen-nav {
+	@include screen-nav($borderColorActive: $white);
+}
+
+// Cards
+@include card-image-has-brand($black-ter);
+
+// Aside
+@include aside-sticky-panel(rgba(255, 255, 255, 0.1), $black, $black-bis, $white);
+
+// Vertical Percentage Bar
+@include vertical-bar($grey-darkest, $black-bis);
+
+// Badge
+@include badge-ghost($black-bis, $white);
+
+// Dropdown
+@include dropdown-menu-without-a($black-bis);
+
+// Carousel
+.slider-navigation-previous,
+.slider-navigation-next {
+	background: $black center center no-repeat;
+	border-color: $black;
+}
+
+// TO DO: Available for DARK mode only
+@include is-loading(); /* is-loading class */
+@include average-bar(); /* PView Portfolio KPI's */

@@ -1,0 +1,7 @@
+<button class="card-header-icon {{#if headerIcon}} {{headerIcon}} {{/if}}" {{#if aria-label}}aria-label={{aria-label}}{{/if}}>
+  {{#if @partial-block}}
+    {{>@partial-block}}
+  {{else}}
+    {{>bulma/elements/icons/icon}}
+  {{/if}}
+</button>

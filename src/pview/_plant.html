@@ -1,0 +1,67 @@
+${require('quickview/plant/_index.html')}
+{{>pview/quickview/components/modal}}
+
+<div class="js--toggle-navbar-composed flex-column is-fixed is-top is-hidden-mobile 
+js--toggle-aside">
+  ${require('panel/_monitoring.html')}
+</div>
+
+<div class="js--toggle-aside-content has-aside pb-5">
+  <div class="container is-fluid is-flex">
+    ${require('navbar/components/_navbar-item-menu-toggle.html')}
+    {{>pview/quickview/quickview-button}}
+  </div>
+  <div class="container is-fluid">
+    <section>
+      <div class="columns is-variable is-1">
+        <div class="column is-6">
+          <div class="columns is-variable is-1 mb-0">
+            <div class="column is-6 pb-2">
+              ${require('card/summary/_plant.html')}
+            </div>
+            <div class="column is-6 pb-2">
+              ${require('card/chart/plant/_kpi.html')}
+            </div>
+          </div>
+          <div class="columns is-variable is-1">
+            <div class="column">
+              ${require('card/summary/plant/_weather.html')}
+            </div>
+            <div class="column">
+              <div class="columns is-full-height is-gapless">
+                <div class="column has-text-centered is-full-height mr-1">
+                  ${require('card/summary/plant/_total-production.html')}
+                </div>
+                <div class="column has-text-centered is-full-height ml-1">
+                  ${require('card/gauge/plant/_current-power.html')}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column is-6">
+          ${require('card/chart/plant/_production.html')}
+        </div>
+      </div>
+
+      <div class="columns">
+        <div class="column is-8">
+          ${require('title/_inverter.html')}
+          <div class="columns is-variable is-1">
+            <div class="column">
+              ${require('card/status/plant/_index.html')}
+            </div>
+            <div class="column">
+              ${require('card/tabs/_plant.html')}
+            </div>
+          </div>
+        </div>
+        <div class="column is-4">
+          ${require('title/_alarm.html')}
+          ${require('card/alarms/_index.html')}
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>

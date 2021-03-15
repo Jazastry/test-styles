@@ -1,0 +1,12 @@
+<div class="dropdown js--is-unclickable" id="js--dropdown-add-node">
+  <div class="dropdown-trigger" id="js--trigger-add-node">
+     {{>bulma/elements/buttons/button-icon class="is-text is-large is-borderless is-rounded has-tooltip-arrow has-tooltip-bottom" i="mi mi-add is-size-3" data-tooltip="Add Node" aria-controls="add-node"}}
+  </div>
+  <div class="dropdown-menu" id="add-node" role="menu" style="left: -104px;">
+    <div class="dropdown-content is-paddingless">
+      <div class="grid is-2 is-2-mobile is-gapless has-text-centered">
+        {{>config/header/items/add/master class="is-selected"}}
+      </div>
+    </div>
+  </div>
+</div>

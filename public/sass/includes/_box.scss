@@ -1,0 +1,12 @@
+// Box
+.box {
+	&.is-selected {
+		border: 1px solid $link;
+    @if $dark-mode {
+      border: 1px solid $white-ter;
+      .has-text-link {
+        color: $white-ter !important;
+      }
+    }
+	}
+}

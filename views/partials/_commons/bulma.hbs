@@ -1,0 +1,11 @@
+<div class="js--toggle-navbar-composed js--toggle-aside flex-column is-fixed is-top is-hidden-mobile">
+  {{>_commons/aside listName = listName asideItems = asideItems}}
+</div>
+<div class="js--toggle-aside-content has-aside pb-5">
+  <div class="container is-fluid is-flex">
+    {{>_commons/navbar-item-menu-toggle}}
+  </div>
+  <div class="container is-fluid">
+    {{>@partial-block}}
+  </div>
+</div>

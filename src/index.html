@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Prediktor guidelines</title>
+    <style>
+      @import "/css/branding/prediktor/prediktor-dark.css" (prefers-color-scheme: dark);
+      @import "/css/branding/prediktor/prediktor-light.css" (prefers-color-scheme: no-preference), (prefers-color-scheme: light);
+    </style>
+  </head>
+
+  <body class="bulma as-browser has-navbar-fixed-top">
+    ${require('portal-0.2/apps/bulma/_navbar.html')}
+    ${require('portal-0.2/navbar/_level-expanded.html')}
+
+    <div class="js--toggle-navbar-content">
+      <div id="tab-all" class="content-tab">
+        ${require('bulma/_all.html')}
+      </div>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/bulma-quickview.min.js"></script>
+    <script src="js/bulma-carousel.min.js"></script>
+    <script src="js/bulma-modal-fx.min.js"></script>
+    <script>
+      // Carousel
+      bulmaCarousel.attach('#carousel-demo', {
+        slidesToScroll: 1,
+        slidesToShow: 3
+      });
+    </script>
+  </body>
+</html>

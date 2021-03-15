@@ -1,0 +1,157 @@
+// PView KPI vertical chart bar
+@mixin vertical-bar($color: $grey-light, $bgColor: $white) {
+	.vertical-bar {
+		progress {
+			&::-webkit-progress-bar {
+				background-color: rgba(255,255,255,0.05);
+			}
+		}
+		.icon {
+			&.is-off { margin-left: -7px; color: $danger; }
+			&.is-on { margin-left: auto; right: -8px; color: $blue-dark; }
+		}
+		dt, dd {
+			position: relative;
+			z-index: 0;
+			&:after {
+				background-image: linear-gradient(90deg,
+				$color 0%, $color 0.5%, transparent 0.5%,
+				transparent 20%, $color 20%, $color 20.5%, transparent 20.5%,
+				transparent 40%, $color 40%, $color 40.5%, transparent 40.5%,
+				transparent 60%, $color 60%, $color 60.5%, transparent 60.5%,
+				transparent 80%, $color 80%, $color 80.3%, transparent 80.3%,
+				transparent 99.5%, $color 99.7%, $color 100%, transparent 100%);
+				background-size: contain;
+				content: "";
+				position: absolute;
+				height: 100%;
+				right: 0;
+				top: 0;
+				z-index: -1;
+				width: calc(100% - 100px);
+			}
+		}
+		dd > div:first-child {
+			@include border-middle;
+			position: relative;
+			flex: 0 0 100px;
+			&:after {
+				border-top-style: solid;
+				width: 7px;
+				position: absolute;
+				right: 0;
+				top: 50%;
+				bottom: 50%;
+				@if $dark-mode {
+					border-color: $black;
+				} @else {
+					border-color: $grey-lightest;
+				}
+			}
+		}
+		.is-xaxis {
+			div:first-child { flex: 0 0 100px; }
+			.column {
+				position: relative;
+				margin-top: -5px;
+				background: $bgColor;
+				&:before,
+				&:last-child span:before {
+					font-size: 8px;
+					position: absolute;
+					left: -5px;
+				}
+				&:nth-child(1) {
+					&:before { content: "0%"; left: -2px; }
+				}
+				&:nth-child(2) {
+					&:before { content: "20%"; }
+				}
+				&:nth-child(3) {
+					&:before { content: "40%"; }
+				}
+				&:nth-child(4) {
+					&:before { content: "60%"; }
+				}
+				&:nth-child(5) {
+					&:before { content: "80%"; }
+					span:before { content: "100%"; right: -10px; left: auto; }
+				}
+			}
+		}
+	}
+}
+
+// PView Performance chart
+@mixin average-bar($heightAbove: 66.6%, $heightBelow: 33.3%, $margin: 0.25rem, $width: 0.45rem) {
+	.average-bar {
+		@include stripes();
+		&:after {
+			border-top: 1px solid $warning;
+			border-bottom: 1px solid $livid;
+			top: $heightBelow;
+			height: $heightBelow;
+		}
+		.item {
+			margin-right: $margin;
+			display: flex;
+			height: $heightAbove;
+			div {	width: $width; }
+			&-label {
+				display: flex;
+				height: $heightBelow;
+				span {
+					margin: auto $margin auto auto;
+				}
+			}
+			&:hover,
+			&.is-not-available,
+			&.is-outrange {
+				&:before {
+					content: "";
+					position: absolute;
+					background: rgba(255, 255, 255, 0.2);
+					display: block;
+					width: $width;
+					height: 100%;
+					top: 0;
+				}
+			}
+			&.is-increased {
+				div {
+					background: $success;
+					align-self: flex-end;
+					&:hover {
+						background: lighten($success, 3%);
+					}
+				}
+			}
+			&.is-inrange {
+				div {
+					background: $blue-dark;
+					align-self: flex-end;
+					&:hover {
+						background: lighten($blue-dark, 3%);
+					}
+				}
+			}
+			&.is-decreased {
+				height: $heightBelow;
+				margin-top: auto;
+				div {
+					align-self: flex-start;
+					background: $danger;
+					&:hover {
+						background: ligthen($danger, 3%);
+					}
+				}
+			}
+			&.is-outrange {
+				&:before {
+					outline: 1px solid rgba($danger, 0.7);
+					background: rgba(255, 255, 255, 0.05);
+				}
+			}
+		}
+	}
+}

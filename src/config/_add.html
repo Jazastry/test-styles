@@ -1,0 +1,40 @@
+<div class="dropdown">
+  <div class="dropdown-trigger">
+
+    <button class="button icon is-text is-large is-borderless is-rounded has-shadow has-tooltip-arrow" data-tooltip="Add Node" aria-controls="add-node">
+      <i class="mi mi-add is-size-3"></i>
+    </button>
+
+    <!-- <button class="button icon rotated-45 is-text is-large is-borderless is-rounded has-shadow has-tooltip-arrow" data-tooltip="Add Node" aria-controls="add-node">
+      <i class="mi mi-add is-size-3"></i>
+    </button> -->
+
+  </div>
+  <div class="dropdown-menu" id="add-node" role="menu" style="left: -92px;">
+    <div class="dropdown-content is-paddingless">
+
+      <div class="grid is-2 is-gapless has-text-centered">
+        <!-- <button class="button is-light flex-column is-full-width is-full-height has-line-height-1 is-radiusless">
+          <i class="fas fa-circle has-text-success is-size-5 py-1 m-auto"></i>
+          <span class="has-text-weight-medium my-1">Master</span>
+          <small class="is-size-7 has-text-opacity-40-70 mb-1">parent/child node</small>
+        </button> -->
+        <!-- <button class="button is-light flex-column is-full-width is-full-height has-line-height-1 is-radiusless">
+          <i class="fas fa-circle has-text-danger is-size-5 py-1 m-auto"></i>
+          <span class="has-text-weight-medium my-1">Servant</span>
+          <span class="is-size-7 has-text-opacity-40-70 mb-1">standalone node</span>
+        </button> -->
+        <button class="button is-light is-selected flex-column is-full-width is-full-height has-line-height-1 is-radiusless">
+          <span class="badge is-top-left is-primary button icon is-rounded m-0 p-0">
+            <i class="mi mi-remove is-size-7"></i>
+          </span>
+          <i class="fas fa-circle has-text-success is-size-5 py-1 m-auto"></i>
+          <span class="has-text-weight-medium my-1">Master</span>
+          <small class="is-size-7 has-text-opacity-40-70 mb-1">parent/child node</small>
+        </button>
+        ${require('_type-partial-variation.html')}
+      </div>
+
+    </div>
+  </div>
+</div>

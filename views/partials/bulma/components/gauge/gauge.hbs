@@ -1,0 +1,106 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  fillRule="evenodd"
+  strokeLinejoin="round"
+  strokeMiterlimit="2"
+  clipRule="evenodd"
+  viewBox="0 0 200 200"
+  style="height: inherit; width: inherit;"
+>
+  <defs>
+    <clipPath id="donut-path" transform="matrix(1.33333,0,0,1.33333,-486.941,-89.8718)">
+      <path 
+        fill="none"
+        d="M387.625,195.864C373.79,182.255 365.206,163.324 365.206,142.404C365.206,101.01 398.812,67.404 440.206,67.404C481.599,67.404 515.206,101.01 515.206,142.404C515.206,163.254 506.679,182.128 492.926,195.727L478.701,181.671C488.883,171.689 495.206,157.779 495.206,142.404C495.206,112.048 470.561,87.404 440.206,87.404C409.85,87.404 385.206,112.048 385.206,142.404C385.206,157.848 391.586,171.815 401.851,181.808L387.625,195.864Z"
+      />
+    </clipPath>
+  </defs>
+  <g clip-path="url(#donut-path)">
+    <circle 
+      class="gauge-donut" 
+      fill="transparent" 
+      cx="100" 
+      cy="100" 
+      r="86" 
+      stroke-width="26">
+    </circle>
+  </g>
+  <g clip-path="url(#donut-path)">
+    <circle 
+      class="gauge-current" 
+      transform="rotate(90 100 100)" 
+      fill="transparent" 
+      cx="100" 
+      cy="100" 
+      r="86" 
+      stroke-width="26" 
+      stroke-dasharray="270 270">
+    </circle>
+  </g>
+  {{#if degree}}
+    <g transform="rotate({{degree}} 100 100)"> 
+  {{else}}
+    <g transform="rotate(0 100 100)"> 
+  {{/if}}
+    <path 
+      class="gauge-arrow" 
+      d="M90.327,-2.919C90.4,-2.919 90.407,-2.028 90.548,-0.402C91.517,10.776 95.33,54.854 95.327,55.295C95.325,55.601 95.279,55.987 95.279,55.987C94.942,58.42 92.851,60.295 90.327,60.295C87.802,60.295 85.712,58.42 85.374,55.987C85.374,55.987 85.327,55.454 85.327,55.295C85.327,54.853 89.146,10.71 90.109,-0.402C90.247,-2.004 90.253,-2.919 90.327,-2.919Z"
+      transform="matrix(1.33333,0,0,1.33333,-20.4355,29.7495)"
+    />
+  </g>
+</svg>
+
+{{!-- 
+https://sergiocarracedo.es/2020/05/18/Creating-a-simple-donut-chart/
+<template>
+  <div>
+    <label style="margin-bottom: 20px">
+      Percent
+      <input v-model="percent">
+    </label>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      :viewBox="`0 0 ${size} ${size}`"
+      preserveAspectRatio="xMidYMid meet"
+    >
+      <circle
+        fill="transparent"
+        :cx="c"
+        :cy="c"
+        :r="radius"
+        :stroke-width="width"
+        stroke="#B1D576"
+        :stroke-dasharray="strokeDashArray"
+      ></circle>
+    </svg>
+  </div>
+</template>
+<script>
+  export default {
+  name: "simple-donut-2",
+  data() {
+    return {
+      size: 100,
+      width: 10,
+      percent: 65
+    };
+  },
+  computed: {
+    c() {
+      return this.size / 2;
+    },
+    radius() {
+      return this.size / 2 - this.width / 2;
+    },
+    circumferenceLength() {
+      return 2 * Math.PI * this.radius;
+    },
+    strokeDashArray() {
+      const solid = Math.round(this.circumferenceLength) * this.percent / 100;
+      const transparent =
+        Math.round(this.circumferenceLength) * (100 - this.percent) / 100;
+      return `${solid } ${transparent}`;
+    }
+  }
+};
+</script> --}}

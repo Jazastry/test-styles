@@ -1,0 +1,15 @@
+{{#each gaugeItems}}
+  {{#>_commons/partial}}
+    <ul class="block-list">
+      {{#each this.values}}
+        <li>
+          {{#each this.items}}
+            <span class="icon {{this.class}} is-largest mr-4">
+              {{>bulma/components/gauge/gauge}}
+            </span>
+          {{/each}}
+        </li>
+      {{/each}}
+    </ul>
+  {{/_commons/partial}}
+{{/each}}

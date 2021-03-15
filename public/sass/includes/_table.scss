@@ -1,0 +1,148 @@
+// Table
+@mixin table-has-thead-transparent {
+	.table {
+		thead.is-transparent {
+			tr {
+				background: transparent;
+			}
+			th {
+				border-bottom-width: 1px;
+				border-left: none;
+		    border-right: none;
+		    border-top: none;
+			}
+		}
+		tr.is-selected {
+			td, th {
+				border-color: transparent;
+			}
+		}
+	}
+}
+
+@include table-has-thead-transparent;
+
+// Table with sorting columns
+@mixin table-has-sorting($color, $colorActive) {
+	.table {
+		th.sorting {
+			&:after {
+				content: "\f0dc";
+				font-family: $fontawesome;
+				font-weight: 900;
+				margin-left: 5px;
+				color: $color;
+			}
+			&[aria-sort="ascending"],
+			&[aria-sort="descending"] {
+				&:after {
+					color: $colorActive;
+				}
+			}
+			&[aria-sort="ascending"]:after {
+				content: "\f0de";
+			}
+			&[aria-sort="descending"]:after {
+				content: "\f0dd";
+			}
+		}
+	}
+}
+
+@if $dark-mode {
+	@include table-has-sorting(
+		$color: $grey-dark,
+		$colorActive: $white-ter
+	);
+} @else {
+	@include table-has-sorting(
+		$color: $grey-light,
+		$colorActive: $primary
+	);
+}
+
+// Table tree
+.table.tree {
+	tr {
+		@if $dark-mode {
+			background: $black-bis;
+		} @else {
+			background: $white;
+		}
+		&.level--1 {
+			td:first-child {
+				@include tree-level--1();
+			}
+		}
+		&.level--2 {
+			td:first-child {
+				@include tree-level--1();
+				@include tree-level--2();
+			}
+		}
+	}
+}
+
+// Table Hoverable
+.table.is-hoverable {
+	tbody tr:not(.is-selected):hover {
+		@include hoverable($black-bis, rgba($grey-lighter,0.5));
+	}
+}
+
+// Portal v0.1: Table Users
+@mixin table-has-users($borderColor, $bgColor) {
+  .field-users {
+  	figure {
+  		border-radius: 50%;
+  		border-width: 1px;
+  		border-style: solid;
+  		margin-left: -8px;
+      border-color: $borderColor;
+      background: $bgColor;
+  	}
+  }
+}
+
+@if $dark-mode {
+	@include table-has-users(
+		$borderColor: $black-bis,
+		$bgColor: $black
+	);
+} @else {
+	@include table-has-users(
+		$borderColor: $white,
+		$bgColor: $grey-lighter
+	);
+}
+
+// PView: Lobby
+@mixin table-columns-background-opaque($bgColor, $bgColor1, $borderColor) {
+	.has-columns-background-opaque {
+		th, tbody td {
+			&:nth-child(2) {
+				background: $bgColor;
+			}
+			&:nth-child(3) {
+				background: $bgColor1;
+			}
+		}
+    tfoot td, thead th {
+      border-color: $borderColor;
+    }
+	}
+}
+
+@if $dark-mode {
+	@include table-columns-background-opaque(
+		$bgColor: rgba($white, 0.05), 
+		$bgColor1: rgba($white, 0.1),
+		$borderColor: $black
+	);
+} @else {
+	@include table-columns-background-opaque(
+		$bgColor: rgba($black, 0.05), 
+		$bgColor1: rgba($black, 0.1),
+		$borderColor: $grey-light
+	);
+}

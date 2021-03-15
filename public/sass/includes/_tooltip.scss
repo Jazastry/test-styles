@@ -1,0 +1,10 @@
+// Tooltip
+span[data-tooltip].icon,
+span[data-tooltip].is-clickable:not(.button),
+span[data-tooltip].tag {
+	@extend .is-borderless;
+}
+
+span[data-tooltip].is-clickable.button {
+	border-style: solid;
+}

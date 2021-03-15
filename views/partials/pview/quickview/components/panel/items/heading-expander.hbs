@@ -1,0 +1,8 @@
+{{#if expanderName}}
+  {{#>bulma/components/panel/items/block block="is-borderless pl-4"}}
+    <h6 class="is-uppercase has-text-weight-semibold is-size-7">{{expanderName}}</h6>
+    <span class="has-border-solid is-flex-grow-1 ml-3"></span>
+    {{>bulma/elements/buttons/button-icon class="is-medium is-text is-transparent pr-2" i="mi
+      mi-remove-circle-outline" onclick=(replace "expandWithId(event,'###',true)" "###" (camelcase expanderName))}}
+  {{/bulma/components/panel/items/block}}
+{{/if}}

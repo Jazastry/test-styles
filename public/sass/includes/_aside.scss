@@ -1,0 +1,46 @@
+aside.is-sticky {
+	top: 0;
+	bottom: 0;
+	overflow-y: auto;
+	display: inline-block;
+	height: 100vh;
+	.is-sticky {
+		z-index: 1;
+	}
+}
+// PView: Aside sticky panel
+@mixin aside-sticky-panel($border-color: $grey-lighter, $background: $white-ter, $background-hover: $grey-lighter, $text: $black-ter) {
+	.pview aside.is-sticky {
+		// border-right: 1px solid $border-color;
+		//background: $background;
+		.tabs {
+			//background: $background;
+			ul {
+				// border-bottom: 1px solid $border-color;
+				li:not(.is-active) {
+					span {
+						//border-color: transparent;
+					}
+				}
+			}
+		}
+		// .panel-heading {
+		// 	background: $background;
+		// 	border-top: 1px solid $border-color;
+		// 	color: $grey;
+		// }
+		// .panel-block {
+		// 	color: $text;
+		// 	background: $background;
+		// 	&.is-active {
+		// 		background: $background-hover;
+		// 		&:hover {
+		// 			background: $background-hover;
+		// 		}
+		// 	}
+		// 	&:hover {
+		// 		background: $background-hover;
+		// 	}
+		// }
+	}
+}

@@ -1,0 +1,162 @@
+<table class="table tree is-fullwidth is-hoverable">
+  <thead>
+    <tr>
+      <th class="is-size-7 is-uppercase has-text-weight-semibold">App</th>
+      <th class="is-size-7 is-uppercase has-text-weight-semibold">Read</th>
+      <th class="is-size-7 is-uppercase has-text-weight-semibold">Write</th>
+      <th class="is-size-7 is-uppercase has-text-weight-semibold">Execute</th>
+      <th class="is-size-7 is-uppercase has-text-weight-semibold">Delete</th>
+      <th class="is-size-7 is-uppercase has-text-weight-semibold">Add</th>
+      <th class="is-size-7 is-uppercase has-text-weight-semibold has-text-right">Valid To</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <span class="icon is-small mr-1">
+          <i class="fas fa-user-shield fa-xs" aria-hidden="true"></i>
+        </span>
+        <span class="has-text-vcentered">Role Manager</span>
+      </td>
+      <td class="is-narrow">${require('./status/_allow.html')}</td>
+      <td class="is-narrow">${require('./status/_deny.html')}</td>
+      <td class="is-narrow">${require('./status/_inherit.html')}</td>
+      <td class="is-narrow">${require('./status/_not-set.html')}</td>
+      <td class="is-narrow">${require('./status/_allow.html')}</td>
+      <td class="is-narrow has-text-right"><span class="tag is-warning is-small has-text-vcentered">invalid</span></td>
+    </tr>
+    <tr class="level--0">
+      <td>
+        <span class="icon is-small has-text-vcentered mr-2 is-clickable has-text-opacity-70" aria-label="Expand this app">
+          <i class="mi mi-add-box" aria-hidden="true"></i>
+        </span>
+        <span class="icon is-small has-text-vcentered mr-1">
+          <picture>
+            <source
+              srcset="./images/logo/composed/symbol--negative.svg"
+              media="(prefers-color-scheme: dark)"
+            />
+            <source
+              srcset="./images/logo/composed/symbol--positive.svg"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+            />
+            <img class="is-flex" src="./images/logo/composed/symbol--positive.svg" alt="" width="16" />
+          </picture>
+        </span>
+        <span class="has-text-vcentered">Composed App 1</span>
+      </td>
+      <td class="is-narrow">${require('./status/_allow.html')}</td>
+      <td class="is-narrow">${require('./status/_allow.html')}</td>
+      <td class="is-narrow">${require('./status/_allow.html')}</td>
+      <td class="is-narrow">${require('./status/_allow.html')}</td>
+      <td class="is-narrow">${require('./status/_allow.html')}</td>
+      <td class="is-narrow has-text-right"><span class="is-size-7 has-text-vcentered">27 Feb 2021</span></td>
+    </tr>
+    <tr class="level--0">
+      <td class="is-borderless">
+        <span class="icon is-small has-text-vcentered mr-2 is-clickable has-text-opacity-70" aria-label="Collapse this app">
+          <i class="mi mi-indeterminate-check-box" aria-hidden="true"></i>
+        </span>
+        <span class="icon is-small has-text-vcentered mr-1">
+          <picture>
+            <source
+              srcset="./images/logo/composed/symbol--negative.svg"
+              media="(prefers-color-scheme: dark)"
+            />
+            <source
+              srcset="./images/logo/composed/symbol--positive.svg"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+            />
+            <img class="is-flex" src="./images/logo/composed/symbol--positive.svg" alt="" width="16" />
+          </picture>
+        </span>
+        <span class="has-text-vcentered">Composed App 1</span>
+      </td>
+      <td class="is-narrow is-borderless">${require('./status/_allow.html')}</td>
+      <td class="is-narrow is-borderless">${require('./status/_allow.html')}</td>
+      <td class="is-narrow is-borderless">${require('./status/_allow.html')}</td>
+      <td class="is-narrow is-borderless">${require('./status/_allow.html')}</td>
+      <td class="is-narrow is-borderless">${require('./status/_allow.html')}</td>
+      <td class="is-narrow is-borderless has-text-right"><span class="is-size-7">11 Jan 2021</span></td>
+    </tr>
+    <tr class="level--1">
+      <td class="is-borderless">
+        <span class="icon is-small has-text-vcentered mr-2 is-clickable has-text-opacity-70" aria-label="Collapse this category">
+          <i class="mi mi-indeterminate-check-box" aria-hidden="true"></i>
+        </span>
+        <span class="icon is-small has-text-vcentered mr-1">
+          <i class="fas fa-bookmark fa-xs" aria-hidden="true"></i>
+        </span>
+        <span class="has-text-vcentered">Category</span>
+      </td>
+      <td class="is-narrow is-borderless">${require('./status/_allow.html')}</td>
+      <td class="is-narrow is-borderless">${require('./status/_allow.html')}</td>
+      <td class="is-narrow is-borderless">${require('./status/_allow.html')}</td>
+      <td class="is-narrow is-borderless">${require('./status/_allow.html')}</td>
+      <td class="is-narrow is-borderless">${require('./status/_allow.html')}</td>
+      <td class="is-narrow is-borderless has-text-right"><span class="is-size-7 has-text-vcentered">31 Nov 2020</span></td>
+    </tr>
+    <tr class="level--2">
+      <td class="is-borderless">
+        <span class="icon is-small has-text-vcentered mr-1">
+          <picture>
+            <source
+              srcset="./images/logo/grafana/symbol--negative.svg"
+              media="(prefers-color-scheme: dark)"
+            />
+            <source
+              srcset="./images/logo/grafana/symbol--positive.svg"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+            />
+            <img class="is-flex" src="./images/logo/grafana/symbol--positive.svg" alt="" width="16" />
+          </picture>
+        </span>
+        <span class="has-text-vcentered">Screen #1</span>
+      </td>
+      <td class="is-narrow is-borderless">${require('./status/_allow.html')}</td>
+      <td class="is-narrow is-borderless">${require('./status/_allow.html')}</td>
+      <td class="is-narrow is-borderless">${require('./status/_allow.html')}</td>
+      <td class="is-narrow is-borderless">${require('./status/_allow.html')}</td>
+      <td class="is-narrow is-borderless">${require('./status/_allow.html')}</td>
+      <td class="is-narrow is-borderless has-text-right"><span class="is-size-7 has-text-vcentered">1 Jan 2021</span></td>
+    </tr>
+    <tr class="level--2">
+      <td>
+        <span class="icon is-small has-text-vcentered mr-1">
+          <picture>
+            <source
+              srcset="./images/logo/pview/symbol--negative.svg"
+              media="(prefers-color-scheme: dark)"
+            />
+            <source
+              srcset="./images/logo/pview/symbol--positive.svg"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+            />
+            <img class="is-flex" src="./images/logo/pview/symbol--positive.svg" alt="" width="16" />
+          </picture>
+        </span>
+        <span class="has-text-vcentered">Screen #2</span>
+      </td>
+      <td class="is-narrow">${require('./status/_allow.html')}</td>
+      <td class="is-narrow">${require('./status/_allow.html')}</td>
+      <td class="is-narrow">${require('./status/_allow.html')}</td>
+      <td class="is-narrow">${require('./status/_allow.html')}</td>
+      <td class="is-narrow">${require('./status/_allow.html')}</td>
+      <td class="is-narrow has-text-right"><span class="is-size-7 has-text-vcentered">1 Jan 2021</span></td>
+    </tr>
+    <tr class="level--0">
+      <td>
+        <span class="icon is-small has-text-vcentered mr-1">
+          <i class="mi mi-domain"></i>
+        </span>
+        <span class="has-text-vcentered">Provider Manager</span>
+      </td>
+      <td class="is-narrow">${require('./status/_allow.html')}</td>
+      <td class="is-narrow">${require('./status/_allow.html')}</td>
+      <td class="is-narrow">${require('./status/_allow.html')}</td>
+      <td class="is-narrow">${require('./status/_allow.html')}</td>
+      <td class="is-narrow">${require('./status/_allow.html')}</td>
+      <td class="is-narrow has-text-right"><span class="is-size-7 has-text-vcentered">17 Jan 2021</span></td>
+    </tr>
+  </tbody>
+</table>

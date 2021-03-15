@@ -1,0 +1,11 @@
+ {{#>bulma/layout/media/media media=(replace "is-align-items-center has-line-height-1 ###" "###" extendMedia)}}
+  {{#unless noMediaLeft}}
+    {{#>bulma/layout/media/items/left mediaLeft=(replace "is-flex ###" "###" mediaLeftExtend)}}
+      {{>@partial-block}} 
+    {{/bulma/layout/media/items/left}}
+  {{/unless}}
+
+  {{#>bulma/layout/media/items/content}}
+    {{>pview/components/card/items/signal/value-unit}}
+  {{/bulma/layout/media/items/content}}
+{{/bulma/layout/media/media}}

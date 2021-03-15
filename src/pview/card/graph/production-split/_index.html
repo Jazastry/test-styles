@@ -1,0 +1,45 @@
+<div class="card flex-column is-full-height">
+  <header class="card-header is-shadowless">
+    <h2 class="card-header-title is-uppercase is-size-7">Production Split</h2>
+  </header>
+  <div class="card-content px-3 mt-auto">
+
+    <div class="has-height-100 border-xy-axis is-relative mb-4">
+      <div class="is-flex is-relative is-full-height mx-6" style="z-index: 1">
+        ${require('_plant-to-grid.html')}
+        ${require('_plant-to-factory.html')}
+        ${require('_grid-to-factory.html')}
+      </div>
+
+      <span class="icon is-large has-text-grey-dark ml-auto mr-auto is-absolute is-top is-left is-right" style="margin-top: -20px">
+        <i class="icon-plant is-size-3" aria-hidden="true"></i>
+      </span>
+      <span class="icon is-large has-text-grey-dark is-absolute is-bottom is-left" style="margin-bottom: -24px">
+        <i class="icon-grid is-size-4" aria-hidden="true"></i>
+      </span>
+      <span class="icon is-large has-text-grey-dark is-absolute is-bottom is-right" style="margin-bottom: -24px">
+        <i class="icon-factory is-size-4" aria-hidden="true"></i>
+      </span>
+    </div>
+
+    <div class="columns is-mobile mt-4">
+      <div class="column is-6 has-text-centered">
+        <h2>
+          <span class="has-text-weight-semibold is-size-4 is-block has-line-height-1">
+            106<small class="is-size-7 has-text-weight-light">kW</small>
+          </span>
+          <small>Exported</small>
+        </h2>
+      </div>
+      <div class="column is-6 has-text-centered">
+        <h2>
+          <span class="has-text-weight-semibold is-size-4 is-block has-line-height-1">
+            36<small class="is-size-7 has-text-weight-light">kW</small>
+          </span>
+          <small>Consumed</small>
+        </h2>
+      </div>
+    </div>
+
+  </div>
+</div>

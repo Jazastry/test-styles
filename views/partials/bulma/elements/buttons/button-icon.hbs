@@ -1,0 +1,7 @@
+<button class="button icon {{class}}"
+{{#if this.data-tooltip}} data-tooltip="{{this.data-tooltip}}" {{/if}}
+{{#if this.data-target}} data-target="{{this.data-target}}" {{/if}}
+{{#if this.aria-controls}} aria-controls="{{this.aria-controls}}"{{/if}}
+{{#if this.onclick}} onclick="{{this.onclick}}"{{/if}}>
+  {{>bulma/elements/icons/i}}
+</button>

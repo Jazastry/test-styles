@@ -1,0 +1,101 @@
+<div class="js--toggle-navbar-composed flex-column is-fixed is-top is-hidden-mobile 
+js--toggle-aside">
+  ${require('aside/_elements.html')}
+</div>
+
+<div class="js--toggle-aside-content has-aside pb-5">
+  <div class="container is-fluid is-flex">
+    ${require('../pview/navbar/components/_navbar-item-menu-toggle.html')}
+  </div>
+  <div class="container is-fluid pt-5">
+    <section>
+
+      <div id="box" class="mt-6">
+        <div class="divider">
+          <h2 class="title is-capitalized">Box</h2>
+        </div>
+        ${require('../bulma/elements/_box.html')}
+      </div>
+
+      <div id="button" class="mt-6">
+        <div class="divider">
+          <h2 class="title is-capitalized">Button</h2>
+        </div>
+        ${require('../bulma/elements/_button.html')}
+        ${require('../config/_button-group.html')}
+      </div>
+
+      <div id="content" class="mt-6">
+        <div class="divider">
+          <h2 class="title is-capitalized">Content</h2>
+        </div>
+        ${require('../bulma/elements/_content.html')}
+      </div>
+
+      <div id="delete" class="mt-6">
+        <div class="divider">
+          <h2 class="title is-capitalized">Delete</h2>
+        </div>
+        ${require('../bulma/elements/_delete.html')}
+      </div>
+
+      <div id="icon" class="mt-6">
+        <div class="divider">
+          <h2 class="title is-capitalized">Icon</h2>
+        </div>
+        ${require('../bulma/elements/_icon.html')}
+        ${require('content/elements/_icon.html')}
+      </div>
+
+      <div id="image" class="mt-6">
+        <div class="divider">
+          <h2 class="title is-capitalized">Image</h2>
+        </div>
+        ${require('../bulma/elements/_image.html')}
+      </div>
+
+      <div id="notification" class="mt-6">
+        <div class="divider">
+          <h2 class="title is-capitalized">Notification</h2>
+        </div>
+        ${require('../bulma/elements/_notification.html')}
+      </div>
+
+      <div id="progress-bars" class="mt-6">
+        <div class="divider">
+          <h2 class="title is-capitalized">Progress Bars</h2>
+        </div>
+        ${require('../bulma/elements/_progress-bars.html')}
+      </div>
+
+      <div id="table" class="mt-6">
+        <div class="divider">
+          <h2 class="title is-capitalized">Table</h2>
+        </div>
+        ${require('../bulma/elements/_table.html')}
+        ${require('content/elements/_table.html')}
+      </div>
+
+      <div id="tag" class="mt-6">
+        <div class="divider">
+          <h2 class="title is-capitalized">Tag</h2>
+        </div>
+        ${require('../bulma/elements/_tag.html')}
+      </div>
+
+      <div id="title" class="mt-6">
+        <div class="divider">
+          <h2 class="title is-capitalized">Title</h2>
+        </div>
+        ${require('../bulma/elements/_title.html')}
+      </div>
+
+      <div id="other" class="mt-6">
+        <div class="divider">
+          <h2 class="title is-capitalized">Other</h2>
+        </div>
+        @import "other.sass" > block, delete, heading, highlight, loader, number
+      </div>
+    </section>
+  </div>
+</div>

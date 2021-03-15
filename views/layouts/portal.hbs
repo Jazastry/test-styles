@@ -1,0 +1,3148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Prediktor guidelines</title>
+    <style>
+      @import "/css/branding/prediktor/prediktor-dark.css" (prefers-color-scheme: dark);
+      @import "/css/branding/prediktor/prediktor-light.css" (prefers-color-scheme: no-preference), (prefers-color-scheme: light);
+    </style>
+  </head>
+
+  <body class="as-browser has-navbar-fixed-top has-composed-app">
+    <nav class="js--toggle-navbar as-browser navbar is-fixed-top" aria-label="main navigation">
+  <div class="navbar-brand is-full-width">
+    
+    <div class="navbar-tabs">
+  <div class="navbar-item is-clickable">
+    <a href="/bulma">
+      <i class="icon-bulma" aria-hidden="true"></i>
+      <span class="is-size-7 is-hidden-mobile">Bulma</span>
+    </a>
+  </div>
+  <div class="navbar-item is-clickable">
+    <a href="/custom">
+      <i class="fas fa-code" aria-hidden="true"></i>
+      <span class="is-size-7 is-hidden-mobile">Bulma</span>
+    </a>
+  </div>
+  <div class="navbar-item is-clickable">
+    <a href="/pview-html">
+      <i class="fas fa-code" aria-hidden="true"></i>
+      <span class="is-size-7 is-hidden-mobile">PView</span>
+    </a>
+  </div>
+  <div class="navbar-item is-clickable is-active">
+    <a href="/portal">
+      <i class="fas fa-code" aria-hidden="true"></i>
+      <span class="is-size-7 is-hidden-mobile">Portal vO.1</span>
+    </a>
+  </div>
+</div>
+
+
+    <div class="ml-auto is-flex">
+      <div class="navbar-item has-text-opacity-70 is-clickable has-tooltip-arrow has-tooltip-left" data-tooltip="Find Anything">
+        <i class="fas fa-search"></i>
+      </div>
+      <div class="navbar-item">
+        <div class="dropdown is-right">
+  <div class="dropdown-trigger">
+    <button class="button is-paddingless is-borderless is-transparent has-text-opacity-70 is-clickable" aria-haspopup="true" aria-controls="dropdown-menu4">
+      <span class="image is-20x20 has-badge">
+        <img src="https://bulma.io/images/placeholders/32x32.png" alt="" class="is-rounded">
+      </span>
+      <span class="icon is-small ml-0">
+        <i class="fas fa-angle-down fa-xs" aria-hidden="true"></i>
+      </span>
+    </button>
+  </div>
+  <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+    <div class="dropdown-content py-1">
+      <div class="divider is-size-8 my-1">Notifications</div>
+      <div class="dropdown-item has-text-weight-semibold is-size-7">
+        Here comes notification message. <a href="#" class="link">View more</a>
+      </div>
+      <div class="dropdown-item is-size-7">
+        This notification message has been read.
+      </div>
+      <div class="divider is-size-8 my-1">User</div>
+      <div class="dropdown-item">
+        <span class="is-20x20 is-inline-block has-text-centered mr-2">
+          <i class="fas fa-cog" aria-hidden="true"></i>
+        </span>
+        Settings
+      </div>
+      <hr class="dropdown-divider m-0">
+      <div class="dropdown-item">
+        <span class="is-20x20 is-inline-block has-text-centered mr-2">
+          <i class="fas fa-question-circle" aria-hidden="true"></i>
+        </span>
+        Help
+      </div>
+      <hr class="dropdown-divider m-0">
+      <div class="dropdown-item">
+        <span class="is-20x20 is-inline-block has-text-centered mr-2">
+          <i class="fas fa-sign-out-alt" aria-hidden="true"></i>
+        </span>
+        Log out
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+    <section class="as-browser navbar tabs composed-app is-fixed-top" aria-label="main navigation">
+  <ul class="is-borderless pt-3 pl-1">
+    <li class="tab screen is-active mx-1 is-clickable" onclick="openTab(event,'tab-app-manager')">
+      <figure class="image is-flex has-width-100 has-height-75">
+      </figure>
+      <div class="px-2">
+        <small class="is-size-7 is-truncated">App Manager</small>
+      </div>
+    </li>
+    <li class="tab screen mx-1 is-clickable" onclick="openTab(event,'tab-composed-app')">
+      <figure class="image is-flex has-width-100 has-height-75">
+      </figure>
+      <div class="px-2">
+        <small class="is-size-7 is-truncated">Composed App</small>
+      </div>
+    </li>
+    <li class="tab screen mx-1 is-clickable" onclick="openTab(event,'tab-screens')">
+      <figure class="image is-flex has-width-100 has-height-75"></figure>
+      <div class="px-2">
+        <small class="is-size-7 is-truncated">Composed App /<br />Screens</small>
+      </div>
+    </li>
+    <li class="tab screen mx-1 is-clickable" onclick="openTab(event,'tab-authorisation')">
+      <figure class="image is-flex has-width-100 has-height-75"></figure>
+      <div class="px-2">
+        <small class="is-size-7 is-truncated">Authorisation<br />Manager</small>
+      </div>
+    </li>
+    <li class="tab screen mx-1 is-clickable" onclick="openTab(event,'tab-provider')">
+      <figure class="image is-flex has-width-100 has-height-75"></figure>
+      <div class="px-2">
+        <small class="is-size-7 is-truncated">Provider<br />Manager</small>
+      </div>
+    </li>
+    <li class="tab screen mx-1 is-clickable" onclick="openTab(event,'tab-new-role')">
+      <figure class="image is-flex has-width-100 has-height-75"></figure>
+      <div class="px-2">
+        <small class="is-size-7 is-truncated">Authorisation /<br />New Role</small>
+      </div>
+    </li>
+    <li class="tab screen mx-1 is-clickable" onclick="openTab(event,'tab-new-app')">
+      <figure class="image is-flex has-width-100 has-height-75"></figure>
+      <div class="px-2">
+        <small class="is-size-7 is-truncated">Create App /<br />Step 1</small>
+      </div>
+    </li>
+    <li class="tab screen mx-1 is-clickable" onclick="openTab(event,'tab-new-app-native')">
+      <figure class="image is-flex has-width-100 has-height-75"></figure>
+      <div class="px-2">
+        <small class="is-size-7 is-truncated">Create App /<br /> Step 2 Native</small>
+      </div>
+    </li>
+    <li class="tab screen mx-1 is-clickable" onclick="openTab(event,'tab-new-app-native-register')">
+      <figure class="image is-flex has-width-100 has-height-75"></figure>
+      <div class="px-2">
+        <small class="is-size-7 is-truncated">Create App /<br /> Step 2.1 Native</small>
+      </div>
+    </li>
+    <li class="tab screen mx-1 is-clickable" onclick="openTab(event,'tab-new-app-created')">
+      <figure class="image is-flex has-width-100 has-height-75"></figure>
+      <div class="px-2">
+        <small class="is-size-7 is-truncated">Create App /<br /> Done</small>
+      </div>
+    </li>
+    <li class="tab screen mx-1 is-clickable" onclick="openTab(event,'tab-new-app-composed')">
+      <figure class="image is-flex has-width-100 has-height-75"></figure>
+      <div class="px-2">
+        <small class="is-size-7 is-truncated">Create App /<br /> Step 2<br />Composed</small>
+      </div>
+    </li>
+    <li class="tab screen mx-1 is-clickable" onclick="openTab(event,'tab-new-app-composed-screens')">
+      <figure class="image is-flex has-width-100 has-height-75"></figure>
+      <div class="px-2">
+        <small class="is-size-7 is-truncated">Create App /<br /> Step 3 Composed</small>
+      </div>
+    </li>
+    <li class="tab screen mx-1 is-clickable" onclick="openTab(event,'tab-new-app-composed-screens')">
+      <figure class="image is-flex has-width-100 has-height-75"></figure>
+      <div class="px-2">
+        <small class="is-size-7 is-truncated">Create App /<br /> Step 4 Composed</small>
+      </div>
+    </li>
+  </ul>
+</section>
+
+    <div class="js--toggle-navbar-parent as-browser level has-composed-app is-mobile is-size-8 px-3">
+  <div class="level-left">
+    <!-- When is shrinked item name appears here -->
+  </div>
+  <div class="level-right has-text-opacity-40 is-clickable">
+    <div class="js--toggle-navbar-button level-item">
+      <i class="icon-expand has-line-height-1"></i>
+    </div>
+  </div>
+</div>
+
+
+    <div class="js--toggle-navbar-content">
+      <nav class="js--toggle-navbar-composed navbar is-fixed-top has-portal-aside has-background-blurred" aria-label="main navigation">
+  <div class="container is-fluid">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="#">
+        <i class="fa fa-angle-double-right fa-xs" aria-hidden="true"></i>
+      </a>
+
+      <div class="navbar-item is-hidden-tablet">
+        <div class="control has-icons-left">
+          <input class="input is-rounded" type="text">
+          <span class="icon is-small is-left">
+            <i class="fas fa-search"></i>
+          </span>
+        </div>
+      </div><!-- Search for mobile -->
+
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarPortal1">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarPortal1" class="navbar-menu is-hidden-tablet">
+      <div class="navbar-start">
+        // Here comes the navigation for mobile
+      </div>
+    </div>
+
+    <div class="navbar-menu is-hidden-mobile">
+      <div class="navbar-start navbar-start--centered">
+        <div class="navbar-item">
+          <div class="control has-icons-left">
+            <input class="input is-rounded" type="text">
+            <span class="icon is-small is-left">
+              <i class="fas fa-search"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="dropdown is-right">
+            <div class="dropdown-trigger">
+              <button class="button is-borderless is-paddingless is-transparent has-badge" aria-haspopup="true" aria-controls="notifications">
+                <i class="fas fa-bell is-size-4" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="dropdown-menu" id="notifications" role="menu">
+              <div class="dropdown-content">
+                <div class="dropdown-item">
+                  <p>Here comes notification</p>
+                </div>
+                <hr class="dropdown-divider">
+                <div class="dropdown-item">
+                  <p>Another notification</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <div class="dropdown is-right">
+            <div class="dropdown-trigger">
+              <div class="button is-paddingless is-borderless is-transparent" aria-haspopup="true" aria-controls="dropdown-menu3">
+                <figure class="image is-32x32">
+                  <img src="https://bulma.io/images/placeholders/32x32.png" alt="" class="is-rounded">
+                </figure>
+                <span class="icon is-small">
+                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                </span>
+              </div>
+            </div>
+            <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+              <div class="dropdown-content">
+                <a href="#" class="dropdown-item">
+                  User Settings
+                </a>
+                <hr class="dropdown-divider">
+                <a href="#" class="dropdown-item">
+                  Log out
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+      <aside class="js--toggle-navbar-composed aside portal-aside is-hidden-mobile" style="top: 1rem">
+  <div class="menu">
+    <ul class="menu-list">
+      <li>
+        <a href="/" class="is-active pl-0 py-4 has-tooltip-arrow has-tooltip-right" data-tooltip="Home">
+          <span class="icon has-width-50">
+            <i class="fa fa-home is-size-5"></i>
+          </span>
+        </a>
+      </li>
+      <li><hr class="my-0 has-background-dark"></li>
+      <li>
+        <a href="/composed-app" class="pl-0 py-3 has-tooltip-arrow has-tooltip-right" data-tooltip="Composed App 1">
+          <span class="icon has-width-50">
+            <i class="mi mi-folder is-size-5"></i>
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="/" class="pl-0 py-3 has-tooltip-arrow has-tooltip-right" data-tooltip="Grafana">
+          <span class="icon has-width-50">
+            <i class="icon-grafana is-size-5"></i>
+          </span>
+        </a>
+      </li>
+      <li><hr class="my-0 has-background-dark"></li>
+      <li>
+        <a href="/app-manager" class="pl-0 py-3 has-tooltip-arrow has-tooltip-right" data-tooltip="App Manager">
+          <span class="icon has-width-50">
+            <i class="fa fa-th-large is-size-5"></i>
+          </span>
+        </a>
+      </li>
+      <li><hr class="my-0 has-background-dark"></li>
+      <li>
+        <a href="/authorisation-manager" class="pl-0 py-3 has-tooltip-arrow has-tooltip-right" data-tooltip="Authorisation Manager">
+          <span class="icon has-width-50">
+            <i class="fa fa-shield-alt is-size-5"></i>
+          </span>
+        </a>
+      </li>
+      <li><hr class="my-0 has-background-dark"></li>
+      <li>
+        <a href="/provider-manager" class="pl-0 py-3 has-tooltip-arrow has-tooltip-right" data-tooltip="Provider Manager">
+          <span class="icon has-width-50">
+            <i class="mi mi-domain is-size-5"></i>
+          </span>
+        </a>
+      </li>
+      <li><hr class="my-0 has-background-dark"></li>
+    </ul>
+  </div>
+</aside>
+
+
+      <div id="tab-app-manager" class="content-tab">
+        <div class="has-portal-aside mt-6">
+
+  <div class="section px-6">
+    <div class="level">
+      <div class="level-left">
+        <h1 class="title is-size-4 has-text-weight-medium">App Manager</h1>
+      </div>
+      <div class="level-right">
+        <button class="button icon is-rounded is-primary has-tooltip-arrow" data-tooltip="Create App">
+          <i class="fas fa-plus" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="section pt-0 px-6">
+    <div class="has-shadow">
+      <table class="table tree is-fullwidth is-hoverable">
+  <thead>
+    <tr>
+      <th class="is-size-7 is-uppercase has-text-weight-semibold">Name</th>
+      <th><span class="is-hidden">Actions</span></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <span class="icon is-small has-text-vcentered mr-1">
+          <i class="icon-grafana"></i>
+        </span>
+        <span class="has-text-vcentered is-clickable">Grafana</span>
+      </td>
+      <td class="is-narrow has-text-vcentered">
+        <div class="field is-grouped is-pulled-right">
+          <button class="button icon is-small is-rounded is-hoverable mr-2 has-tooltip-arrow" data-tooltip="View App">
+            <i class="fa fa-eye"></i>
+          </button>
+          <button class="button icon is-small is-rounded has-tooltip-arrow" data-tooltip="Unpin from menu">
+            <i class="fas fa-thumbtack"></i>
+          </button>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="icon is-small has-text-vcentered mr-2 is-clickable has-text-opacity-70" aria-label="Expand this app">
+          <i class="mi mi-add-box" aria-hidden="true"></i>
+        </span>
+        <span class="icon is-small has-text-vcentered mr-1">
+          <picture>
+            <source
+              srcset="./images/logo/composed/symbol--negative.svg"
+              media="(prefers-color-scheme: dark)"
+            />
+            <source
+              srcset="./images/logo/composed/symbol--positive.svg"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+            />
+            <img class="is-flex" src="./images/logo/composed/symbol--positive.svg" alt="" width="16" />
+          </picture>
+        </span>
+        <span class="has-text-vcentered is-clickable">Composed App 1</span>
+      </td>
+      <td class="is-narrow has-text-vcentered">
+        <div class="field is-grouped is-pulled-right">
+          <button class="button icon is-small is-rounded mr-2 has-tooltip-arrow" data-tooltip="View App">
+            <i class="fa fa-eye"></i>
+          </button>
+          <button class="button icon is-small is-rounded has-tooltip-arrow" data-tooltip="Pin to menu">
+            <span class="icon is-small rotate-90 has-text-grey">
+              <i class="fas fa-thumbtack"></i>
+            </span>
+          </button>
+        </div>
+      </td>
+    </tr>
+    <tr class="level--0">
+      <td class="is-borderless">
+        <span class="icon is-small has-text-vcentered mr-2 is-clickable has-text-opacity-70" aria-label="Collapse this app">
+          <i class="mi mi-indeterminate-check-box" aria-hidden="true"></i>
+        </span>
+        <span class="icon is-small has-text-vcentered mr-1">
+          <picture>
+            <source
+              srcset="./images/logo/composed/symbol--negative.svg"
+              media="(prefers-color-scheme: dark)"
+            />
+            <source
+              srcset="./images/logo/composed/symbol--positive.svg"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+            />
+            <img class="is-flex" src="./images/logo/composed/symbol--positive.svg" alt="" width="16" />
+          </picture>
+        </span>
+        <span class="has-text-vcentered is-clickable">Composed App 2</span>
+      </td>
+      <td class="is-narrow has-text-vcentered is-borderless">
+        <div class="field is-grouped is-pulled-right">
+          <button class="button icon is-small is-rounded mr-2 has-tooltip-arrow" data-tooltip="View App">
+            <i class="fa fa-eye"></i>
+          </button>
+          <button class="button icon is-small is-rounded has-tooltip-arrow" data-tooltip="Unpin from menu">
+            <i class="fas fa-thumbtack"></i>
+          </button>
+        </div>
+      </td>
+    </tr>
+    <tr class="level--1">
+      <td class="is-borderless">
+        <span class="icon is-small has-text-vcentered mr-2 is-clickable has-text-opacity-70" aria-label="Collapse this category">
+          <i class="mi mi-indeterminate-check-box" aria-hidden="true"></i>
+        </span>
+        <span class="icon is-small has-text-vcentered mr-1">
+          <i class="fas fa-bookmark fa-xs" aria-hidden="true"></i>
+        </span>
+        <span class="has-text-vcentered">Category</span>
+      </td>
+      <td class="is-borderless">
+        <button class="button icon is-small is-rounded mr-2 has-tooltip-arrow" data-tooltip="Actions">
+          <i class="fa fa-ellipsis-v"></i>
+        </button>
+      </td>
+    </tr>
+    <tr class="level--2">
+      <td class="is-borderless">
+        <span class="icon is-small has-text-vcentered mr-1">
+          <picture>
+            <source srcset="./images/logo/grafana/symbol--negative.svg" media="(prefers-color-scheme: dark)">
+            <source srcset="./images/logo/grafana/symbol--positive.svg" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
+            <img class="is-flex" src="./images/logo/grafana/symbol--positive.svg" alt="" width="16">
+          </picture>
+        </span>
+        <span class="has-text-vcentered">Screen #1</span>
+      </td>
+      <td>
+        <button class="button icon is-small is-rounded mr-2 has-tooltip-arrow" data-tooltip="Actions">
+          <i class="fa fa-ellipsis-v"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+  </div>
+
+</div>
+
+      </div>
+
+      <div id="tab-composed-app" class="content-tab" style="display:none">
+        <div class="has-portal-aside mt-6">
+
+  <div class="section">
+    Here comes the content
+  </div>
+
+  <nav class="navbar is-screen-nav is-block is-fixed-bottom pb-1 has-shadow has-background-blurred">
+    <div class="level mx-2 my-1 is-mobile">
+      <div class="level-left">
+        <div class="level-item">
+          <div class="control has-icons-left ml-3">
+            <input class="input is-small" type="text" placeholder="Search for screens">
+            <span class="icon is-small is-left">
+              <i class="fas fa-search"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="level-item">
+        <div class="tabs is-small">
+          <ul>
+            <li class="tab is-active" onclick="openTab(event,'tab1')">
+              <a>
+                <span class="icon is-small">
+                  <i class="fas fa-bookmark" aria-hidden="true"></i></span>
+                <span>Favourites</span>
+              </a>
+            </li>
+            <li class="tab" onclick="openTab(event,'tab2')">
+              <a>
+                <span class="icon is-small">
+                  <i class="fas fa-bookmark" aria-hidden="true"></i></span>
+                <span>Dashboards</span>
+              </a>
+            </li>
+            <li class="tab" onclick="openTab(event,'tab3')">
+              <a>
+                <span class="icon is-small">
+                  <i class="fas fa-bookmark" aria-hidden="true"></i></span>
+                <span>Operator Favourites</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="level-right">
+        <div class="level-item">
+          <button class="button icon is-small is-rounded has-tooltip-arrow" data-tooltip="App Settings">
+            <i class="fa fa-cog" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="level-item">
+          <button class="button icon is-small is-rounded has-tooltip-arrow" data-tooltip="Hide">
+            <i class="fa fa-angle-double-down" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab1" class="content-tab">
+      <div class="columns mx-2 mt-1">
+        <div class="column is-narrow">
+          <a href="#" class="screen">
+  <figure class="image is-flex has-width-100 has-height-75">
+    <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+  </figure>
+  <small class="text is-block is-size-7 has-text-centered mt-1">Screen 1</small>
+</a>
+
+        </div>
+        <div class="column is-narrow">
+          <a href="#" class="screen">
+  <figure class="image is-flex has-width-100 has-height-75">
+    <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+  </figure>
+  <small class="text is-block is-size-7 has-text-centered mt-1">Screen 1</small>
+</a>
+
+        </div>
+        <div class="column is-narrow">
+          <a href="#" class="screen">
+  <figure class="image is-flex has-width-100 has-height-75">
+    <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+  </figure>
+  <small class="text is-block is-size-7 has-text-centered mt-1">Screen 1</small>
+</a>
+
+        </div>
+        <div class="column is-narrow">
+          <a href="#" class="screen">
+  <figure class="image is-flex has-width-100 has-height-75">
+    <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+  </figure>
+  <small class="text is-block is-size-7 has-text-centered mt-1">Screen 1</small>
+</a>
+
+        </div>
+        <div class="column is-narrow">
+          <a href="#" class="screen is-active">
+  <figure class="image is-flex has-width-100 has-height-75">
+    <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+  </figure>
+  <small class="text is-block is-size-7 has-text-centered mt-1">Screen 2</small>
+</a>
+
+        </div>
+        <div class="column is-narrow">
+          <a href="#" class="screen is-new">
+  <div class="is-flex has-width-100 has-height-75">
+    <span class="icon is-size-4 m-auto">
+      <i class="fas fa-plus" aria-hidden="true"></i>
+    </span>
+  </div>
+  <small class="text is-block is-size-7 has-text-centered mt-1">Add screen</small>
+</a>
+
+        </div>
+      </div>
+    </div>
+    <div id="tab2" class="content-tab" style="display:none">
+      <div class="columns mx-2 mt-1">
+        <div class="column is-narrow">
+          <a href="#" class="screen">
+  <figure class="image is-flex has-width-100 has-height-75">
+    <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+  </figure>
+  <small class="text is-block is-size-7 has-text-centered mt-1">Screen 1</small>
+</a>
+
+        </div>
+        <div class="column is-narrow">
+          <a href="#" class="screen is-new">
+  <div class="is-flex has-width-100 has-height-75">
+    <span class="icon is-size-4 m-auto">
+      <i class="fas fa-plus" aria-hidden="true"></i>
+    </span>
+  </div>
+  <small class="text is-block is-size-7 has-text-centered mt-1">Add screen</small>
+</a>
+
+        </div>
+      </div>
+    </div>
+    <div id="tab3" class="content-tab is-block" style="display:none">
+      <div class="columns mx-2 mt-1">
+        <div class="column is-narrow">
+          <a href="#" class="screen">
+  <figure class="image is-flex has-width-100 has-height-75">
+    <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+  </figure>
+  <small class="text is-block is-size-7 has-text-centered mt-1">Screen 1</small>
+</a>
+
+        </div>
+        <div class="column is-narrow">
+          <a href="#" class="screen">
+  <figure class="image is-flex has-width-100 has-height-75">
+    <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+  </figure>
+  <small class="text is-block is-size-7 has-text-centered mt-1">Screen 1</small>
+</a>
+
+        </div>
+        <div class="column is-narrow">
+          <a href="#" class="screen is-new">
+  <div class="is-flex has-width-100 has-height-75">
+    <span class="icon is-size-4 m-auto">
+      <i class="fas fa-plus" aria-hidden="true"></i>
+    </span>
+  </div>
+  <small class="text is-block is-size-7 has-text-centered mt-1">Add screen</small>
+</a>
+
+        </div>
+      </div>
+    </div>
+
+  </nav>
+</div>
+
+      </div>
+
+      <div id="tab-screens" class="content-tab" style="display:none">
+        <div class="has-portal-aside mt-6">
+
+  <div class="section px-6">
+    <div class="level">
+      <div class="level-left">
+        <nav class="breadcrumb is-large" aria-label="breadcrumbs">
+          <ul>
+            <li><a href="#" class="has-text-weight-medium">App Manager</a></li>
+            <li class="is-active">
+              <a href="#" aria-current="page" class="has-text-weight-medium">
+                <span class="icon has-text-vcentered mr-3 ml-0">
+                  <picture>
+                    <source srcset="./images/logo/composed/symbol--negative.svg" media="(prefers-color-scheme: dark)">
+                    <source srcset="./images/logo/composed/symbol--positive.svg" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
+                    <img class="is-flex" src="./images/logo/composed/symbol--positive.svg" alt="" width="24">
+                  </picture>
+                </span>
+                Composed App 1
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <div class="section pt-0 px-6">
+    <div class="columns has-shadow is-marginless">
+      <div class="column is-narrow is-paddingless">
+        <nav class="panel is-nav is-full-height">
+          <div class="tabs panel-tabs m-auto">
+            <ul>
+              <li class="tab" onclick="">
+                <a class="is-inline-block has-text-centered">
+                  <span class="icon is-small mr-0">
+                    <i class="fas fa-cog" aria-hidden="true"></i>
+                  </span>
+                  <span class="is-block is-size-7 is-uppercase has-text-weight-semibold">
+                    <small>Settings</small>
+                  </span>
+                </a>
+              </li>
+              <li class="tab is-active" onclick="">
+                <a class="is-inline-block has-text-centered">
+                  <span class="icon is-small mr-0">
+                    <i class="mi mi-computer" aria-hidden="true"></i>
+                  </span>
+                  <span class="is-block is-size-7 is-uppercase has-text-weight-semibold">
+                    <small>Screens</small>
+                  </span>
+                </a>
+              </li>
+              <li class="tab" onclick="">
+                <a class="is-inline-block has-text-centered">
+                  <span class="icon is-small mr-0">
+                    <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                  </span>
+                  <span class="is-block is-size-7 is-uppercase has-text-weight-semibold">
+                    <small>Permissions</small>
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <p class="panel-block">
+            <span>All Categories</span>
+            <button class="button icon is-small is-rounded ml-auto has-tooltip-arrow" data-tooltip="Add Category">
+              <i class="fas fa-plus" aria-hidden="true"></i>
+            </button>
+          </p>
+          <a href="#" class="panel-block is-active">
+            <span class="panel-icon">
+              <i class="fa fa-bookmark fa-xs mr-2" aria-hidden="true"></i>
+            </span>
+            Favourites
+          </a>
+          <a href="#" class="panel-block">
+            <span class="panel-icon">
+              <i class="fa fa-bookmark fa-xs mr-2" aria-hidden="true"></i>
+            </span>
+            Dashboards
+          </a>
+          <a href="#" class="panel-block is-radiusless">
+            <span class="panel-icon">
+              <i class="fa fa-bookmark fa-xs mr-2" aria-hidden="true"></i>
+            </span>
+            Operator Favourites
+          </a>
+        </nav>
+      </div>
+      <div class="column">
+        <div class="px-5 py-5">
+          <div class="content-tab is-block" style="display: block;">
+            <h2 class="title is-size-3 has-text-weight-medium">
+              Favourites
+              <span class="icon is-size-5 has-text-vcentered">
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+              </span>
+            </h2>
+            <hr class="mt-0" />
+            <div class="columns is-multiline">
+              <div class="column is-3">
+                <div class="card is-screen">
+  <div class="card-image is-relative">
+    <figure class="image is-4by3">
+      <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+    </figure>
+    <div class="dropdown is-absolute is-right is-top mr-2 mt-2">
+      <div class="dropdown-trigger">
+        <button class="button icon is-small is-link is-rounded" aria-haspopup="true" aria-controls="dropdown-menu">
+          <i class="fas fa-ellipsis-v" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="dropdown-menu" id="dropdown-menu" role="menu">
+        <div class="dropdown-content">
+          <a href="#" class="dropdown-item dropdown-block">
+            <span class="dropdown-icon">
+              <i class="fa fa-pencil" aria-hidden="true"></i>
+            </span>
+            Edit
+          </a>
+          <a href="#" class="dropdown-item dropdown-block">
+            <span class="dropdown-icon">
+              <i class="fas fa-copy" aria-hidden="true"></i>
+            </span>
+            Clone
+          </a>
+          <a class="dropdown-item">
+            <span class="dropdown-icon">
+              <i class="fas fa-long-arrow-alt-right" aria-hidden="true"></i>
+            </span>
+            Move to...
+          </a>
+          <hr class="dropdown-divider">
+          <a href="#" class="dropdown-item dropdown-block">
+            <span class="dropdown-icon">
+              <i class="fas fa-trash" aria-hidden="true"></i>
+            </span>
+            Delete
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-content px-2 py-2">
+    <span class="icon is-small has-text-vcentered mr-1">
+      <picture>
+        <source
+          srcset="./images/logo/grafana/symbol--negative.svg"
+          media="(prefers-color-scheme: dark)"
+        />
+        <source
+          srcset="./images/logo/grafana/symbol--positive.svg"
+          media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+        />
+        <img class="is-flex" src="./images/logo/grafana/symbol--positive.svg" alt="" width="16" />
+      </picture>
+    </span>
+    <span class="has-text-vcentered">Screen #1</span>
+    <div class="mt-1">
+      <span class="is-size-7">Provider Name</span>
+      <span class="is-size-7 is-block">/dashboard</span>
+    </div>
+  </div>
+</div>
+
+              </div>
+              <div class="column is-3">
+                <div class="card is-screen is-new is-full-height is-flex">
+  <a href="#" class="is-flex has-text-centered is-full-width">
+    <div class="m-auto">
+      <span class="icon is-large">
+        <i class="fas fa-plus fa-2x" aria-hidden="true"></i>
+      </span>
+      <span class="text is-block">Add screen</span>
+    </div>
+  </a>
+</div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+      </div>
+
+      <div id="tab-authorisation" class="content-tab" style="display:none">
+        <div class="has-portal-aside mt-6">
+
+  <div class="section px-6">
+    <div class="level">
+      <div class="level-left">
+        <h1 class="title is-size-4 has-text-weight-medium">Authorisation Manager</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="section pt-0 px-6">
+    <div class="columns has-shadow is-marginless">
+      <div class="column is-2 is-paddingless">
+        <nav class="panel is-nav is-full-height">
+          <p class="panel-block">
+            <span>All Roles</span>
+            <button class="button icon is-small is-rounded ml-auto has-tooltip-arrow" data-tooltip="Add Role">
+              <i class="fas fa-plus" aria-hidden="true"></i>
+            </button>
+          </p>
+          <a href="#" class="panel-block is-active">Administrator</a>
+          <a href="#" class="panel-block">Operator Line A</a>
+          <a href="#" class="panel-block">Operator Line B</a>
+          <a href="#" class="panel-block is-radiusless">Packaging Line A</a>
+        </nav>
+      </div>
+      <div class="column">
+        <div class="px-5 py-5">
+          <div class="is-flex">
+            <h2 class="title is-size-3 has-text-weight-medium mt-auto mb-2">Administrator</h2>
+            <div class="tabs m-auto">
+              <ul>
+                <li class="tab is-active" onclick="openTab(event,'tabPermissions')">
+                  <a class="is-inline-block has-text-centered">
+                    <span class="icon is-small mr-0">
+                      <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                    </span>
+                    <span class="is-block is-size-7 is-uppercase has-text-weight-semibold">
+                      <small>Permissions</small>
+                    </span>
+                  </a>
+                </li>
+                <li class="tab" onclick="openTab(event,'tabUsers')">
+                  <a class="is-inline-block has-text-centered">
+                    <span class="icon is-small mr-0">
+                      <i class="fas fa-users" aria-hidden="true"></i>
+                    </span>
+                    <span class="is-block is-size-7 is-uppercase has-text-weight-semibold">
+                      <small>Users</small>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <hr class="my-0" />
+          <p class="is-size-7 mt-1">Here comes the description of this role if any</p>
+          <div class="mt-6">
+            <div id="tabPermissions" class="content-tab is-block" style="display: block;">
+              <table class="table tree is-fullwidth is-hoverable">
+  <thead>
+    <tr>
+      <th class="is-size-7 is-uppercase has-text-weight-semibold">App</th>
+      <th class="is-size-7 is-uppercase has-text-weight-semibold">Read</th>
+      <th class="is-size-7 is-uppercase has-text-weight-semibold">Write</th>
+      <th class="is-size-7 is-uppercase has-text-weight-semibold">Execute</th>
+      <th class="is-size-7 is-uppercase has-text-weight-semibold">Delete</th>
+      <th class="is-size-7 is-uppercase has-text-weight-semibold">Add</th>
+      <th class="is-size-7 is-uppercase has-text-weight-semibold has-text-right">Valid To</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <span class="icon is-small mr-1">
+          <i class="fas fa-user-shield fa-xs" aria-hidden="true"></i>
+        </span>
+        <span class="has-text-vcentered">Role Manager</span>
+      </td>
+      <td class="is-narrow"><div class="control has-icons-left is-rounded">
+  <div class="select is-small">
+    <select aria-label="Read">
+      <option selected>Allow</option>
+      <option>Inherit</option>
+      <option>Deny</option>
+      <option>Not Set</option>
+    </select>
+  </div>
+  <span class="icon is-small is-left">
+    <i class="fas fa-check has-text-success" aria-hidden="true"></i>
+  </span>
+</div>
+</td>
+      <td class="is-narrow"><div class="control has-icons-left is-rounded">
+  <div class="select is-small">
+    <select aria-label="Read">
+      <option selected>Deny</option>
+      <option>Inherit</option>
+      <option>Allow</option>
+      <option>Not Set</option>
+    </select>
+  </div>
+  <span class="icon is-small is-left">
+    <i class="fas fa-ban has-text-danger" aria-hidden="true"></i>
+  </span>
+</div>
+</td>
+      <td class="is-narrow"><div class="control has-icons-left is-rounded">
+  <div class="select is-small">
+    <select aria-label="Read">
+      <option selected>Inherit</option>
+      <option>Allow</option>
+      <option>Deny</option>
+      <option>Not Set</option>
+    </select>
+  </div>
+  <span class="icon is-small is-left">
+    <i class="fas fa-dna has-text-grey" aria-hidden="true"></i>
+  </span>
+</div>
+</td>
+      <td class="is-narrow"><div class="control has-icons-left is-rounded">
+  <div class="select is-small">
+    <select aria-label="Read">
+      <option selected>Not Set</option>
+      <option>Allow</option>
+      <option>Deny</option>
+      <option>Inherit</option>
+    </select>
+  </div>
+  <span class="icon is-small is-left">
+    <i class="fas fa-question has-text-grey-light" aria-hidden="true"></i>
+  </span>
+</div>
+</td>
+      <td class="is-narrow"><div class="control has-icons-left is-rounded">
+  <div class="select is-small">
+    <select aria-label="Read">
+      <option selected>Allow</option>
+      <option>Inherit</option>
+      <option>Deny</option>
+      <option>Not Set</option>
+    </select>
+  </div>
+  <span class="icon is-small is-left">
+    <i class="fas fa-check has-text-success" aria-hidden="true"></i>
+  </span>
+</div>
+</td>
+      <td class="is-narrow has-text-right"><span class="tag is-warning is-small has-text-vcentered">invalid</span></td>
+    </tr>
+    <tr class="level--0">
+      <td>
+        <span class="icon is-small has-text-vcentered mr-2 is-clickable has-text-opacity-70" aria-label="Expand this app">
+          <i class="mi mi-add-box" aria-hidden="true"></i>
+        </span>
+        <span class="icon is-small has-text-vcentered mr-1">
+          <picture>
+            <source
+              srcset="./images/logo/composed/symbol--negative.svg"
+              media="(prefers-color-scheme: dark)"
+            />
+            <source
+              srcset="./images/logo/composed/symbol--positive.svg"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+            />
+            <img class="is-flex" src="./images/logo/composed/symbol--positive.svg" alt="" width="16" />
+          </picture>
+        </span>
+        <span class="has-text-vcentered">Composed App 1</span>
+      </td>
+      <td class="is-narrow"><div class="control has-icons-left is-rounded">
+  <div class="select is-small">
+    <select aria-label="Read">
+      <option selected>Allow</option>
+      <option>Inherit</option>
+      <option>Deny</option>
+      <option>Not Set</option>
+    </select>
+  </div>
+  <span class="icon is-small is-left">
+    <i class="fas fa-check has-text-success" aria-hidden="true"></i>
+  </span>
+</div>
+</td>
+      <td class="is-narrow"><div class="control has-icons-left is-rounded">
+  <div class="select is-small">
+    <select aria-label="Read">
+      <option selected>Allow</option>
+      <option>Inherit</option>
+      <option>Deny</option>
+      <option>Not Set</option>
+    </select>
+  </div>
+  <span class="icon is-small is-left">
+    <i class="fas fa-check has-text-success" aria-hidden="true"></i>
+  </span>
+</div>
+</td>
+      <td class="is-narrow"><div class="control has-icons-left is-rounded">
+  <div class="select is-small">
+    <select aria-label="Read">
+      <option selected>Allow</option>
+      <option>Inherit</option>
+      <option>Deny</option>
+      <option>Not Set</option>
+    </select>
+  </div>
+  <span class="icon is-small is-left">
+    <i class="fas fa-check has-text-success" aria-hidden="true"></i>
+  </span>
+</div>
+</td>
+      <td class="is-narrow"><div class="control has-icons-left is-rounded">
+  <div class="select is-small">
+    <select aria-label="Read">
+      <option selected>Allow</option>
+      <option>Inherit</option>
+      <option>Deny</option>
+      <option>Not Set</option>
+    </select>
+  </div>
+  <span class="icon is-small is-left">
+    <i class="fas fa-check has-text-success" aria-hidden="true"></i>
+  </span>
+</div>
+</td>
+      <td class="is-narrow"><div class="control has-icons-left is-rounded">
+  <div class="select is-small">
+    <select aria-label="Read">
+      <option selected>Allow</option>
+      <option>Inherit</option>
+      <option>Deny</option>
+      <option>Not Set</option>
+    </select>
+  </div>
+  <span class="icon is-small is-left">
+    <i class="fas fa-check has-text-success" aria-hidden="true"></i>
+  </span>
+</div>
+</td>
+      <td class="is-narrow has-text-right"><span class="is-size-7 has-text-vcentered">27 Feb 2021</span></td>
+    </tr>
+    <tr class="level--0">
+      <td class="is-borderless">
+        <span class="icon is-small has-text-vcentered mr-2 is-clickable has-text-opacity-70" aria-label="Collapse this app">
+          <i class="mi mi-indeterminate-check-box" aria-hidden="true"></i>
+        </span>
+        <span class="icon is-small has-text-vcentered mr-1">
+          <picture>
+            <source
+              srcset="./images/logo/composed/symbol--negative.svg"
+              media="(prefers-color-scheme: dark)"
+            />
+            <source
+              srcset="./images/logo/composed/symbol--positive.svg"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+            />
+            <img class="is-flex" src="./images/logo/composed/symbol--positive.svg" alt="" width="16" />
+          </picture>
+        </span>
+        <span class="has-text-vcentered">Composed App 1</span>
+      </td>
+      <td class="is-narrow is-borderless"><div class="control has-icons-left is-rounded">
+  <div class="select is-small">
+    <select aria-label="Read">
+      <option selected>Allow</option>
+      <option>Inherit</option>
+      <option>Deny</option>
+      <option>Not Set</option>
+    </select>
+  </div>
+  <span class="icon is-small is-left">
+    <i class="fas fa-check has-text-success" aria-hidden="true"></i>
+  </span>
+</div>
+</td>
+      <td class="is-narrow is-borderless"><div class="control has-icons-left is-rounded">
+  <div class="select is-small">
+    <select aria-label="Read">
+      <option selected>Allow</option>
+      <option>Inherit</option>
+      <option>Deny</option>
+      <option>Not Set</option>
+    </select>
+  </div>
+  <span class="icon is-small is-left">
+    <i class="fas fa-check has-text-success" aria-hidden="true"></i>
+  </span>
+</div>
+</td>
+      <td class="is-narrow is-borderless"><div class="control has-icons-left is-rounded">
+  <div class="select is-small">
+    <select aria-label="Read">
+      <option selected>Allow</option>
+      <option>Inherit</option>
+      <option>Deny</option>
+      <option>Not Set</option>
+    </select>
+  </div>
+  <span class="icon is-small is-left">
+    <i class="fas fa-check has-text-success" aria-hidden="true"></i>
+  </span>
+</div>
+</td>
+      <td class="is-narrow is-borderless"><div class="control has-icons-left is-rounded">
+  <div class="select is-small">
+    <select aria-label="Read">
+      <option selected>Allow</option>
+      <option>Inherit</option>
+      <option>Deny</option>
+      <option>Not Set</option>
+    </select>
+  </div>
+  <span class="icon is-small is-left">
+    <i class="fas fa-check has-text-success" aria-hidden="true"></i>
+  </span>
+</div>
+</td>
+      <td class="is-narrow is-borderless"><div class="control has-icons-left is-rounded">
+  <div class="select is-small">
+    <select aria-label="Read">
+      <option selected>Allow</option>
+      <option>Inherit</option>
+      <option>Deny</option>
+      <option>Not Set</option>
+    </select>
+  </div>
+  <span class="icon is-small is-left">
+    <i class="fas fa-check has-text-success" aria-hidden="true"></i>
+  </span>
+</div>
+</td>
+      <td class="is-narrow is-borderless has-text-right"><span class="is-size-7">11 Jan 2021</span></td>
+    </tr>
+    <tr class="level--1">
+      <td class="is-borderless">
+        <span class="icon is-small has-text-vcentered mr-2 is-clickable has-text-opacity-70" aria-label="Collapse this category">
+          <i class="mi mi-indeterminate-check-box" aria-hidden="true"></i>
+        </span>
+        <span class="icon is-small has-text-vcentered mr-1">
+          <i class="fas fa-bookmark fa-xs" aria-hidden="true"></i>
+        </span>
+        <span class="has-text-vcentered">Category</span>
+      </td>
+      <td class="is-narrow is-borderless"><div class="control has-icons-left is-rounded">
+  <div class="select is-small">
+    <select aria-label="Read">
+      <option selected>Allow</option>
+      <option>Inherit</option>
+      <option>Deny</option>
+      <option>Not Set</option>
+    </select>
+  </div>
+  <span class="icon is-small is-left">
+    <i class="fas fa-check has-text-success" aria-hidden="true"></i>
+  </span>
+</div>
+</td>
+      <td class="is-narrow is-borderless"><div class="control has-icons-left is-rounded">
+  <div class="select is-small">
+    <select aria-label="Read">
+      <option selected>Allow</option>
+      <option>Inherit</option>
+      <option>Deny</option>
+      <option>Not Set</option>
+    </select>
+  </div>
+  <span class="icon is-small is-left">
+    <i class="fas fa-check has-text-success" aria-hidden="true"></i>
+  </span>
+</div>
+</td>
+      <td class="is-narrow is-borderless"><div class="control has-icons-left is-rounded">
+  <div class="select is-small">
+    <select aria-label="Read">
+      <option selected>Allow</option>
+      <option>Inherit</option>
+      <option>Deny</option>
+      <option>Not Set</option>
+    </select>
+  </div>
+  <span class="icon is-small is-left">
+    <i class="fas fa-check has-text-success" aria-hidden="true"></i>
+  </span>
+</div>
+</td>
+      <td class="is-narrow is-borderless"><div class="control has-icons-left is-rounded">
+  <div class="select is-small">
+    <select aria-label="Read">
+      <option selected>Allow</option>
+      <option>Inherit</option>
+      <option>Deny</option>
+      <option>Not Set</option>
+    </select>
+  </div>
+  <span class="icon is-small is-left">
+    <i class="fas fa-check has-text-success" aria-hidden="true"></i>
+  </span>
+</div>
+</td>
+      <td class="is-narrow is-borderless"><div class="control has-icons-left is-rounded">
+  <div class="select is-small">
+    <select aria-label="Read">
+      <option selected>Allow</option>
+      <option>Inherit</option>
+      <option>Deny</option>
+      <option>Not Set</option>
+    </select>
+  </div>
+  <span class="icon is-small is-left">
+    <i class="fas fa-check has-text-success" aria-hidden="true"></i>
+  </span>
+</div>
+</td>
+      <td class="is-narrow is-borderless has-text-right"><span class="is-size-7 has-text-vcentered">31 Nov 2020</span></td>
+    </tr>
+    <tr class="level--2">
+      <td class="is-borderless">
+        <span class="icon is-small has-text-vcentered mr-1">
+          <picture>
+            <source
+              srcset="./images/logo/grafana/symbol--negative.svg"
+              media="(prefers-color-scheme: dark)"
+            />
+            <source
+              srcset="./images/logo/grafana/symbol--positive.svg"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+            />
+            <img class="is-flex" src="./images/logo/grafana/symbol--positive.svg" alt="" width="16" />
+          </picture>
+        </span>
+        <span class="has-text-vcentered">Screen #1</span>
+      </td>
+      <td class="is-narrow is-borderless"><div class="control has-icons-left is-rounded">
+  <div class="select is-small">
+    <select aria-label="Read">
+      <option selected>Allow</option>
+      <option>Inherit</option>
+      <option>Deny</option>
+      <option>Not Set</option>
+    </select>
+  </div>
+  <span class="icon is-small is-left">
+    <i class="fas fa-check has-text-success" aria-hidden="true"></i>
+  </span>
+</div>
+</td>
+      <td class="is-narrow is-borderless"><div class="control has-icons-left is-rounded">
+  <div class="select is-small">
+    <select aria-label="Read">
+      <option selected>Allow</option>
+      <option>Inherit</option>
+      <option>Deny</option>
+      <option>Not Set</option>
+    </select>
+  </div>
+  <span class="icon is-small is-left">
+    <i class="fas fa-check has-text-success" aria-hidden="true"></i>
+  </span>
+</div>
+</td>
+      <td class="is-narrow is-borderless"><div class="control has-icons-left is-rounded">
+  <div class="select is-small">
+    <select aria-label="Read">
+      <option selected>Allow</option>
+      <option>Inherit</option>
+      <option>Deny</option>
+      <option>Not Set</option>
+    </select>
+  </div>
+  <span class="icon is-small is-left">
+    <i class="fas fa-check has-text-success" aria-hidden="true"></i>
+  </span>
+</div>
+</td>
+      <td class="is-narrow is-borderless"><div class="control has-icons-left is-rounded">
+  <div class="select is-small">
+    <select aria-label="Read">
+      <option selected>Allow</option>
+      <option>Inherit</option>
+      <option>Deny</option>
+      <option>Not Set</option>
+    </select>
+  </div>
+  <span class="icon is-small is-left">
+    <i class="fas fa-check has-text-success" aria-hidden="true"></i>
+  </span>
+</div>
+</td>
+      <td class="is-narrow is-borderless"><div class="control has-icons-left is-rounded">
+  <div class="select is-small">
+    <select aria-label="Read">
+      <option selected>Allow</option>
+      <option>Inherit</option>
+      <option>Deny</option>
+      <option>Not Set</option>
+    </select>
+  </div>
+  <span class="icon is-small is-left">
+    <i class="fas fa-check has-text-success" aria-hidden="true"></i>
+  </span>
+</div>
+</td>
+      <td class="is-narrow is-borderless has-text-right"><span class="is-size-7 has-text-vcentered">1 Jan 2021</span></td>
+    </tr>
+    <tr class="level--2">
+      <td>
+        <span class="icon is-small has-text-vcentered mr-1">
+          <picture>
+            <source
+              srcset="./images/logo/pview/symbol--negative.svg"
+              media="(prefers-color-scheme: dark)"
+            />
+            <source
+              srcset="./images/logo/pview/symbol--positive.svg"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+            />
+            <img class="is-flex" src="./images/logo/pview/symbol--positive.svg" alt="" width="16" />
+          </picture>
+        </span>
+        <span class="has-text-vcentered">Screen #2</span>
+      </td>
+      <td class="is-narrow"><div class="control has-icons-left is-rounded">
+  <div class="select is-small">
+    <select aria-label="Read">
+      <option selected>Allow</option>
+      <option>Inherit</option>
+      <option>Deny</option>
+      <option>Not Set</option>
+    </select>
+  </div>
+  <span class="icon is-small is-left">
+    <i class="fas fa-check has-text-success" aria-hidden="true"></i>
+  </span>
+</div>
+</td>
+      <td class="is-narrow"><div class="control has-icons-left is-rounded">
+  <div class="select is-small">
+    <select aria-label="Read">
+      <option selected>Allow</option>
+      <option>Inherit</option>
+      <option>Deny</option>
+      <option>Not Set</option>
+    </select>
+  </div>
+  <span class="icon is-small is-left">
+    <i class="fas fa-check has-text-success" aria-hidden="true"></i>
+  </span>
+</div>
+</td>
+      <td class="is-narrow"><div class="control has-icons-left is-rounded">
+  <div class="select is-small">
+    <select aria-label="Read">
+      <option selected>Allow</option>
+      <option>Inherit</option>
+      <option>Deny</option>
+      <option>Not Set</option>
+    </select>
+  </div>
+  <span class="icon is-small is-left">
+    <i class="fas fa-check has-text-success" aria-hidden="true"></i>
+  </span>
+</div>
+</td>
+      <td class="is-narrow"><div class="control has-icons-left is-rounded">
+  <div class="select is-small">
+    <select aria-label="Read">
+      <option selected>Allow</option>
+      <option>Inherit</option>
+      <option>Deny</option>
+      <option>Not Set</option>
+    </select>
+  </div>
+  <span class="icon is-small is-left">
+    <i class="fas fa-check has-text-success" aria-hidden="true"></i>
+  </span>
+</div>
+</td>
+      <td class="is-narrow"><div class="control has-icons-left is-rounded">
+  <div class="select is-small">
+    <select aria-label="Read">
+      <option selected>Allow</option>
+      <option>Inherit</option>
+      <option>Deny</option>
+      <option>Not Set</option>
+    </select>
+  </div>
+  <span class="icon is-small is-left">
+    <i class="fas fa-check has-text-success" aria-hidden="true"></i>
+  </span>
+</div>
+</td>
+      <td class="is-narrow has-text-right"><span class="is-size-7 has-text-vcentered">1 Jan 2021</span></td>
+    </tr>
+    <tr class="level--0">
+      <td>
+        <span class="icon is-small has-text-vcentered mr-1">
+          <i class="mi mi-domain"></i>
+        </span>
+        <span class="has-text-vcentered">Provider Manager</span>
+      </td>
+      <td class="is-narrow"><div class="control has-icons-left is-rounded">
+  <div class="select is-small">
+    <select aria-label="Read">
+      <option selected>Allow</option>
+      <option>Inherit</option>
+      <option>Deny</option>
+      <option>Not Set</option>
+    </select>
+  </div>
+  <span class="icon is-small is-left">
+    <i class="fas fa-check has-text-success" aria-hidden="true"></i>
+  </span>
+</div>
+</td>
+      <td class="is-narrow"><div class="control has-icons-left is-rounded">
+  <div class="select is-small">
+    <select aria-label="Read">
+      <option selected>Allow</option>
+      <option>Inherit</option>
+      <option>Deny</option>
+      <option>Not Set</option>
+    </select>
+  </div>
+  <span class="icon is-small is-left">
+    <i class="fas fa-check has-text-success" aria-hidden="true"></i>
+  </span>
+</div>
+</td>
+      <td class="is-narrow"><div class="control has-icons-left is-rounded">
+  <div class="select is-small">
+    <select aria-label="Read">
+      <option selected>Allow</option>
+      <option>Inherit</option>
+      <option>Deny</option>
+      <option>Not Set</option>
+    </select>
+  </div>
+  <span class="icon is-small is-left">
+    <i class="fas fa-check has-text-success" aria-hidden="true"></i>
+  </span>
+</div>
+</td>
+      <td class="is-narrow"><div class="control has-icons-left is-rounded">
+  <div class="select is-small">
+    <select aria-label="Read">
+      <option selected>Allow</option>
+      <option>Inherit</option>
+      <option>Deny</option>
+      <option>Not Set</option>
+    </select>
+  </div>
+  <span class="icon is-small is-left">
+    <i class="fas fa-check has-text-success" aria-hidden="true"></i>
+  </span>
+</div>
+</td>
+      <td class="is-narrow"><div class="control has-icons-left is-rounded">
+  <div class="select is-small">
+    <select aria-label="Read">
+      <option selected>Allow</option>
+      <option>Inherit</option>
+      <option>Deny</option>
+      <option>Not Set</option>
+    </select>
+  </div>
+  <span class="icon is-small is-left">
+    <i class="fas fa-check has-text-success" aria-hidden="true"></i>
+  </span>
+</div>
+</td>
+      <td class="is-narrow has-text-right"><span class="is-size-7 has-text-vcentered">17 Jan 2021</span></td>
+    </tr>
+  </tbody>
+</table>
+
+            </div>
+            <div id="tabUsers" class="content-tab" style="display: none;">
+              <table class="table tree is-fullwidth is-hoverable">
+  <thead>
+    <tr>
+      <th colspan="4">
+        <span class="is-size-7 is-uppercase has-text-weight-semibold">Name</span>
+        <div class="is-inline-block is-pulled-right">
+          <button class="button is-primary is-small is-rounded">
+            Add from Directory...
+          </button>
+        </div>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <div class="columns has-text-vcentered">
+          <div class="column is-narrow">
+            <figure class="image is-32x32">
+              <img class="is-rounded" src="https://bulma.io/images/placeholders/32x32.png" alt="">
+            </figure>
+          </div>
+          <div class="column is-narrow px-0">
+            <p>John Doe</p>
+            <span class="is-block is-size-7">
+              <small class="is-block">Prediktor AS</small>
+            </span>
+          </div>
+        </div>
+      </td>
+      <td class="is-narrow has-text-vcentered">
+        <span class="icon is-small mr-1">
+          <i class="fas fa-envelope fa-xs" aria-hidden="true"></i>
+        </span>
+        <a href="mailto:user1@prediktor.no">user1@prediktor.no</a>
+      </td>
+      <td class="is-narrow has-text-vcentered">
+        <span class="icon is-small mr-1">
+          <i class="fas fa-phone fa-xs" aria-hidden="true"></i>
+        </span>
+        <a href="callto:+47134321222">+47 134 321 222</a>
+      </td>
+      <td class="is-narrow has-text-vcentered">
+        <button class="button icon is-small is-rounded">
+          <i class="fas fa-trash"></i>
+        </button>
+      </td>
+    </tr>
+    <tr class="level--0">
+      <td>
+        <div class="columns has-text-vcentered">
+          <div class="column is-narrow">
+            <span class="icon is-small has-text-vcentered is-clickable has-text-opacity-70" aria-label="Expand this group">
+              <i class="mi mi-add-box" aria-hidden="true"></i>
+            </span>
+          </div>
+          <div class="column is-narrow px-0">
+            <figure class="image is-32x32">
+              <img class="is-rounded" src="https://bulma.io/images/placeholders/32x32.png" alt="">
+            </figure>
+          </div>
+          <div class="column">
+            <p>Technical Administrators</p>
+            <span class="is-block is-size-7">
+              <small class="is-block">Here comes the description of the group</small>
+            </span>
+          </div>
+        </div>
+      </td>
+      <td colspan="2" class="is-narrow has-text-vcentered has-text-right">
+        <div class="field-users field is-grouped is-pulled-right">
+          <figure class="image is-32x32">
+            <img class="is-rounded" src="https://bulma.io/images/placeholders/32x32.png" alt="">
+          </figure>
+          <figure class="image is-32x32">
+            <img class="is-rounded" src="https://bulma.io/images/placeholders/32x32.png" alt="">
+          </figure>
+          <figure class="image is-32x32">
+            <img class="is-rounded" src="https://bulma.io/images/placeholders/32x32.png" alt="">
+          </figure>
+          <figure class="image is-32x32">
+            <img class="is-rounded" src="https://bulma.io/images/placeholders/32x32.png" alt="">
+          </figure>
+          <figure class="image is-32x32">
+            <img class="is-rounded" src="https://bulma.io/images/placeholders/32x32.png" alt="">
+          </figure>
+          <figure class="image is-32x32">
+            <img class="is-rounded" src="https://bulma.io/images/placeholders/32x32.png" alt="">
+          </figure>
+          <figure class="image is-32x32">
+            <img class="is-rounded" src="https://bulma.io/images/placeholders/32x32.png" alt="">
+          </figure>
+          <figure class="image is-32x32">
+            <img class="is-rounded" src="https://bulma.io/images/placeholders/32x32.png" alt="">
+          </figure>
+          <figure class="image is-32x32">
+            <img class="is-rounded" src="https://bulma.io/images/placeholders/32x32.png" alt="">
+          </figure>
+          <figure class="image is-32x32 has-text-centered">
+            <span class="is-size-7">+3</span>
+          </figure>
+        </div>
+      </td>
+      <td class="is-narrow has-text-vcentered">
+        <button class="button icon is-small is-rounded">
+          <i class="fas fa-trash"></i>
+        </button>
+      </td>
+    </tr>
+    <tr class="level--0">
+      <td class="is-borderless">
+        <div class="columns has-text-vcentered">
+          <div class="column is-narrow">
+            <span class="icon is-small has-text-vcentered is-clickable has-text-opacity-70" aria-label="Collapse this group">
+              <i class="mi mi-indeterminate-check-box" aria-hidden="true"></i>
+            </span>
+          </div>
+          <div class="column is-narrow px-0">
+            <figure class="image is-32x32">
+              <img class="is-rounded" src="https://bulma.io/images/placeholders/32x32.png" alt="">
+            </figure>
+          </div>
+          <div class="column">
+            <p>Technical Administrators</p>
+            <span class="is-block is-size-7">
+              <small class="is-block">Here comes the description of the group</small>
+            </span>
+          </div>
+        </div>
+      </td>
+      <td colspan="2" class="is-narrow has-text-vcentered has-text-right is-borderless">
+        <div class="field-users field is-grouped is-pulled-right">
+          <figure class="image is-32x32">
+            <img class="is-rounded" src="https://bulma.io/images/placeholders/32x32.png" alt="">
+          </figure>
+          <figure class="image is-32x32">
+            <img class="is-rounded" src="https://bulma.io/images/placeholders/32x32.png" alt="">
+          </figure>
+          <figure class="image is-32x32">
+            <img class="is-rounded" src="https://bulma.io/images/placeholders/32x32.png" alt="">
+          </figure>
+          <figure class="image is-32x32">
+            <img class="is-rounded" src="https://bulma.io/images/placeholders/32x32.png" alt="">
+          </figure>
+          <figure class="image is-32x32">
+            <img class="is-rounded" src="https://bulma.io/images/placeholders/32x32.png" alt="">
+          </figure>
+          <figure class="image is-32x32">
+            <img class="is-rounded" src="https://bulma.io/images/placeholders/32x32.png" alt="">
+          </figure>
+          <figure class="image is-32x32">
+            <img class="is-rounded" src="https://bulma.io/images/placeholders/32x32.png" alt="">
+          </figure>
+          <figure class="image is-32x32">
+            <img class="is-rounded" src="https://bulma.io/images/placeholders/32x32.png" alt="">
+          </figure>
+          <figure class="image is-32x32">
+            <img class="is-rounded" src="https://bulma.io/images/placeholders/32x32.png" alt="">
+          </figure>
+          <figure class="image is-32x32 has-text-centered">
+            <span class="is-size-7">+3</span>
+          </figure>
+        </div>
+      </td>
+      <td class="is-narrow has-text-vcentered is-borderless">
+        <button class="button icon is-small is-rounded">
+          <i class="fas fa-trash"></i>
+        </button>
+      </td>
+    </tr>
+    <tr class="level--1">
+      <td class="is-borderless">
+        <div class="columns has-text-vcentered">
+          <div class="column is-narrow">
+            <figure class="image is-32x32">
+              <img class="is-rounded" src="https://bulma.io/images/placeholders/32x32.png" alt="">
+            </figure>
+          </div>
+          <div class="column is-narrow px-0">
+            <p>John Doe</p>
+            <span class="is-block is-size-7">
+              <small class="is-block">Prediktor AS</small>
+            </span>
+          </div>
+        </div>
+      </td>
+      <td class="is-narrow has-text-vcentered is-borderless">
+        <span class="icon is-small mr-1">
+          <i class="fas fa-envelope fa-xs" aria-hidden="true"></i>
+        </span>
+        <a href="mailto:user1@prediktor.no">user1@prediktor.no</a>
+      </td>
+      <td class="is-narrow has-text-vcentered is-borderless">
+        <span class="icon is-small mr-1">
+          <i class="fas fa-phone fa-xs" aria-hidden="true"></i>
+        </span>
+        <a href="callto:+47134321222">+47 134 321 222</a>
+      </td>
+      <td class="is-narrow has-text-vcentered is-borderless">
+        <button class="button icon is-small is-rounded">
+          <i class="fas fa-trash"></i>
+        </button>
+      </td>
+  </tbody>
+</table>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+      </div>
+
+      <div id="tab-provider" class="content-tab" style="display:none">
+        <div class="has-portal-aside mt-6">
+
+  <div class="section px-6">
+    <div class="level">
+      <div class="level-left">
+        <h1 class="title is-size-4 has-text-weight-medium">Provider Manager</h1>
+      </div>
+      <div class="level-right">
+        <button class="button icon is-rounded has-tooltip-arrow" data-tooltip="New Provider">
+          <i class="fas fa-plus" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="section pt-0 px-6">
+    <div class="has-shadow">
+      <table class="table tree is-fullwidth is-hoverable">
+  <thead>
+    <tr>
+      <th class="is-size-7 is-uppercase has-text-weight-semibold">Name</th>
+      <th class="is-size-7 is-uppercase has-text-weight-semibold"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <span class="icon is-small has-text-vcentered mr-1">
+          <picture>
+            <source
+              srcset="./images/logo/dancer/symbol--negative.svg"
+              media="(prefers-color-scheme: dark)"
+            />
+            <source
+              srcset="./images/logo/dancer/symbol--positive.svg"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+            />
+            <img class="is-flex" src="./images/logo/dancer/symbol--positive.svg" alt="" width="16" />
+          </picture>
+        </span>
+        <span class="has-text-vcentered is-clickable">Dancer</span>
+      </td>
+      <td class="has-text-right">
+        <button class="button icon is-small is-rounded mr-2 has-tooltip-arrow" data-tooltip="Provider URL">
+          <i class="fa fa-external-link-alt" aria-hidden="true"></i>
+        </button>
+        <span class="icon is-small has-text-vcentered has-tooltip-arrow" data-tooltip="Mobile friendly">
+          <i class="mi mi-mobile is-size-6"></i>
+        </span>
+      </td>
+    </tr>
+    <tr class="level--0">
+      <td>
+        <span class="icon is-small has-text-vcentered mr-2 is-clickable has-text-opacity-70" aria-label="Expand this app">
+          <i class="mi mi-add-box" aria-hidden="true"></i>
+        </span>
+        <span class="icon is-small has-text-vcentered mr-1">
+          <picture>
+            <source
+              srcset="./images/logo/power-bi/symbol--negative.svg"
+              media="(prefers-color-scheme: dark)"
+            />
+            <source
+              srcset="./images/logo/power-bi/symbol--positive.svg"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+            />
+            <img class="is-flex" src="./images/logo/power-bi/symbol--positive.svg" alt="" width="16" />
+          </picture>
+        </span>
+        <a href="#" class="has-text-vcentered">Power Bi</a>
+      </td>
+      <td class="has-text-right">
+        <button class="button icon is-small is-rounded mr-2 has-tooltip-arrow" data-tooltip="Provider URL">
+          <i class="fa fa-external-link-alt" aria-hidden="true"></i>
+        </button>
+        <span class="icon is-small has-text-vcentered has-tooltip-arrow" data-tooltip="Mobile friendly">
+          <i class="mi mi-mobile is-size-6"></i>
+        </span>
+      </td>
+    </tr>
+    <tr class="level--0">
+      <td class="is-borderless">
+        <span class="icon is-small has-text-vcentered mr-2 is-clickable has-text-opacity-70" aria-label="Collapse this app">
+          <i class="mi mi-indeterminate-check-box" aria-hidden="true"></i>
+        </span>
+        <span class="icon is-small has-text-vcentered mr-1">
+          <picture>
+            <source
+              srcset="./images/logo/grafana/symbol--negative.svg"
+              media="(prefers-color-scheme: dark)"
+            />
+            <source
+              srcset="./images/logo/grafana/symbol--positive.svg"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+            />
+            <img class="is-flex" src="./images/logo/grafana/symbol--positive.svg" alt="" width="16" />
+          </picture>
+        </span>
+        <a href="#" class="has-text-vcentered">Grafana</a>
+      </td>
+      <td class="is-borderless has-text-right">
+        <button class="button icon is-small is-rounded mr-2 has-tooltip-arrow" data-tooltip="Provider URL">
+          <i class="fa fa-external-link-alt" aria-hidden="true"></i>
+        </button>
+        <span class="icon is-small has-text-vcentered has-tooltip-arrow" data-tooltip="Mobile friendly">
+          <i class="mi mi-mobile is-size-6"></i>
+        </span>
+      </td>
+    </tr>
+    <tr class="level--1">
+      <td class="is-borderless">
+        <span class="icon is-small has-text-vcentered mr-1">
+          <picture>
+            <source
+              srcset="./images/logo/grafana/symbol--negative.svg"
+              media="(prefers-color-scheme: dark)"
+            />
+            <source
+              srcset="./images/logo/grafana/symbol--positive.svg"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+            />
+            <img class="is-flex" src="./images/logo/grafana/symbol--positive.svg" alt="" width="16" />
+          </picture>
+        </span>
+        <span class="has-text-vcentered">OEE</span>
+      </td>
+      <td class="is-borderless has-text-right">
+        <button target="_blank" class="button icon is-small is-rounded mr-2 has-tooltip-arrow" data-tooltip="Provider URL">
+          <i class="fa fa-external-link-alt" aria-hidden="true"></i>
+        </button>
+        <span class="icon is-small has-text-vcentered has-tooltip-arrow" data-tooltip="Mobile friendly">
+          <i class="mi mi-mobile is-size-6"></i>
+        </span>
+      </td>
+    </tr>
+    <tr class="level--1">
+      <td>
+        <span class="icon is-small has-text-vcentered mr-1">
+          <picture>
+            <source
+              srcset="./images/logo/grafana/symbol--negative.svg"
+              media="(prefers-color-scheme: dark)"
+            />
+            <source
+              srcset="./images/logo/grafana/symbol--positive.svg"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+            />
+            <img class="is-flex" src="./images/logo/grafana/symbol--positive.svg" alt="" width="16" />
+          </picture>
+        </span>
+        <span class="has-text-vcentered">Reports</span>
+      </td>
+      <td class="has-text-right">
+        <button class="button icon is-small is-rounded mr-2 has-tooltip-arrow" data-tooltip="Provider URL">
+          <i class="fa fa-external-link-alt" aria-hidden="true"></i>
+        </button>
+        <span class="icon is-small has-text-vcentered has-tooltip-arrow" data-tooltip="Mobile friendly">
+          <i class="mi mi-mobile is-size-6"></i>
+        </span>
+      </td>
+    </tr>
+    <tr class="level--0">
+      <td>
+        <span class="icon is-small has-text-vcentered mr-1">
+          <picture>
+            <source
+              srcset="./images/logo/pview/symbol--negative.svg"
+              media="(prefers-color-scheme: dark)"
+            />
+            <source
+              srcset="./images/logo/pview/symbol--positive.svg"
+              media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+            />
+            <img class="is-flex" src="./images/logo/pview/symbol--positive.svg" alt="" width="16" />
+          </picture>
+        </span>
+        <a href="#" class="has-text-vcentered">PView</a>
+      </td>
+      <td class="has-text-right">
+        <button class="button icon is-small is-rounded mr-2 has-tooltip-arrow" data-tooltip="Provider URL">
+          <i class="fa fa-external-link-alt" aria-hidden="true"></i>
+        </button>
+        <span class="icon is-small has-text-vcentered has-text-grey has-tooltip-arrow" data-tooltip="Not mobile friendly">
+          <i class="mi mi-mobile-off is-size-6"></i>
+        </span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+  </div>
+
+</div>
+
+      </div>
+
+      <div id="tab-new-role" class="content-tab" style="display:none">
+        <div class="has-portal-aside mt-6">
+
+  <div class="section px-6">
+    <div class="level">
+      <div class="level-left">
+        <nav class="breadcrumb is-large" aria-label="breadcrumbs">
+          <ul>
+            <li><a href="/authorisation-manager" class="has-text-weight-medium has-text-grey">Authorisation Manager</a></li>
+            <li class="is-active">
+              <a href="#" aria-current="page" class="has-text-weight-medium">
+                New Role
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <div class="section pt-0 px-6">
+    <div class="columns has-shadow is-marginless">
+      <div class="column is-2 is-paddingless">
+        <nav class="panel is-nav is-full-height">
+          <p class="panel-block">
+            <span>All Roles</span>
+            <button class="button icon is-small is-rounded ml-auto has-tooltip-arrow" data-tooltip="Add Role">
+              <i class="fas fa-plus" aria-hidden="true"></i>
+            </button>
+          </p>
+          <a href="#" class="panel-block">Administrator</a>
+          <a href="#" class="panel-block">Operator Line A</a>
+          <a href="#" class="panel-block">Operator Line B</a>
+          <a href="#" class="panel-block is-radiusless">Packaging Line A</a>
+        </nav>
+      </div>
+      <div class="column">
+        <div class="px-5 py-5">
+          <h2 class="title is-size-3 has-text-weight-medium">New Role</h2>
+          <hr class="mt-0">
+          <div class="mt-6">
+            <form>
+              <div class="field is-horizontal is-large">
+                <div class="field-label is-normal">
+                  <label class="label">Role</label>
+                </div>
+                <div class="field-body">
+                  <div class="field">
+                    <div class="control">
+                      <input class="input" type="text" placeholder="Enter role name">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="field is-horizontal is-large">
+                <div class="field-label is-normal">
+                  <label class="label">Description</label>
+                </div>
+                <div class="field-body">
+                  <div class="field">
+                    <div class="control">
+                      <textarea class="textarea" placeholder="Enter description of the role"></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="field is-horizontal is-large">
+                <div class="field-label is-normal">
+                  <label class="label">Grace Period</label>
+                </div>
+                <div class="field-body">
+                  <div class="field">
+                    <div class="control">
+                      <div class="select">
+                        <select>
+                          <option>15 days</option>
+                          <option>With options</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="field is-horizontal is-large">
+                <div class="field-label is-normal"></div>
+                <div class="field-body">
+                  <div class="field is-grouped">
+                    <div class="control">
+                      <button class="button is-primary is-rounded">Save</button>
+                    </div>
+                    <div class="control">
+                      <button class="button is-rounded">Cancel</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+      </div>
+
+      <div id="tab-new-app" class="content-tab" style="display:none">
+        <div class="has-portal-aside mt-6">
+
+  <div class="section px-6">
+    <div class="level">
+      <div class="level-left">
+        <nav class="breadcrumb is-large" aria-label="breadcrumbs">
+          <ul>
+            <li><a href="/app-manager" class="has-text-weight-medium has-text-grey">App Manager</a></li>
+            <li class="is-active">
+              <a href="#" aria-current="page" class="has-text-weight-medium">
+                Create App
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <div class="section pt-0 px-6">
+    <div class="columns has-shadow">
+      <div class="column is-2 is-paddingless">
+        <nav class="panel is-nav is-full-height">
+          <div class="px-3 py-3">
+            <ul class="steps has-content-centered has-gaps is-vertical">
+  <li class="steps-segment is-active">
+    <span class="steps-marker is-clickable">
+      <i class="mi mi-widgets" aria-hidden="true"></i>
+    </span>
+    <div class="steps-content">
+      <p class="heading has-text-weight-semibold">Select type</p>
+    </div>
+  </li>
+  <li class="steps-segment">
+    <span class="steps-marker is-hollow">
+      <i class="fa fa-cog" aria-hidden="true"></i>
+    </span>
+    <div class="steps-content">
+      <p class="heading has-text-weight-semibold">Set up basics</p>
+    </div>
+  </li>
+  <li class="steps-segment">
+    <span class="steps-marker is-hollow">
+      <i class="mi mi-check" aria-hidden="true"></i>
+    </span>
+    <div class="steps-content">
+      <p class="heading has-text-weight-semibold">Done</p>
+    </div>
+  </li>
+</ul>
+
+          </div>
+        </nav>
+      </div>
+
+      <div class="column px-6 pt-5">
+
+        <h3 class="is-size-5 has-text-weight-medium mb-4">Select App type</h3>
+
+        <div class="field is-horizontal is-large">
+          <div class="field-label is-normal"></div>
+          <div class="field-body">
+            <div class="tile is-ancestor">
+  <div class="tile is-horizontal">
+    <div class="tile is-parent is-4">
+      <a href="/new-app-native" class="tile is-child box is-relative">
+        <h3 class="is-size-5">Native App</h3>
+        <p class="is-size-7">Lorem ipsum dolor sit amet.</p>
+        <span class="icon is-medium is-size-5 is-absolute is-top is-right has-text-grey-lighter">
+          <i class="fa fa-circle"></i>
+        </span>
+      </a>
+    </div>
+
+    <div class="divider is-vertical my-4">Or</div>
+
+    <div class="tile is-parent is-4">
+      <a href="/new-app-composed" class="tile is-child box is-relative">
+        <h3 class="is-size-5">Composed App</h3>
+        <p class="is-size-7">Excepteur sint occaecat cupidatat non proident.</p>
+        <span class="icon is-medium is-size-5 is-absolute is-top is-right has-text-grey-lighter">
+          <i class="fa fa-circle"></i>
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+      </div>
+
+      <div id="tab-new-app-native" class="content-tab" style="display:none">
+        <div class="has-portal-aside mt-6">
+
+  <div class="section px-6">
+    <div class="level">
+      <div class="level-left">
+        <nav class="breadcrumb is-large" aria-label="breadcrumbs">
+          <ul>
+            <li><a href="/app-manager" class="has-text-weight-medium has-text-grey">App Manager</a></li>
+            <li class="is-active">
+              <a href="#" aria-current="page" class="has-text-weight-medium">
+                Create App
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <div class="section pt-0 px-6">
+    <div class="columns has-shadow">
+      <div class="column is-2 is-paddingless">
+        <nav class="panel is-nav is-full-height">
+          <div class="px-3 py-3">
+            <ul class="steps has-content-centered has-gaps is-vertical">
+  <li class="steps-segment">
+    <span class="steps-marker is-clickable">
+      <i class="mi mi-widgets" aria-hidden="true"></i>
+    </span>
+    <div class="steps-content">
+      <p class="heading has-text-weight-semibold">Select type</p>
+    </div>
+  </li>
+  <li class="steps-segment is-active">
+    <span class="steps-marker">
+      <i class="fa fa-cog" aria-hidden="true"></i>
+    </span>
+    <div class="steps-content">
+      <p class="heading has-text-weight-semibold">Set up basics</p>
+    </div>
+  </li>
+  <li class="steps-segment">
+    <span class="steps-marker is-hollow">
+      <i class="mi mi-check" aria-hidden="true"></i>
+    </span>
+    <div class="steps-content">
+      <p class="heading has-text-weight-semibold">Done</p>
+    </div>
+  </li>
+</ul>
+
+          </div>
+        </nav>
+      </div>
+
+      <div class="column px-6 pt-5">
+
+        <h3 class="is-size-5 has-text-weight-medium mb-4">Set up basics</h3>
+
+        <div class="field is-horizontal is-large">
+          <div class="field-label is-normal"></div>
+          <div class="field-body">
+            <div class="tile is-ancestor">
+  <div class="tile is-horizontal">
+    <div class="tile is-parent is-4">
+      <a href="/new-app-native" class="tile is-child box is-relative is-selected">
+        <h3 class="is-size-5">Native App</h3>
+        <p class="is-size-7">Lorem ipsum dolor sit amet.</p>
+        <span class="icon is-medium is-size-5 is-absolute is-top is-right has-text-link">
+          <i class="fa fa-dot-circle"></i>
+        </span>
+      </a>
+    </div>
+
+    <div class="divider is-vertical my-4">Or</div>
+
+    <div class="tile is-parent is-4">
+      <a href="/new-app-composed" class="tile is-child box is-relative">
+        <h3 class="is-size-5">Composed App</h3>
+        <p class="is-size-7">Excepteur sint occaecat cupidatat non proident.</p>
+        <span class="icon is-medium is-size-5 is-absolute is-top is-right has-text-grey-lighter">
+          <i class="fa fa-circle"></i>
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
+
+          </div>
+        </div>
+
+        <div class="field is-horizontal is-large">
+          <div class="field-label is-normal">
+            <label class="label">App Name</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control has-icons-left">
+                <div class="select">
+                  <select>
+                    <option>Grafana</option>
+                  </select>
+                </div>
+                <div class="icon is-small is-left">
+                  <figure class="image is-16x16 has-text-centered">
+                    <img src="/images/logo/grafana/symbol--coloured.svg" alt="">
+                  </figure>
+                </div>
+              </div>
+              <p class="help"><a href="/new-app-register">Not listed app? Register new</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="field is-horizontal is-large">
+          <div class="field-label is-normal">
+            <label class="label">Frontend URL</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+                <input class="input" type="text" placeholder="Enter Frontend URL">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field is-horizontal is-large">
+          <div class="field-label is-normal">
+            <label class="label">Backend URL</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+                <input class="input" type="text" placeholder="Enter Backend URL">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field is-horizontal is-large">
+          <div class="field-label is-normal"></div>
+          <div class="field-body">
+            <div class="field is-grouped">
+              <div class="control">
+                <button class="button is-primary is-rounded">Create</button>
+              </div>
+              <div class="control">
+                <button class="button is-rounded">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+      </div>
+
+      <div id="tab-new-app-native-register" class="content-tab"
+        style="display:none">
+        <div class="has-portal-aside mt-6">
+
+  <div class="section px-6">
+    <div class="level">
+      <div class="level-left">
+        <nav class="breadcrumb is-large" aria-label="breadcrumbs">
+          <ul>
+            <li><a href="/app-manager" class="has-text-weight-medium has-text-grey">App Manager</a></li>
+            <li class="is-active">
+              <a href="#" aria-current="page" class="has-text-weight-medium">
+                Create App
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <div class="section pt-0 px-6">
+    <div class="columns has-shadow">
+      <div class="column is-2 is-paddingless">
+        <nav class="panel is-nav is-full-height">
+          <div class="px-3 py-3">
+            <ul class="steps has-content-centered has-gaps is-vertical">
+  <li class="steps-segment">
+    <span class="steps-marker is-clickable">
+      <i class="mi mi-widgets" aria-hidden="true"></i>
+    </span>
+    <div class="steps-content">
+      <p class="heading has-text-weight-semibold">Select type</p>
+    </div>
+  </li>
+  <li class="steps-segment is-active">
+    <span class="steps-marker">
+      <i class="fa fa-cog" aria-hidden="true"></i>
+    </span>
+    <div class="steps-content">
+      <p class="heading has-text-weight-semibold">Set up basics</p>
+    </div>
+  </li>
+  <li class="steps-segment">
+    <span class="steps-marker is-hollow">
+      <i class="mi mi-check" aria-hidden="true"></i>
+    </span>
+    <div class="steps-content">
+      <p class="heading has-text-weight-semibold">Done</p>
+    </div>
+  </li>
+</ul>
+
+          </div>
+        </nav>
+      </div>
+
+      <div class="column px-6 pt-5">
+
+        <h3 class="is-size-5 has-text-weight-medium mb-4">Set up basics</h3>
+
+        <div class="field is-horizontal is-large">
+          <div class="field-label is-normal"></div>
+          <div class="field-body">
+            <div class="tile is-ancestor">
+  <div class="tile is-horizontal">
+    <div class="tile is-parent is-4">
+      <a href="/new-app-native" class="tile is-child box is-relative is-selected">
+        <h3 class="is-size-5">Native App</h3>
+        <p class="is-size-7">Lorem ipsum dolor sit amet.</p>
+        <span class="icon is-medium is-size-5 is-absolute is-top is-right has-text-link">
+          <i class="fa fa-dot-circle"></i>
+        </span>
+      </a>
+    </div>
+
+    <div class="divider is-vertical my-4">Or</div>
+
+    <div class="tile is-parent is-4">
+      <a href="/new-app-composed" class="tile is-child box is-relative">
+        <h3 class="is-size-5">Composed App</h3>
+        <p class="is-size-7">Excepteur sint occaecat cupidatat non proident.</p>
+        <span class="icon is-medium is-size-5 is-absolute is-top is-right has-text-grey-lighter">
+          <i class="fa fa-circle"></i>
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
+
+          </div>
+        </div>
+
+        <div class="field is-horizontal is-large">
+          <div class="field-label is-normal">
+            <label class="label">App Name</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+                <input class="input" type="text" placeholder="">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field is-horizontal is-large">
+          <div class="field-label is-normal">
+            <label class="label">App Icon</label>
+          </div>
+          <div class="field-body">
+            <div id="file-js-example" class="file has-name">
+              <label class="file-label">
+                <input class="file-input" type="file" name="resume">
+                <span class="file-cta">
+                  <span class="file-icon">
+                    <i class="fas fa-upload"></i>
+                  </span>
+                  <span class="file-label">
+                    Choose a file…
+                  </span>
+                </span>
+                <span class="file-name">
+                  No file uploaded
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="field is-horizontal is-large">
+          <div class="field-label is-normal">
+            <label class="label">Frontend URL</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+                <input class="input" type="text" placeholder="Enter Frontend URL">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field is-horizontal is-large">
+          <div class="field-label is-normal">
+            <label class="label">Backend Service</label>
+          </div>
+          <div class="field-body pt-1">
+            <div class="field">
+              <input id="switchRoundedDefault" type="checkbox" name="switchRoundedDefault" class="switch is-success is-rounded" checked="checked">
+              <label for="switchRoundedDefault"><span class="is-hidden">yes</span></label>
+            </div>
+          </div>
+        </div>
+
+        <div class="field is-horizontal is-large">
+          <div class="field-label is-normal">
+            <label class="label">Backend URL</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+                <input class="input" type="text" placeholder="Enter Backend URL">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field is-horizontal is-large">
+          <div class="field-label is-normal">
+            <label class="label">Mobile friendly</label>
+          </div>
+          <div class="field-body pt-1">
+            <div class="field">
+              <input id="switchRoundedDefault1" type="checkbox" name="switchRoundedDefault1" class="switch is-success is-rounded">
+              <label for="switchRoundedDefault1"><span class="is-hidden">no</span></label>
+            </div>
+          </div>
+        </div>
+
+        <div class="field is-horizontal is-large">
+          <div class="field-label is-normal"></div>
+          <div class="field-body">
+            <div class="field is-grouped">
+              <div class="control">
+                <button class="button is-primary is-rounded">Create</button>
+              </div>
+              <div class="control">
+                <a href="/app-manager" class="button is-rounded">Cancel</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+      </div>
+
+      <div id="tab-new-app-created" class="content-tab" style="display:none">
+        <div class="has-portal-aside mt-6">
+
+  <div class="section px-6">
+    <div class="level">
+      <div class="level-left">
+        <nav class="breadcrumb is-large" aria-label="breadcrumbs">
+          <ul>
+            <li><a href="/app-manager" class="has-text-weight-medium has-text-grey">App Manager</a></li>
+            <li class="is-active">
+              <a href="#" aria-current="page" class="has-text-weight-medium">
+                Create App
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <div class="section pt-0 px-6">
+    <div class="columns has-shadow">
+      <div class="column is-2 is-paddingless">
+        <nav class="panel is-nav is-full-height">
+          <div class="px-3 py-3">
+            <ul class="steps has-content-centered has-gaps is-vertical">
+  <li class="steps-segment">
+    <span class="steps-marker is-clickable">
+      <i class="mi mi-widgets" aria-hidden="true"></i>
+    </span>
+    <div class="steps-content">
+      <p class="heading has-text-weight-semibold">Select type</p>
+    </div>
+  </li>
+  <li class="steps-segment">
+    <span class="steps-marker">
+      <i class="fa fa-cog" aria-hidden="true"></i>
+    </span>
+    <div class="steps-content">
+      <p class="heading has-text-weight-semibold">Set up basics</p>
+    </div>
+  </li>
+  <li class="steps-segment is-active">
+    <span class="steps-marker">
+      <i class="mi mi-check" aria-hidden="true"></i>
+    </span>
+    <div class="steps-content">
+      <p class="heading has-text-weight-semibold">Done</p>
+    </div>
+  </li>
+</ul>
+
+          </div>
+        </nav>
+      </div>
+
+      <div class="column px-6 pt-5 has-text-centered">
+
+        <h3 class="is-size-5 has-text-weight-medium mb-4 has-text-success">Congrats! The app was successfully created.</h3>
+
+        <div class="my-5">
+          <div class="icon is-large has-text-vcentered mr-3">
+            <figure class="image is-48x48">
+              <img src="/images/logo/grafana/symbol--coloured.svg" alt="">
+            </figure>
+          </div>
+          <h3 class="is-size-3 has-text-weight-medium has-text-vcentered is-inline-block">Grafana</h3>
+        </div>
+
+        <p>Would you like to pin this app to the menu?</p>
+        <div class="my-3">
+          <button class="button is-primary mr-3">
+            <span class="icon">
+              <i class="fas fa-thumbtack" aria-hidden="true"></i>
+            </span>
+            <span>Yes</span>
+          </button>
+          <button class="button is-primary is-outlined">
+            <span class="icon rotate-90">
+              <i class="fas fa-thumbtack" aria-hidden="true"></i>
+            </span>
+            <span>No</span>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+      </div>
+
+      <div id="tab-new-app-composed" class="content-tab" style="display:none">
+        <div class="has-portal-aside mt-6">
+
+  <div class="section px-6">
+    <div class="level">
+      <div class="level-left">
+        <nav class="breadcrumb is-large" aria-label="breadcrumbs">
+          <ul>
+            <li><a href="/app-manager" class="has-text-weight-medium has-text-grey">App Manager</a></li>
+            <li class="is-active">
+              <a href="#" aria-current="page" class="has-text-weight-medium">
+                Create App
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <div class="section pt-0 px-6">
+    <div class="columns has-shadow">
+      <div class="column is-2 is-paddingless">
+        <nav class="panel is-nav is-full-height">
+          <div class="px-3 py-3">
+            <ul class="steps has-content-centered has-gaps is-vertical">
+  <li class="steps-segment">
+    <span class="steps-marker is-clickable">
+      <i class="mi mi-widgets" aria-hidden="true"></i>
+    </span>
+    <div class="steps-content">
+      <p class="heading has-text-weight-semibold">Select type</p>
+    </div>
+  </li>
+  <li class="steps-segment is-active">
+    <span class="steps-marker">
+      <i class="fa fa-cog" aria-hidden="true"></i>
+    </span>
+    <div class="steps-content">
+      <p class="heading has-text-weight-semibold">Set up basics</p>
+    </div>
+  </li>
+  <li class="steps-segment">
+    <span class="steps-marker is-hollow">
+      <i class="mi mi-computer" aria-hidden="true"></i>
+    </span>
+    <div class="steps-content">
+      <p class="heading has-text-weight-semibold">Screen Configuration</p>
+    </div>
+  </li>
+  <li class="steps-segment">
+    <span class="steps-marker is-hollow">
+      <i class="fa fa-shield-alt" aria-hidden="true"></i>
+    </span>
+    <div class="steps-content">
+      <p class="heading has-text-weight-semibold">Permissions</p>
+    </div>
+  </li>
+  <li class="steps-segment">
+    <span class="steps-marker is-hollow">
+      <i class="mi mi-check" aria-hidden="true"></i>
+    </span>
+    <div class="steps-content">
+      <p class="heading has-text-weight-semibold">Done</p>
+    </div>
+  </li>
+</ul>
+
+          </div>
+        </nav>
+      </div>
+
+      <div class="column px-6 pt-5">
+
+        <h3 class="is-size-5 has-text-weight-medium mb-4">Set up basics</h3>
+
+        <div class="field is-horizontal is-large">
+          <div class="field-label is-normal"></div>
+          <div class="field-body">
+            <div class="tile is-ancestor">
+  <div class="tile is-horizontal">
+    <div class="tile is-parent is-4">
+      <a href="/new-app-native" class="tile is-child box is-relative">
+        <h3 class="is-size-5">Native App</h3>
+        <p class="is-size-7">Lorem ipsum dolor sit amet.</p>
+        <span class="icon is-medium is-size-5 is-absolute is-top is-right has-text-grey-lighter">
+          <i class="fa fa-circle"></i>
+        </span>
+      </a>
+    </div>
+
+    <div class="divider is-vertical my-4">Or</div>
+
+    <div class="tile is-parent is-4">
+      <a href="/new-app-composed" class="tile is-child box is-relative is-selected">
+        <h3 class="is-size-5">Composed App</h3>
+        <p class="is-size-7">Excepteur sint occaecat cupidatat non proident.</p>
+        <span class="icon is-medium is-size-5 is-absolute is-top is-right has-text-link">
+          <i class="fa fa-dot-circle"></i>
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
+
+          </div>
+        </div>
+
+        <div class="field is-horizontal is-large">
+          <div class="field-label is-normal">
+            <label class="label">App Name</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+                <input class="input" type="text" placeholder="">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <fieldset>
+          <legend>Templates</legend>
+          <div class="field is-horizontal is-large">
+            <div class="field-label is-normal">
+              <label class="label">Available App Templates</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <div class="select">
+                    <select>
+                      <option>Choose template</option>
+                      <option>Template #1</option>
+                      <option selected="">Template #2</option>
+                      <option>No Template</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Providers</legend>
+          <div class="field is-horizontal is-large">
+            <div class="field-label is-normal">
+              <label class="label">Select provider</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <div class="select">
+                    <select>
+                      <option>Grafana Provider #1 OEE</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="field is-horizontal is-large">
+          <div class="field-label is-normal"></div>
+          <div class="field-body">
+            <div class="field is-grouped">
+              <div class="control">
+                <button class="button is-rounded is-link">
+                  <span>Next</span>
+                  <span class="icon">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                  </span>
+                </button>
+              </div>
+              <div class="control">
+                <a href="/app-manager" class="button is-rounded">Cancel</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+      </div>
+
+      <div id="tab-new-app-composed-screens" class="content-tab"
+        style="display:none">
+        <div class="has-portal-aside mt-6">
+
+  <div class="section px-6">
+    <div class="level">
+      <div class="level-left">
+        <nav class="breadcrumb is-large" aria-label="breadcrumbs">
+          <ul>
+            <li><a href="/app-manager" class="has-text-weight-medium has-text-grey">App Manager</a></li>
+            <li class="is-active">
+              <a href="#" aria-current="page" class="has-text-weight-medium">
+                Create App
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <div class="section pt-0 px-6">
+    <div class="columns has-shadow">
+      <div class="column is-2 is-paddingless">
+        <nav class="panel is-nav is-full-height">
+          <div class="px-3 py-3">
+            <ul class="steps has-content-centered has-gaps is-vertical">
+  <li class="steps-segment">
+    <span class="steps-marker is-clickable">
+      <i class="mi mi-widgets" aria-hidden="true"></i>
+    </span>
+    <div class="steps-content">
+      <p class="heading has-text-weight-semibold">Select type</p>
+    </div>
+  </li>
+  <li class="steps-segment">
+    <span class="steps-marker">
+      <i class="fa fa-cog" aria-hidden="true"></i>
+    </span>
+    <div class="steps-content">
+      <p class="heading has-text-weight-semibold">Set up basics</p>
+    </div>
+  </li>
+  <li class="steps-segment is-active">
+    <span class="steps-marker">
+      <i class="mi mi-computer" aria-hidden="true"></i>
+    </span>
+    <div class="steps-content">
+      <p class="heading has-text-weight-semibold">Screen Configuration</p>
+    </div>
+  </li>
+  <li class="steps-segment">
+    <span class="steps-marker is-hollow">
+      <i class="fa fa-shield-alt" aria-hidden="true"></i>
+    </span>
+    <div class="steps-content">
+      <p class="heading has-text-weight-semibold">Permissions</p>
+    </div>
+  </li>
+  <li class="steps-segment">
+    <span class="steps-marker is-hollow">
+      <i class="mi mi-check" aria-hidden="true"></i>
+    </span>
+    <div class="steps-content">
+      <p class="heading has-text-weight-semibold">Done</p>
+    </div>
+  </li>
+</ul>
+
+          </div>
+        </nav>
+      </div>
+
+      <div class="column px-6 pt-5">
+
+        <h3 class="is-size-5 has-text-weight-medium mb-4">Screen configuration</h3>
+
+        <div class="has-shadow mb-5">
+          <table class="table tree is-fullwidth is-hoverable">
+  <thead>
+    <tr>
+      <th class="is-size-7 is-uppercase has-text-weight-semibold">Name</th>
+      <th class="is-size-7 is-uppercase has-text-weight-semibold">Provider URL</th>
+      <th class="is-size-7 is-uppercase has-text-weight-semibold has-text-right"><button class="button is-small is-rounded is-primary">New Category</button></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="level--0">
+      <td class="is-borderless" colspan="2">
+        <span class="icon is-small has-text-vcentered mr-2 is-clickable has-text-opacity-70" aria-label="Collapse this category">
+          <i class="mi mi-indeterminate-check-box" aria-hidden="true"></i>
+        </span>
+        <h5 class="is-inline-block">
+          <span class="icon is-small has-text-vcentered mr-1">
+            <i class="fas fa-bookmark fa-xs" aria-hidden="true"></i>
+          </span>
+          <span class="has-text-vcentered">Favourites</span>
+          <span class="icon is-small has-text-vcentered">
+            <i class="fa fa-pencil fa-xs" aria-hidden="true"></i>
+          </span>
+        </h5>
+      </td>
+      <td class="is-borderless has-text-right">
+        <button class="button is-small is-rounded is-hoverable has-tooltip-arrow" data-tooltip="Actions">
+          <span class="icon is-small">
+            <i class="fas fa-ellipsis-v" aria-hidden="true"></i>
+          </span>
+        </button>
+      </td>
+    </tr>
+    <tr class="level--1">
+      <td class="has-text-vcentered">
+        <figure class="image is-inline-block has-text-vcentered has-width-50 mr-2">
+          <img src="https://bulma.io/images/placeholders/640x480.png" alt="">
+        </figure>
+        <h5 class="is-inline-block">
+          <span class="has-text-vcentered">Screen #1</span>
+          <span class="icon is-small has-text-vcentered">
+            <i class="fa fa-pencil fa-xs" aria-hidden="true"></i>
+          </span>
+        </h5>
+      </td>
+      <td class="has-text-vcentered">
+        <div class="field is-grouped">
+          <div class="control has-icons-left">
+            <div class="select is-small">
+              <select>
+                <option selected>http://grafana.com</option>
+              </select>
+            </div>
+            <div class="icon is-small is-left">
+              <figure class="image is-16x16 has-text-centered">
+                <img src="/images/logo/grafana/symbol--coloured.svg" alt="">
+              </figure>
+            </div>
+          </div>
+          <div class="control"><span class="is-size-7 has-text-vcentered">/</span></div>
+          <div class="control has-icons-right">
+            <input class="input is-small" type="text" placeholder="Enter URL" value="reports">
+            <div class="icon is-small is-right has-text-success">
+              <i class="fa fa-check" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+      </td>
+      <td class="has-text-vcentered has-text-right">
+        <button class="button is-small is-rounded is-hoverable has-tooltip-arrow" data-tooltip="Actions">
+          <span class="icon is-small">
+            <i class="fas fa-ellipsis-v" aria-hidden="true"></i>
+          </span>
+        </button>
+      </td>
+    </tr>
+    <tr class="level--0">
+      <td class="is-borderless" colspan="2">
+        <span class="icon is-small has-text-vcentered mr-2 is-clickable has-text-opacity-70" aria-label="Collapse this category">
+          <i class="mi mi-indeterminate-check-box" aria-hidden="true"></i>
+        </span>
+        <h5 class="is-inline-block">
+          <span class="icon is-small has-text-vcentered mr-1">
+            <i class="fas fa-bookmark fa-xs" aria-hidden="true"></i>
+          </span>
+          <span class="has-text-vcentered">Dashboards</span>
+          <span class="icon is-small has-text-vcentered">
+            <i class="fa fa-pencil fa-xs" aria-hidden="true"></i>
+          </span>
+        </h5>
+      </td>
+      <td class="is-borderless has-text-right">
+        <button class="button is-small is-rounded is-hoverable has-tooltip-arrow" data-tooltip="Actions">
+          <span class="icon is-small">
+            <i class="fas fa-ellipsis-v" aria-hidden="true"></i>
+          </span>
+        </button>
+      </td>
+    </tr>
+    <tr class="level--1">
+      <td class="has-text-vcentered is-borderless">
+        <figure class="image is-inline-block has-text-vcentered has-width-50 mr-2">
+          <img src="https://bulma.io/images/placeholders/640x480.png" alt="">
+        </figure>
+        <h5 class="is-input is-inline-block">
+          <span class="has-text-vcentered has-text-muted">Screen Name</span>
+          <span class="icon is-small has-text-vcentered">
+            <i class="fa fa-pencil fa-xs" aria-hidden="true"></i>
+          </span>
+        </h5>
+      </td>
+      <td class="has-text-vcentered is-borderless">
+        <div class="field is-grouped">
+          <div class="control has-icons-left">
+            <div class="select is-small">
+              <select>
+                <option selected>Select provider</option>
+                <option>http://grafana.com</option>
+              </select>
+            </div>
+            <div class="icon is-small is-left">
+              <i class="mi mi-domain has-text-grey" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="control"><span class="is-size-7 has-text-vcentered">/</span></div>
+          <div class="control has-icons-right">
+            <input class="input is-small" type="text" placeholder="Enter URL">
+            <!--div class="icon is-small is-right has-text-danger">
+              <i class="fa fa-times" aria-hidden="true"></i>
+            </div-->
+          </div>
+        </div>
+      </td>
+      <td class="has-text-right has-text-vcentered is-borderless">
+        <button class="button icon is-small is-rounded has-tooltip-arrow" data-tooltip="Cancel">
+          <i class="mi mi-clear" aria-hidden="true"></i>
+        </button>
+      </td>
+    </tr>
+    <tr class="level--1">
+      <td class="has-text-vcentered">
+        <figure class="image is-inline-block has-text-vcentered has-width-50 mr-2">
+          <img src="https://bulma.io/images/placeholders/640x480.png" alt="">
+        </figure>
+        <h5 class="is-inline-block">
+          <span class="has-text-vcentered">Screen #2</span>
+          <span class="icon is-small has-text-vcentered">
+            <i class="fa fa-pencil fa-xs" aria-hidden="true"></i>
+          </span>
+        </h5>
+      </td>
+      <td class="has-text-vcentered">
+        <div class="field is-grouped">
+          <div class="control has-icons-left">
+            <div class="select is-small">
+              <select aria-label="Read">
+                <option selected>http://grafana.com</option>
+              </select>
+            </div>
+            <div class="icon is-small is-left">
+              <figure class="image is-16x16 has-text-centered">
+                <img src="/images/logo/grafana/symbol--coloured.svg" alt="">
+              </figure>
+            </div>
+          </div>
+          <div class="control"><span class="is-size-7 has-text-vcentered">/</span></div>
+          <div class="control has-icons-right is-small is-loading">
+            <input class="input is-small" type="text" placeholder="Enter URL" value="dashboard">
+            <!--div class="icon is-small is-right has-text-success">
+              <i class="fa fa-check" aria-hidden="true"></i>
+            </div-->
+          </div>
+        </div>
+      </td>
+      <td class="has-text-vcentered has-text-right">
+        <button class="button is-small is-rounded is-hoverable has-tooltip-arrow" data-tooltip="Actions">
+          <span class="icon is-small">
+            <i class="fas fa-ellipsis-v" aria-hidden="true"></i>
+          </span>
+        </button>
+      </td>
+    </tr>
+    <tr class="level--0">
+      <td class="" colspan="2">
+        <h5 class="is-input is-inline-block">
+          <span class="icon is-small has-text-vcentered mr-1">
+            <i class="fas fa-bookmark fa-xs" aria-hidden="true"></i>
+          </span>
+          <span class="has-text-vcentered">New Category</span>
+          <span class="icon is-small has-text-vcentered">
+            <i class="fa fa-pencil fa-xs" aria-hidden="true"></i>
+          </span>
+        </h5>
+      </td>
+      <td class="has-text-right">
+        <button class="button icon is-small is-rounded has-tooltip-arrow" data-tooltip="Cancel">
+          <i class="mi mi-clear" aria-hidden="true"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+        </div>
+
+        <div class="field is-horizontal is-large">
+          <div class="field-label is-normal pt-0 has-text-left">
+            <button class="button is-rounded is-borderless">
+              <span class="icon">
+                <i class="fa fa-angle-left" aria-hidden="true"></i>
+              </span>
+              <span>Back</span>
+            </button>
+          </div>
+          <div class="field-body">
+            <div class="field is-grouped">
+              <div class="control">
+                <button class="button is-rounded is-link">
+                  <span>Next</span>
+                  <span class="icon">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                  </span>
+                </button>
+              </div>
+              <div class="control">
+                <button class="button is-rounded">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+      </div>
+    </div>
+    <script src="js/main.js"></script>
+
+  </body>
+</html>

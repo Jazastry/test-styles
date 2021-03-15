@@ -1,0 +1,26 @@
+<header class="card-header">
+  <h3 class="card-header-title">CZ Hrusovany</h3>
+</header>
+<div class="card-content px-2 pb-2 pt-0">
+  <div class="columns is-variable is-1 has-text-vcentered">
+    <div class="column">
+      ${require('media/_pr-decreased.html')}
+    </div>
+    <div class="column">
+      ${require('media/_availability-100.html')}
+    </div>
+  </div>
+</div>
+<footer class="card-footer level">
+  <div class="level-left px-2 py-2">
+    ${require('alert/_error-inverter.html')}
+    ${require('alert/_warning-grid.html')}
+    ${require('alert/_warning-string.html')}
+    ${require('alert/_warning-equipment.html')}
+  </div>
+  <div class="level-right px-2 py-2">
+    ${require('alert/_status-warning.html')}
+    ${require('alert/_status-error.html')}
+    ${require('alert/_status-service-requested.html')}
+  </div>
+</footer>

@@ -1,0 +1,94 @@
+{{#>_commons/partial}}
+  <h3 class="subtitle is-4">Panel Tree</h3>
+  {{#>bulma/components/panel/panel-tree}}
+    {{#>bulma/components/panel/items/level level="0 is-hoverable--light"}}
+      <span class="is-clickable">
+        {{>bulma/elements/icons/icon icon="is-small has-text-opacity-40 mr-2" i="fas fa-caret-down" aria-hidden="true"}}
+
+        {{>bulma/elements/icons/icon icon="is-small mr-1" i="fas fa-circle has-text-success is-size-8"}}
+        <span>Plant Name</span>
+      </span>
+      <span class="tag is-small ml-auto">Plant</span>
+    {{/bulma/components/panel/items/level}}
+
+    {{#>bulma/components/panel/items/level level="1 is-hoverable--light"}}
+      <span class="is-clickable">
+        {{>bulma/elements/icons/icon icon="is-small has-text-opacity-40 mr-2" i="fas fa-caret-down" aria-hidden="true"}}
+        {{>bulma/elements/icons/icon icon="is-small mr-1" i="fas fa-circle has-text-success is-size-8"}}
+        <span>Plant Name</span>
+      </span>
+      <span class="tag is-small ml-auto">Plant</span>
+    {{/bulma/components/panel/items/level}}
+
+    {{#>bulma/components/panel/items/level level="2 is-hoverable--light"}}
+      <span class="is-clickable">
+          {{>bulma/elements/icons/icon icon="is-small has-text-opacity-40 mr-2" i="fas fa-caret-down" aria-hidden="true"}}
+          {{>bulma/elements/icons/icon icon="is-small mr-1" i="fas fa-circle has-text-success is-size-8"}}
+        <span>Plant Name</span>
+      </span>
+      <span class="tag is-small ml-auto">Plant</span>
+    {{/bulma/components/panel/items/level}}
+
+    {{#>bulma/components/panel/items/level level="3 is-hoverable--light"}}
+      <span class="is-clickable">
+        {{>bulma/elements/icons/icon icon="is-small has-text-opacity-40 mr-2" i="fas fa-square is-size-9" aria-hidden="true"}}
+        {{>bulma/elements/icons/icon icon="is-small mr-1" i="fas fa-circle has-text-success is-size-8"}}
+        <span>Plant Name</span>
+      </span>
+      <span class="tag is-small ml-auto">Plant</span>
+    {{/bulma/components/panel/items/level}}
+
+    {{#>bulma/components/panel/items/level level="1 is-hoverable--light"}}
+      <span class="is-clickable">
+        {{>bulma/elements/icons/icon icon="is-small has-text-opacity-40 mr-2" i="fas fa-square is-size-9" aria-hidden="true"}}
+        {{>bulma/elements/icons/icon icon="is-small mr-1" i="fas fa-circle has-text-success is-size-8"}}
+        <span>Plant Name</span>
+      </span>
+      <span class="tag is-small ml-auto">Plant</span>
+    {{/bulma/components/panel/items/level}}
+  {{/bulma/components/panel/panel-tree}}
+
+  {{#>bulma/components/panel/panel-tree class="is-shadowless has-border-width-1 has-border-color-primary"}}
+    {{#>bulma/components/panel/items/block block="is-clickable is-hoverable--light"}}
+      {{>bulma/elements/icons/icon icon="is-small mr-1" i="fas fa-circle has-text-danger is-size-8"}}
+      <span>2 Servant Relations</span>
+    {{/bulma/components/panel/items/block}}
+  {{/bulma/components/panel/panel-tree}}
+
+
+  {{!-- Demo with data frm bulma.json --}}
+  {{#each this.values}}
+    {{#>bulma/components/panel/panel}}
+
+      {{>bulma/components/panel/items/heading}}
+
+      {{#each this.items}}
+        {{#>bulma/components/panel/items/block}}
+
+          {{#eq child "button"}}
+            {{>bulma/elements/buttons/button class=button text=text}}
+          {{/eq}}
+
+          {{#eq child "panel-icon"}}
+            {{#>bulma/components/panel/items/icon}}
+              {{>bulma/elements/icons/i aria-hidden=aria-hidden}}
+            {{/bulma/components/panel/items/icon}}
+          {{/eq}}
+
+          {{#eq child "label"}}
+             <input type={{inputType}} />
+            {{text}}
+          {{/eq}}
+
+          {{#eq child "control"}}
+            <p class="control {{control}}">
+            <input class={{input}} type={{inputType}} placeholder= "{{placeholder}}" />
+            {{>bulma/elements/icons/icon icon=icon icon=icon aria-hidden=aria-hidden}}
+            </p>
+          {{/eq}}
+
+        {{/bulma/components/panel/items/block}}
+      {{/each}}
+    {{/bulma/components/panel/panel}}
+  {{/each}}
+{{/_commons/partial}}

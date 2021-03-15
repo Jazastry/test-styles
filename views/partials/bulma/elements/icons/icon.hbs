@@ -1,0 +1,11 @@
+<span class="icon {{icon}}"
+  {{#if this.data-tooltip}} 
+    data-tooltip="{{this.data-tooltip}}" 
+  {{/if}}>
+
+  {{#if @partial-block}}
+    {{>@partial-block}}
+  {{else}}
+    {{>bulma/elements/icons/i}}
+  {{/if}}
+</span>

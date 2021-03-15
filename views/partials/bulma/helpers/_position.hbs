@@ -1,0 +1,16 @@
+{{#each positionItems}}
+  {{#>_commons/partial}}
+    <ul class="block-list">
+      {{#each this.values}}
+      <li>
+        {{#if this.class}}
+          <code class="{{this.class}}">{{this.name}}</code>
+        {{else}}
+          <code>{{this.name}}</code>
+        {{/if}}
+      </li>
+      {{/each}}
+    </ul>
+  {{/_commons/partial}}
+{{/each}}
+

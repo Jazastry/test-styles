@@ -1,0 +1,15 @@
+// Card
+.card {
+	overflow: visible;
+}
+
+// PView: Lobby dashboard
+@mixin card-image-has-brand($border-color: $grey-light) {
+	.card-image {
+		border-bottom: 2px solid $border-color;
+		figure.is-brand {
+			margin-top: -32px;
+			img { border: 2px solid $border-color; }
+		}
+	}
+}

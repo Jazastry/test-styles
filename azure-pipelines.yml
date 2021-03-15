@@ -1,0 +1,50 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- CI
+- Development
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '10.x'
+  displayName: 'Install Node.js'
+
+- task: Npm@1
+  displayName: 'npm install'
+  inputs:
+    verbose: false
+
+- task: Npm@1
+  displayName: 'npm run css-build'
+  inputs:
+    command: custom
+    verbose: false
+    customCommand: 'run css-build'
+
+- task: AzureCLI@1
+  displayName: Az File Copy to Storage (prod)
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/CI'))
+  inputs:
+    azureSubscription: 'PAS Pay-As-You-Go Dev/Test - Invoice (5dee59e4-d6e9-413c-b423-212a9338a3b8)'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      az storage blob upload-batch \
+        --destination "webview-styles/prod" \
+        --account-name "chieftainportal" \
+        --source "public"
+
+- task: AzureCLI@1
+  displayName: Az File Copy to Storage (dev)
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/Development'))
+  inputs:
+    azureSubscription: 'PAS Pay-As-You-Go Dev/Test - Invoice (5dee59e4-d6e9-413c-b423-212a9338a3b8)'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      az storage blob upload-batch \
+        --destination "webview-styles/dev" \
+        --account-name "chieftainportal" \
+        --source "public"

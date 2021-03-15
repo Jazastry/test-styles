@@ -1,0 +1,118 @@
+.is-transparent {
+  background: transparent !important;
+}
+
+$custom-colors:(
+  "default": ($white-ter, $black-bis), 
+  "default2": ($grey-lightest, $black), 
+  "link": ($link, $primary-darkMode), 
+  "grey-lighter": ($grey-lighter, $grey-dark),
+  "grey-light": ($grey-light, $grey-darker),
+  "primary-light": ($primary-light, $primary-light),
+  "primary-lighter": ($primary-lighter, $primary-lighter),
+  "primary-lightest": ($primary-lightest, $primary-lightest),
+  "white-ter": ($white-ter, $white-ter),
+);
+
+@each $custom-name, $pair in $custom-colors {
+  $custom-color: nth($pair, 1);
+  $custom-color-dark-mode: nth($pair, 2);
+  .has-background-#{$custom-name} {
+    @if $dark-mode {
+      background: #{$custom-color-dark-mode} !important;
+    } @else {
+      background: #{$custom-color} !important;
+    }
+  }
+  .has-text-#{$custom-name} {
+    @if $dark-mode {
+      color: #{$custom-color-dark-mode} !important;
+    } @else {
+      color: #{$custom-color} !important;
+    }
+  }
+}
+
+// Opacity
+$opacity-range-start: 10;
+$opacity-range-end: 100;
+$opacity-interval: 10;
+
+$range-start: $opacity-range-start;
+$range-end: $opacity-range-end;
+$interval: $opacity-interval;
+
+$current: $range-start;
+$opacities: ('background', 'color');
+
+@while $current < $range-end {
+  $opacity-value: percentage($current/100);
+  @each $opacity in $opacities {
+    @if ($opacity == 'background') {
+      .has-background-opacity-#{$current} {
+        @if $dark-mode {
+          #{$opacity}: RGBA(255,255,255, #{$opacity-value}) !important;
+        } @else {
+          @if $light-mode {
+            #{$opacity}: RGBA(0,0,0, #{$opacity-value}) !important;
+          }
+        }
+      }
+    } @else if $opacity == 'color' {
+      .has-text-opacity-#{$current} {
+        @if $dark-mode {
+          #{$opacity}: RGBA(255,255,255, #{$opacity-value});
+        } @else {
+          #{$opacity}: RGBA(0,0,0, #{$opacity-value});
+        }
+      }
+    }
+  }
+  $current: $current + $interval;
+}
+
+// needs refactoring
+.has-background-opacity-5 {
+  @if $dark-mode {
+    background: rgba($white, 0.05) !important;
+  } @else {
+    background: rgba(0,0,0, 0.05) !important;
+  }
+}
+.has-text-opacity-5 {
+  @if $dark-mode {
+    color: rgba($white, 0.05) !important;
+  } @else {
+    color: rgba(0,0,0, 0.05) !important;
+  }
+}
+
+// Linear Gradient
+$gradient-primary: $primary2, $primary;
+$gradient-opacity: rgba($black, 0.2), transparent;
+$gradient-opacity-dark-mode: rgba($white, 0.3), transparent;
+
+$gradients: (
+  $gradient-primary: "primary", 
+  $gradient-opacity: "opacity"
+);
+$gradients-dark-mode: (
+  $gradient-opacity-dark-mode: "opacity"
+);
+
+$gradient-direction: (left, right, top, bottom);
+
+@each $direction in $gradient-direction {
+  @each $property, $gradient in $gradients {
+    .has-gradient-#{$direction}-#{$gradient} {
+      @include linear-gradient($direction, $property);
+    }
+  }
+  @each $property, $gradient in $gradients-dark-mode {
+    .has-gradient-#{$direction}-#{$gradient} {
+      @if $dark-mode {
+        @include linear-gradient($direction, $property);
+      }
+    }
+  }
+}

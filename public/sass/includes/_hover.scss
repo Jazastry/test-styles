@@ -1,0 +1,28 @@
+.is-hoverable {
+  &--dark {
+  	@include hoverable($black-bis, rgba($grey-lighter,0.5));
+  }
+  &--light {
+  	@include hoverable(rgba($black, 0.2), $white-ter);
+  }
+  &--lighter {
+  	@include hoverable(rgba($black, 0.6), $grey-lighter);
+  }
+}
+
+.on-hover {
+  .on-hover--show {
+    display: none !important;
+  }
+  &:hover {
+    .on-hover--show {
+      display: inline-block !important;
+      &.button {
+        display: inline-flex !important;
+      }
+    }
+    .on-hover--hide {
+      display: none;
+    }
+  }
+}

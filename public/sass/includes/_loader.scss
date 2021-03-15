@@ -1,0 +1,40 @@
+
+// Loader
+@mixin is-loading($borderColor: $grey, $bgColor: rgba(0, 0, 0, 0.01)) {
+  .is-loading:not(.control) {
+		position: relative;
+		height: 100%;
+    &:after  {
+      -webkit-animation: spinAround 500ms infinite linear;
+              animation: spinAround 500ms infinite linear;
+      border: 2px solid $borderColor;
+      border-radius: 290486px;
+      border-right-color: transparent;
+      border-top-color: transparent;
+      content: "";
+      display: block;
+      position: absolute;
+      height: 1em;
+      width: 1em;
+      left: calc(50% - (1em / 2));
+      top: calc(50% - (1em / 2));
+			z-index: 101;
+    }
+		&:before {
+			background: $bgColor;
+			content: "";
+			height: 100%;
+			width: 100%;
+			left: 0;
+			top: 0;
+			z-index: 100;
+			position: absolute;
+		}
+  }
+	@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+		.is-loading:before {
+			-webkit-backdrop-filter: blur(5px);
+			backdrop-filter: blur(5px);
+		}
+	}
+}

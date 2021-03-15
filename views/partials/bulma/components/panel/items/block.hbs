@@ -1,0 +1,9 @@
+{{#unless html}}
+  <div class="panel-block {{block}} {{state}}">
+    {{>@partial-block}}
+  </div>
+{{else}}
+  <{{html}} {{#eq html "a"}}href={{href}}{{/eq}} class="panel-block {{block}} {{state}}">
+    {{>@partial-block}}
+  </{{html}}>
+{{/unless}}

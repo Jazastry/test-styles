@@ -1,0 +1,20 @@
+{{#>bulma/components/dropdown/dropdown id-dropdown="js--dropdown-shortcuts" class="js--is-unclickable is-up"}}
+
+  {{#>bulma/components/dropdown/trigger id-trigger="js--trigger-shortcuts" button="icon is-text is-rounded is-small is-transparent" aria-haspopup="true" aria-controls="shortcuts"}}
+    {{>bulma/elements/icons/i i="fas fa-keyboard"}}
+  {{/bulma/components/dropdown/trigger}}
+
+  {{#>bulma/components/dropdown/menu content="is-paddingless" id="shortcuts" role="menu"}}
+   {{>bulma/components/dropdown/item type="span" item="is-size-7 is-uppercase has-cursor-default" text="Shortcuts"}}
+    {{>bulma/components/dropdown/divider divider="m-0"}}
+    {{#>bulma/components/dropdown/item type="div" item="is-flex is-justify-content-space-between is-size-7 is-hoverable--lighter has-cursor-default"}}
+    <div>Copy</div>
+    <div>CTRL + C</div>
+    {{/bulma/components/dropdown/item}}
+      {{#>bulma/components/dropdown/item type="div" item="is-flex is-justify-content-space-between is-size-7 is-hoverable--lighter has-cursor-default"}}
+    <div>Paste</div>
+    <div>CTRL + V</div>
+    {{/bulma/components/dropdown/item}}
+  {{/bulma/components/dropdown/menu}}
+
+{{/bulma/components/dropdown/dropdown}}

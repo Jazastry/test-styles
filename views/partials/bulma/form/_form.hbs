@@ -1,0 +1,66 @@
+<ul class="block-list">
+{{#each formItems}}
+  {{#>_commons/partial}}
+    {{#each this.values}}
+    <li>
+        {{#>bulma/form/field}}
+        {{#if externalLabel}}
+          {{#>bulma/form/label}}
+          {{labelText}}
+          {{/bulma/form/label}}
+          
+          {{#>bulma/form/control}}
+            {{>bulma/form/input}}
+          
+            {{#if this.items}}
+              {{#each this.items}}
+                {{>bulma/elements/icons/icon icon=icon i=i}}
+                {{/each}}
+            {{/if}}
+          {{/bulma/form/control}}
+
+        {{else}}
+          {{#>bulma/form/control}}
+          {{#if label}}
+           {{#>bulma/form/label}}
+            {{>bulma/form/input}}
+            {{labelText}}
+          {{/bulma/form/label}}
+          {{else}}
+            {{>bulma/form/input}}
+            {{#if this.items}}
+              {{#each this.items}}
+                {{>bulma/elements/icons/icon icon=icon i=i}}
+                {{/each}}
+            {{/if}}
+          {{/if}}  
+          {{/bulma/form/control}}
+        {{/if}}  
+        
+        {{/bulma/form/field}}
+    </li>
+    {{/each}}
+
+  {{/_commons/partial}}
+{{/each}}
+</ul>
+
+
+
+<ul class="block-list">
+{{#each formExtensionItems}}
+  {{#>_commons/partial}}
+    {{#each this.values}}
+    <li>
+      {{#>bulma/form/field}}
+        {{>bulma/form/checkbox}}
+        {{#>bulma/form/label for=id label=label}}
+          {{labelText}}
+        {{/bulma/form/label}}
+      {{/bulma/form/field}}
+    </li>
+    {{/each}}
+
+  {{/_commons/partial}}
+{{/each}}
+</ul>

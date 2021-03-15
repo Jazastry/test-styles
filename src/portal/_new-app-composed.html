@@ -1,0 +1,120 @@
+<div class="has-portal-aside mt-6">
+
+  <div class="section px-6">
+    <div class="level">
+      <div class="level-left">
+        <nav class="breadcrumb is-large" aria-label="breadcrumbs">
+          <ul>
+            <li><a href="/app-manager" class="has-text-weight-medium has-text-grey">App Manager</a></li>
+            <li class="is-active">
+              <a href="#" aria-current="page" class="has-text-weight-medium">
+                Create App
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <div class="section pt-0 px-6">
+    <div class="columns has-shadow">
+      <div class="column is-2 is-paddingless">
+        <nav class="panel is-nav is-full-height">
+          <div class="px-3 py-3">
+            ${require('steps/_step2-composed.html')}
+          </div>
+        </nav>
+      </div>
+
+      <div class="column px-6 pt-5">
+
+        <h3 class="is-size-5 has-text-weight-medium mb-4">Set up basics</h3>
+
+        <div class="field is-horizontal is-large">
+          <div class="field-label is-normal"></div>
+          <div class="field-body">
+            ${require('tiles/_app-type-is-composed.html')}
+          </div>
+        </div>
+
+        <div class="field is-horizontal is-large">
+          <div class="field-label is-normal">
+            <label class="label">App Name</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+                <input class="input" type="text" placeholder="">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <fieldset>
+          <legend>Templates</legend>
+          <div class="field is-horizontal is-large">
+            <div class="field-label is-normal">
+              <label class="label">Available App Templates</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <div class="select">
+                    <select>
+                      <option>Choose template</option>
+                      <option>Template #1</option>
+                      <option selected="">Template #2</option>
+                      <option>No Template</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Providers</legend>
+          <div class="field is-horizontal is-large">
+            <div class="field-label is-normal">
+              <label class="label">Select provider</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <div class="select">
+                    <select>
+                      <option>Grafana Provider #1 OEE</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="field is-horizontal is-large">
+          <div class="field-label is-normal"></div>
+          <div class="field-body">
+            <div class="field is-grouped">
+              <div class="control">
+                <button class="button is-rounded is-link">
+                  <span>Next</span>
+                  <span class="icon">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                  </span>
+                </button>
+              </div>
+              <div class="control">
+                <a href="/app-manager" class="button is-rounded">Cancel</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

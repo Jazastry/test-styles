@@ -1,0 +1,92 @@
+@if $dark-mode {
+	.panel { 
+		background: $black-bis;
+	}
+}
+
+.panel.tree,
+.panel.list {
+	.panel-block {
+		min-height: 40px;
+		padding-top: 0;
+		padding-bottom: 0;
+		&.is-hoverable, &.is-clickable,
+		& .is-hoverable, & .is-clickable {
+			color: $panel-list-item-color !important;
+			&:hover {
+				color: $panel-list-item-hover-color !important;
+			}
+		}
+		& .is-clickable > * {
+      vertical-align: middle;
+    }
+	}
+}
+
+// Panel Navigation (PView: Left nav)
+@mixin panel-is-nav($bgColor, $bgColorActive, $bgTabs) {
+  .panel.is-nav {
+    background: $bgColor;
+    border-radius: 6px 0 0 6px;
+		padding-top: 0.25em;
+		padding-bottom: 0.25em;
+    box-shadow: none;
+    .panel-block {
+  		&.is-active {
+  			background: $bgColorActive;
+        .panel-icon {
+          color: $link;
+        }
+  		}
+    }
+    .tabs {
+      background: $bgTabs;
+      li.is-active a {
+        background: $bgColorActive;
+      }
+    }
+  }
+}
+
+@if $dark-mode {
+	@include panel-is-nav(
+		$bgColor: darken($black, 10%),
+		$bgColorActive: $black-bis,
+		$bgTabs: darken($black, 10%)
+	);
+} @else {
+	@include panel-is-nav(
+		$bgColor: $white-ter,
+		$bgColorActive: $white,
+		$bgTabs: lighten($grey-lighter, 5%)
+	);
+}
+
+// Panel Tree
+.panel.tree {
+	&.relation {
+		@if $dark-mode {
+			border: 1px solid $grey-darker;
+		} @else {
+			border: 1px solid $grey-light;
+		}
+		.panel-heading {
+			display: block;
+		}
+	}
+	&.parent {
+		.panel-heading {
+			display: none;
+		}
+	}
+  .panel-block {
+    border: none;
+		&.level--1 {
+			@include tree-level--1();
+		}
+		&.level--2 {
+			@include tree-level--1();
+			@include tree-level--2();
+		}
+	}
+}

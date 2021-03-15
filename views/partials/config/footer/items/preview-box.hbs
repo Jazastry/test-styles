@@ -1,0 +1,15 @@
+
+{{#>bulma/components/dropdown/dropdown id-dropdown="js--dropdown-preview-box" class="js--is-unclickable is-up"}}
+
+  {{#>bulma/components/dropdown/trigger id-trigger="js--trigger-preview-box" button="icon is-text is-rounded is-small is-transparent" aria-haspopup="true"  aria-controls="preview-box"}}
+    {{!-- {{>bulma/elements/icons/i i="fas fa-eye"}} --}}
+    {{>bulma/elements/icons/i i="fas fa-eye-slash"}}
+  {{/bulma/components/dropdown/trigger}}
+
+  {{#>bulma/components/dropdown/menu content="is-paddingless" id="preview-box" role="menu"}}
+    <figure class="image is-16by9">
+      <img src="/images/apps/config/preview-box.png" alt="preview-box">
+    </figure>
+  {{/bulma/components/dropdown/menu}}
+
+{{/bulma/components/dropdown/dropdown}}
