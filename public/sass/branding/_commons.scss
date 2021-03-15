@@ -11,10 +11,10 @@ $light-mode: false !default;
 // Icons
 $fontawesome: "Font Awesome 5 Free";
 $fa-font-path: "../../../fonts/FontAwesome";
-@import "../../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
-@import "../../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
-@import "../../../node_modules/@fortawesome/fontawesome-free/scss/regular.scss";
-@import "../../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
+@import "node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
+@import "node_modules/@fortawesome/fontawesome-free/scss/regular.scss";
+@import "node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
 
 $material-icons-font-size: inherit;
 $material-icons-font-path: "../../../fonts/MaterialIcons/";
