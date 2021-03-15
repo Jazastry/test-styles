@@ -1,6 +1,6 @@
 {
   "name": "test-styles",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "index.js",
   "author": "",
   "license": "ISC",
@@ -16,7 +16,7 @@
     "compile": "npm run precompile && npm run rename",
     "server": "nodemon index.js",
     "refresh": "npm run css-build && npm run compile",
-    "postinstall": "node node_modules/.bin/node-sass --omit-source-map-url public/sass/ -o public/css/"
+    "postinstall": "npm run css-build"
   },
   "dependencies": {
     "@creativebulma/bulma-badge": "^1.0.1",
