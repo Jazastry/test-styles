@@ -18,7 +18,8 @@
     "rename": "node rename.js",
     "compile": "npm run precompile && npm run rename",
     "server": "nodemon index.js",
-    "refresh": "npm run css-build && npm run compile"
+    "refresh": "npm run css-build && npm run compile",
+    "install": "npm run cssbuild"
   },
   "dependencies": {
     "@creativebulma/bulma-badge": "^1.0.1",
