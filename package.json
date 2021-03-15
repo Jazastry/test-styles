@@ -1,0 +1,19 @@
+{
+  "name": "test-styles",
+  "version": "1.0.0",
+  "description": "Description will be here.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jazastry/test-styles.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jazastry/test-styles/issues"
+  },
+  "homepage": "https://github.com/Jazastry/test-styles#readme"
+}
