@@ -122,14 +122,14 @@ $dropdown-item-hover-color: $white-ter;
 $pagination-current-color: $black;
 
 // BULMA
-@import "../../../../node_modules/bulma/bulma.sass";
+@import "node_modules/bulma/bulma.sass";
 
 // EXTENSIONS
 // Steps
 $steps-divider-size: .14em;
 $steps-hollow-border-size: .14em;
 $steps-default-color: $grey-darker;
-@import "../../../../node_modules/bulma-o-steps/index.sass";
+@import "node_modules/bulma-o-steps/index.sass";
 
 // Modal
 $transition-duration: .3s;
@@ -137,42 +137,42 @@ $transition-duration-newsPaper: .7s;
 $transition-duration-3dslit: .5s;
 $modal-perspective: 1300px;
 $modal-bg-color: rgba($black,.5);
-@import "../../../../node_modules/bulma-modal-fx/src/_scss/components/_modal-fx.scss";
+@import "node_modules/bulma-modal-fx/src/_scss/components/_modal-fx.scss";
 
 // Badge
-@import "../../../../node_modules/@creativebulma/bulma-badge/src/sass/index.sass";
+@import "node_modules/@creativebulma/bulma-badge/src/sass/index.sass";
 
 // Tooltip
 $tooltip-background-color: $grey-lighter;
 $tooltip-color: $black;
-@import "../../../../node_modules/@creativebulma/bulma-tooltip/src/sass/index.sass";
+@import "node_modules/@creativebulma/bulma-tooltip/src/sass/index.sass";
 
 // Divider
 $hr-height: 1px;
 $hr-background-color: $black;
-@import "../../../../node_modules/@creativebulma/bulma-divider/src/sass/index.sass";
+@import "node_modules/@creativebulma/bulma-divider/src/sass/index.sass";
 
 // Quickview
 $quickview-divider: 1px solid darken($livid-dark, 15%);
 $quickview-shadow: $shadow;
-@import "../../../../node_modules/bulma-quickview/src/sass/index.sass";
+@import "node_modules/bulma-quickview/src/sass/index.sass";
 
 // Switch
-@import "../../../../node_modules/bulma-switch/src/sass/index.sass";
+@import "node_modules/bulma-switch/src/sass/index.sass";
 
 // Slider
 $slider-thumb-background: $grey-dark;
 $slider-track-background: $grey-darkest;
 $slider-thumb-border: 1px solid $black-ter;
-@import "../../../../node_modules/bulma-slider/src/sass/index.sass";
+@import "node_modules/bulma-slider/src/sass/index.sass";
 
 // Carousel
-@import "../../../../node_modules/bulma-carousel/src/sass/index.sass";
+@import "node_modules/bulma-carousel/src/sass/index.sass";
 
 // Checkradio
 $checkbox-border: .1rem solid $grey-darker;
 $checkradio-focus: transparent;
-@import "../../../../node_modules/bulma-checkradio/src/sass/index.sass";
+@import "node_modules/bulma-checkradio/src/sass/index.sass";
 
 // CUSTOM
 $dark-mode: true;

@@ -45,13 +45,13 @@ $progress-value-background-color: $blue;
 $dropdown-content-shadow: 0 1px 1px 0 rgba(60, 64, 67, 0.08), 0 1px 3px 1px rgba(60, 64, 67, 0.16);
 
 // BULMA
-@import "../../../../node_modules/bulma/bulma.sass";
+@import "node_modules/bulma/bulma.sass";
 
 // EXTENSIONS
 // Steps
 $steps-divider-size: .14em;
 $steps-hollow-border-size: .14em;
-@import "../../../../node_modules/bulma-o-steps/bulma-steps.sass"; /* there is bug with this bulma-o-steps overwriting the form inputs (font-size & height). I've commented the whole file (utilities/controls.sass)from being included in utilities/_all.sass */
+@import "node_modules/bulma-o-steps/bulma-steps.sass"; /* there is bug with this bulma-o-steps overwriting the form inputs (font-size & height). I've commented the whole file (utilities/controls.sass)from being included in utilities/_all.sass */
 
 // Modal
 $transition-duration: .3s;
@@ -59,34 +59,34 @@ $transition-duration-newsPaper: .7s;
 $transition-duration-3dslit: .5s;
 $modal-perspective: 1300px;
 $modal-bg-color: rgba($white,.5);
-@import "../../../../node_modules/bulma-modal-fx/src/_scss/components/_modal-fx.scss";
+@import "node_modules/bulma-modal-fx/src/_scss/components/_modal-fx.scss";
 
 // Badge
-@import "../../../../node_modules/@creativebulma/bulma-badge/src/sass/index.sass";
+@import "node_modules/@creativebulma/bulma-badge/src/sass/index.sass";
 
 // Tooltip
 $tooltip-background-color: $black;
-@import "../../../../node_modules/@creativebulma/bulma-tooltip/src/sass/index.sass";
+@import "node_modules/@creativebulma/bulma-tooltip/src/sass/index.sass";
 
 // Divider
 $hr-height: 1px;
 $hr-background-color: $grey-lighter;
-@import "../../../../node_modules/@creativebulma/bulma-divider/src/sass/index.sass";
+@import "node_modules/@creativebulma/bulma-divider/src/sass/index.sass";
 
 // Quickview
-@import "../../../../node_modules/bulma-quickview/src/sass/index.sass";
+@import "node_modules/bulma-quickview/src/sass/index.sass";
 
 // Switch
-@import "../../../../node_modules/bulma-switch/src/sass/index.sass";
+@import "node_modules/bulma-switch/src/sass/index.sass";
 
 // Slider
-@import "../../../../node_modules/bulma-slider/src/sass/index.sass";
+@import "node_modules/bulma-slider/src/sass/index.sass";
 
 // Carousel
-@import "../../../../node_modules/bulma-carousel/src/sass/index.sass";
+@import "node_modules/bulma-carousel/src/sass/index.sass";
 
 // Checkradio
-@import "../../../../node_modules/bulma-checkradio/src/sass/index.sass";
+@import "node_modules/bulma-checkradio/src/sass/index.sass";
 
 // CUSTOM
 $light-mode: true;
