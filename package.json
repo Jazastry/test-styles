@@ -1,6 +1,6 @@
 {
   "name": "test-styles",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "main": "index.js",
   "author": "",
   "license": "ISC",
@@ -15,8 +15,7 @@
     "rename": "node rename.js",
     "compile": "npm run precompile && npm run rename",
     "server": "nodemon index.js",
-    "refresh": "npm run css-build && npm run compile",
-    "postinstall": "npm run css-build"
+    "refresh": "npm run css-build && npm run compile"
   },
   "dependencies": {
     "@creativebulma/bulma-badge": "^1.0.1",
