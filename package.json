@@ -16,16 +16,15 @@
     "compile": "npm run precompile && npm run rename",
     "server": "nodemon index.js",
     "refresh": "npm run css-build && npm run compile",
-    "install": "npm run css-build"
+    "postinstall": "node node_modules/.bin/node-sass --omit-source-map-url public/sass/ -o public/css/"
   },
   "dependencies": {
-    "node-sass": "^5.0.0",
-    "@vizuaalog/bulmajs": "^0.12.0",
-    "bulma": "^0.9.1",
     "@creativebulma/bulma-badge": "^1.0.1",
     "@creativebulma/bulma-divider": "^1.1.0",
     "@creativebulma/bulma-tooltip": "^1.2.0",
     "@fortawesome/fontawesome-free": "^5.15.2",
+    "@vizuaalog/bulmajs": "^0.12.0",
+    "bulma": "^0.9.1",
     "bulma-carousel": "^4.0.4",
     "bulma-checkradio": "^1.1.1",
     "bulma-helpers": "^0.3.12",
@@ -39,6 +38,7 @@
     "fs": "^0.0.1-security",
     "handlebars-helpers": "^0.10.0",
     "material-icons": "^0.5.2",
+    "node-sass": "^5.0.0",
     "nodemon": "^2.0.7"
   }
 }
