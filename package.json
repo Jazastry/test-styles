@@ -19,7 +19,7 @@
     "compile": "npm run precompile && npm run rename",
     "server": "nodemon index.js",
     "refresh": "npm run css-build && npm run compile",
-    "install": "npm run css-build"
+    "install": "npm i && npm run css-build"
   },
   "dependencies": {
     "@creativebulma/bulma-badge": "^1.0.1",
