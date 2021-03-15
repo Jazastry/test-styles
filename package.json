@@ -1,16 +1,17 @@
 {
   "name": "test-styles",
-  "version": "1.0.5",
+  "version": "1.0.3",
   "main": "index.js",
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@vizuaalog/bulmajs": "^0.12.0",
+    "bulma": "^0.9.1",
     "html-includes": "^4.3.3",
     "node-sass": "^5.0.0"
   },
   "scripts": {
-    "build": "node-sass --omit-source-map-url public/sass/ -o public/css/",
+    "css-build": "node-sass --omit-source-map-url public/sass/ -o public/css/",
     "css-watch": "npm run css-build -- --watch",
     "start": "npm run css-watch",
     "precompile": "html-includes --src src --dest views/layouts",
@@ -24,7 +25,6 @@
     "@creativebulma/bulma-divider": "^1.1.0",
     "@creativebulma/bulma-tooltip": "^1.2.0",
     "@fortawesome/fontawesome-free": "^5.15.2",
-    "bulma": "^0.9.1",
     "bulma-carousel": "^4.0.4",
     "bulma-checkradio": "^1.1.1",
     "bulma-helpers": "^0.3.12",
